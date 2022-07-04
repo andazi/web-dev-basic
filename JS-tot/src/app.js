@@ -1066,44 +1066,44 @@
 
 // // mostly use to manipulate a portion of our data to use as a new array
 
-const fullNames = [
-    {
-        first: 'Albus', 
-        last: 'Dumbledore'
-    },
-    {
-        first: 'Harry', 
-        last: 'Potter'
-    },
-    {
-        first: 'Hermione',
-         last: 'Granger'
-        },
-    {
-        first: 'Ron', 
-        last: 'Weasley'
-    },
-    {
-        first: 'Rubeus', 
-        last: 'Hagrid'
-    },
-    {
-        first: 'Minerva', 
-        last: 'McGonagall'
-    },
-    {
-        first: 'Severus',
-        last: 'Snape'
-    }
-];
+// const fullNames = [
+//     {
+//         first: 'Albus', 
+//         last: 'Dumbledore'
+//     },
+//     {
+//         first: 'Harry', 
+//         last: 'Potter'
+//     },
+//     {
+//         first: 'Hermione',
+//          last: 'Granger'
+//         },
+//     {
+//         first: 'Ron', 
+//         last: 'Weasley'
+//     },
+//     {
+//         first: 'Rubeus', 
+//         last: 'Hagrid'
+//     },
+//     {
+//         first: 'Minerva', 
+//         last: 'McGonagall'
+//     },
+//     {
+//         first: 'Severus',
+//         last: 'Snape'
+//     }
+// ];
 
-const firstNames = [];
-for (let names of fullNames){
-    console.log(names);
-    console.log(names.first);
-    firstNames.push(firstNames);
-}
-console.log(firstNames);
+// const firstNames = [];
+// for (let names of fullNames){
+//     console.log(names);
+//     console.log(names.first);
+//     firstNames.push(names.first);
+// }
+// console.log(firstNames);
 
 // arrow function
 // helps us make a function expression
