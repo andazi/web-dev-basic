@@ -1310,14 +1310,93 @@
 // console.log(villains);
 
 
+// // some and every
+
+// every 
+// test whether all elements in the array pass the provided function.
+//returns a boolean value
+
+// const exams = [40, 43, 56, 70, 61, 99, 54, 98, 67];
+
+// const scores = exams.every(score => score > 65);
+// console.log(scores);
+
+// const scores = exams.every(score => score >= 40);
+// console.log(scores);
+
+// const registry = ['Namian','Kola', 'Bola', 'Usman','Thelma', 'Boboye'];
+
+// const students = registry.every(names => names.length >= 4);
+// console.log(students);
+
+// const stats = [
+//     {
+//         title: 'Darkside',
+//         rating: 4.7
+//     },
+//     {
+//         title: 'Thanos',
+//         rating: 4 
+//     },
+//     {
+//         title: 'Reverse Flash',
+//         rating: 3.9
+//     },
+//     {
+//         title: 'Harley Quinn',
+//         rating: 4.1
+//     },
+//     {
+//         title: 'Loki',
+//         rating: 4.9
+//     },
+//     {
+//         title: 'Lex Luthor',
+//         rating: 5
+//     }   
+// ]
+
+// const rating = stats.map(character => character.rating)
+
+// const villain = rating.every(rating => rating > 4)
+// console.log(villain);
 
 
+// some
+// alike with every
+// test whether any elements in the array pass the argument
 
+// const stats = [
+//     {
+//         title: 'Darkside',
+//         rating: 4.7
+//     },
+//     {
+//         title: 'Thanos',
+//         rating: 4 
+//     },
+//     {
+//         title: 'Reverse Flash',
+//         rating: 3.9
+//     },
+//     {
+//         title: 'Harley Quinn',
+//         rating: 4.1
+//     },
+//     {
+//         title: 'Loki',
+//         rating: 4.9
+//     },
+//     {
+//         title: 'Lex Luthor',
+//         rating: 5
+//     }   
+// ]
 
+// const rating = stats.map(character => character.rating)
 
-
-
-
+// const villain = rating.some(rating => rating > 4)
+// console.log(villain);
 
 
 
