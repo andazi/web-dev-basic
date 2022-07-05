@@ -17,3 +17,29 @@
 //     n2 = nextTerm;
 // }
 // console.log(fib)
+
+
+//  <>  ||  * +  () => {} console.log() :  $  % !
+
+// need working
+
+// let num = 7;
+// for(let i = 2; i <= num - 1; i++){
+//     let prime = num % i;
+//     if (prime === 0){
+//         console.log('is not prime');
+//         break;
+//     } else {
+//         console.log('is prime');
+//     }
+// }
+
+// let num = 2;
+// for(let i = 2; i < num/2 + 1; i++){
+//     let prime = num % i;
+//     if (prime === 0  ){
+//         return false;
+//     } else {
+//         console.log('is prime');
+//     }
+// }

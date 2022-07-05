@@ -72,6 +72,7 @@
 // console.log(`The factors of ${number} are ${numberFactor}`);
 
 
+
 // // switch without break
 
 
@@ -524,7 +525,7 @@
 // // multiple arguments
 
 // function greet(firstName, lastName){
-//     console.log(`Hey there, ${firstName} ${lastName[0]}`);
+//     return `Hey there, ${firstName} ${lastName}`;
 // }
 // greet('Boboye', 'Andazi');
 
@@ -537,10 +538,10 @@
 
 // function laugh(sound, freq){
 //     let laughter = [];
-//     for (i = 0; i <= freq; i++){
-//         laughter.push(sound);
-//     }
-//     console.log(laughter);
+    // for (i = 0; i <= freq; i++){
+    //     laughter.push(sound);
+    // }
+    // console.log(laughter);
 // }
 // laugh('muahahaha ', 2);
 
