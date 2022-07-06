@@ -1398,9 +1398,94 @@
 // const villain = rating.some(rating => rating > 4)
 // console.log(villain);
 
+//  <>  ||  * +  () => {} console.log() :  $  % ! +=  >=
+// reduce 
+// executes a return statement on each element in an array
+
+// const shopping = [45, 65, 76, 90, 65, 89, 76];
+
+// suming the scores in exam
+
+// const cost = shopping.reduce((sum, price) => sum += price);
+// console.log(cost); // 506
+
+// cost with tax
+// 20 being tax
+
+// const costTax = shopping.reduce(((sum, price) => sum += price), 20);
+// console.log(costTax)  //526
+
+// returning min value
+
+// const shopping = [23, 54, 33.5, 45, 65, 76, 90, 6.5, 89, 76];
+// const minPrice = shopping.reduce((min, price) => {
+//     if (min > price) {
+//         return price
+//     }
+//     return min
+// })
+// console.log(minPrice);
+
+// // max price
+// const maxPrice = shopping.reduce((max, price) => {
+//     if (max < price) {
+//         return price
+//     }
+//     return max
+// })
+// console.log(maxPrice);
 
 
+// // arrow function and keyword this
+// in arrow function, keyword this refers to the window scope not the inner scope
 
+// const person = {
+//     name : 'boboye',
+//     laptop : 'grey',
+//     shoes : 'brown',
+//     hair : 'black',
+//     eyes : 'blue',
+//     sentence() {
+//         return `the kid name is ${this.name}, he has ${this.hair}, enchanting ${this.eyes} and funny looking ${this.shoes} with a ${this.laptop} laptop on his left hand. `
+//     }
+// }
+// let myPerson = person.sentence();
+
+// console.log(myPerson); // this.name = boboye ....
+
+// const person = {
+//     name : 'boboye',
+//     laptop : 'grey',
+//     shoes : 'brown',
+//     hair : 'black',
+//     eyes : 'blue',
+//     sentence : () => (
+//         `the kid name is ${this.name}, he has ${this.hair}, enchanting ${this.eyes} and funny looking ${this.shoes} with a ${this.laptop} laptop on his left hand. `
+//     )
+// }
+// let myPerson = person.sentence();
+
+// console.log(myPerson);  // this.name = undefined
+
+// // we can call this keyword insie of a higher function
+
+// const person = {
+//     name : 'boboye',
+//     laptop : 'grey',
+//     shoes : 'brown',
+//     hair : 'black',
+//     eyes : 'blue',
+//     sentence : function () {
+//         setTimeout(() => {
+//             return console.log(`the kid name is ${this.name}, he has ${this.hair}. `);
+//         }, 300)
+//     }
+// }
+// let myPerson = person.sentence();
+
+// console.log(myPerson); 
+
+//  <  >  ||  * +  () => {} console.log() :  $  % ! +=  >=
 
 
 

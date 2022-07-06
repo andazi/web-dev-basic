@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XRP WEB</title>
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+    <section id="header">
+        <div class="container">
+            <img src="xrp_img/logo.png" alt="" class="logo">
+            <div class="header-text">
+                <h1>The Purpose is to<br>
+                     teach and bring learning to people</h1>
+                     <span class="square"></span>
+                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                         Doloremque, obcaecati soluta voluptates dolorum tenetur incidunt quisquam, veritatis qui 
+                         eveniet odio amet at eum vitae assumenda natus sint cum! Ipsa, voluptatem?</p>
+                     <button class="common-btn">Read More</button>
+                     <div class="line">
+                         <span class="line-1"></span><br>
+                         <span class="line-2"></span><br>
+                         <span class="line-3"></span>
+                     </div>
+        </div>
+        </div>
+    </section>
+    <nav id="sideNav">
+        <ul>
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">ABOUT</a></li>
+            <li><a href="#">FEATURES</a></li>
+            <li><a href="#">REVIEWS</a></li>
+            <li><a href="#">CONTACT</a></li>
+        </ul>
+    </nav>
+    <img src="xrp_img/menu.png" alt="" id="menuBtn">
+
+    <!-- about -->
+
+    <section id="about-page">
+        <div class="about-img">
+            <img src="xrp_img/about.png" alt="">
+        </div>
+        <div class="about">
+            <div class="about-text">
+                <h1>About US</h1>
+                <span class="square"></span>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis illum quis
+                   laboriosam cupiditate necessitatibus dicta ut rerum culpa amet sunt, 
+                   doloremque possimus, eum dolorem odio. Odio quibusdam omnis rem architecto?
+                </p>
+                <div class="line">
+                    <span class="line-1"></span><br>
+                    <span class="line-2"></span><br>
+                    <span class="line-3"></span>
+                </div>
+                <h2>
+                    <q>Learning the way of Lorem ipsum adipisicing elit. In non tenetura beatae corporis doloremque delectus recusandae error eos,
+                        Perspiciatis vel possimus voluptate quisquam!</q>
+                </h2>
+                <h3>----Andazi Boboye</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- features  -->
+
+    <section id="features">
+        <div class="features-row">
+            <div class="features-col">
+                <img src="xrp_img/pic-1.png" alt="">
+                <h4>Learn Anywhere</h4>
+                <p>Switch between your computer, tablet or mobile device</p>
+            </div>
+            <div class="features-col">
+                <img src="xrp_img/pic-2.png" alt="">
+                <h4>Expert Teachers</h4>
+                <p>Learn from Expert who are passionate to teach</p>
+            </div>
+            <div class="features-col">
+                <img src="xrp_img/pic-3.png" alt="">
+                <h4>Unlimited Access</h4>
+                <p>Get unlimited access to resources and videos</p>
+            </div>
+        </div>
+        <div class="features-btn">
+            <button class="common-btn">Start Free Trial</button>
+        </div>
+    </section>
+
+    <!-- courses  -->
+
+<section id="courses">
+    <div class="container course-row">
+        <div class="col-left">
+            <div class="course-text">
+                <h2>Browse our top <br>Courses</h2>
+                <span class="square"></span>
+                <p>Lorem ipsum is not a random text but a text dated back to 45 BC in a classical latin literature. Making it our 2000 years old...</p>
+                <button class="common-btn">View All Course</button>
+                <div class="line">
+                    <span class="line-1"></span><br>
+                    <span class="line-2"></span><br>
+                    <span class="line-3"></span>
+                </div>
+            </div>
+        </div>
+        <div class="col-right">
+            <img src="xrp_img/course.png" alt="">
+        </div>
+    </div>
+</section>
+
+<!-- offer  -->
+<section id="offer about-page">
+    <div class="about-img">
+        <img src="xrp_img/offer.png" alt="">
+    </div>
+    <div class="about">
+        <div class="about-text">
+            <h1>Limitless learning <br>Limitless Resources</h1>
+            <span class="square"></span>
+            <p>Lorem ipsum loriosam dolorem odio. Odio quibusdam omnis rem architecto?
+            </p>
+            <button class="common-btn">View All Course</button>      
+            <div class="line">
+                <span class="line-1"></span><br>
+                <span class="line-2"></span><br>
+                <span class="line-3"></span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- contact  -->
+
+<section id="contact">
+    <div class="container contact-row">
+        <div class="contact-left"></div>
+        <div class="contact-right">
+            <img src="xrp_img/contact.png" alt="">
+        </div>
+    </div>
+</section>
+
+
+
+    <script>
+        var menuBtn = document.getElementById("menuBtn");
+        var sideNav = document.getElementById("sideNav");
+
+        sideNav.style.right = "-250px";
+        menuBtn.onclick = function(){
+            if(sideNav.style.right = "-250px"){
+                sideNav.style.right = "0";
+            }
+            else{
+                sideNav.style.right = "-250px";
+            }
+        }
+
+    </script>
+</body>
+</html>
