@@ -1,12 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,400;0,700;1,300;1,400&display=swap');
+
+
 * {
     box-sizing: border-box;
     margin: 0;
-    padding: 0%;
+    padding: 0;
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
     font-size: 20px;
+    background-color: #1b1206;
 }
 
 
@@ -27,7 +31,7 @@ body {
 /* reviews  */
 
 .reviews {
-    background-color: #e6e4e173;
+    background-color: #e6e4e123;
     width: 90vw;
     margin-left: auto;
     margin-right: auto;
@@ -40,7 +44,7 @@ body {
 /* review box  */
 
 .box {
-    background-color: #cecece;
+    background-color: #cecece96;
     width: 350px;
     height: 200px;
     display: flex;
@@ -50,6 +54,8 @@ body {
     border-radius: 10px;
     box-shadow: 0 0 8px #000;
 }
+
+/* profile  */
 
 .profile {
     display: flex;
@@ -63,6 +69,8 @@ img {
     border: 1px solid #141414;
 }
 
+/* profile bio  */
+
 .bio {
     font-size: 0.6em;
     align-self: center;
@@ -74,10 +82,17 @@ img {
 }
 
 .qoute {
-    font-size: .7em;
-    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     border-top: 1px solid #000;
     margin-top: 20px;
+}
+
+.qoute p {
+    font-size: .8em;
+    line-height: 1.5;
     padding: 10px 0;
 }
 
@@ -100,5 +115,5 @@ button:hover {
 /* a clicking effect  */
 
 button:active {
-    box-shadow: 0 0 5px #000;
+    box-shadow: none;
 }

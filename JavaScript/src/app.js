@@ -1485,10 +1485,270 @@
 
 // console.log(myPerson); 
 
-//  <  >  ||  * +  () => {} console.log() :  $  % ! +=  >=
+
+// // setting default param
+
+// const product = (x,y) =>  x * y;
+
+// console.log(product(2,99)); //198
+// console.log(product()); // NaN
+// console.log(product(2));  // NaN
+
+// default
+// follows order
+
+// const product = (x,y = 1) =>  x * y;
+
+// console.log(product(2,99)); //198
+// console.log(product()); // NaN
+// console.log(product(2));  // 2
+
+// const product = (x=1,y) =>  x * y;
+
+// console.log(product(2,99)); //198
+// console.log(product()); // NaN
+// console.log(product(2));  // NaN
+
+
+// // spread argument
+// ...arg
+// spreads syntax allows an iterable such as array to be expanded
+// use for method that demand multiple arg
+// ... spreads the param
+
+// const nums = [23,45,32,34,56,78,99,76,44]; 
+
+// const maxNum = Math.max(nums);
+// console.log(maxNum); // NaN 
+
+// const maxNum = Math.max(...nums);
+
+// console.log(maxNum); // 99
+
+// const topic = 'THIS IS SPREAD';
+// console.log(...topic)
+
+// const class1 = [23,43,56,75,89,88,12,34,56,37,27,43];
+// const class2 = [45,32,45,67,87,32];
+
+// const class3 = [...class1, ...class2];
+// console.log(class3);
+
+// const baby1 = ['A', 'B', 'C'];
+// const baby2 = ['X', 'Y', 'Z'];
+// const baby = [...baby1, 'M','N', 'O', ...baby2];
+
+// console.log(baby);
+
+// spread in objects copies the object properties into a new object
+
+// const userForm =  {
+//     first : 'boboye',
+//     last : 'andazi',
+//     password : 'pdko8u4nofkfkl./3',
+//     usename : 'bobli',
+// };
+
+// const admin = {...userForm, isAdmin : true };
+// console.log(admin)
+
+
+// conflicted properties
+// const feline =  {
+//     legs : 4,
+//     hairy : true,
+//     feed : 'canivorous',
+//     family : 'filidaae',
+// };
+// const reptile =  {
+//     legs : 5,
+//     hairy : false,
+//     feed : 'omnivorous',
+//     family : 'reptilia'
+// };
+
+// const admin = {...feline, ...reptile};  // property with same key, last arg takes precident
+// console.log(admin)
+
+// const cart1 =  {
+//     bag : 4,
+//     pet : 'cat',
+//     shoe : 10,
+//     payment : true,
+// };
+// const cart2 =  {
+//     book : 5,
+//     pencil : 10,
+//     phone : 'Samsung',
+//     payment : false,
+// };
+
+// const list = {...cart1, ...cart2};  // property with same key, last arg takes precident, // payment = false
+// console.log(list)
+
+
+// // rest param
+
+// like spread but not exactly
+// array-like object
+// has length property
+// does not support method like push, pop, log
+// contains all arg passed into function
+// not available to arrow function
+
+// function sum(){
+//     return arguments.reduce((total, el) => total += el)  // return error due arrow function
+// }
+
+// function sum(num){
+//     return num.reduce((total, el) => total += el)  // return error due arrow function
+// }
+// const sumTotal = sum(34,45,67,886,54);
+// console.log(sumTotal);
+
+// function sum(...num){
+//     return num.reduce((total, el) => total += el)
+// }
+// const sumTotal = sum(34,45,67,886,54);
+// console.log(sumTotal); // 1086
+
+// sum = (nums) => (
+//     console.log(nums)
+//     )
+// sum(34,45,67,886,54);  // 34
+
+// sum = (...nums) => (
+//     console.log(nums)
+//     )
+// sum(34,45,67,886,54); //[34,45,67,886,54]
 
 
 
+// function sum(nums){
+//     console.log(nums)
+// }
+// sum(34,45,67,886,54) // 34
+
+
+// function sum(...nums){
+//     console.log(nums)
+// }
+// sum(34,45,67,886,54)
+
+// function medal(gold,silver,bronze, ...others){
+//     console.log(`GOLD MEDAL GOESS TO ${gold} `);
+//     console.log(`SILVER MEDAL GOESS TO ${silver} `),
+//     console.log(`BRONZE MEDAL GOESS TO ${bronze} `),
+//     console.log(`IRON MEDAL GOESS TO ${others} `)
+// }
+// medal('GLORIA','MANNY', 'PEPPER', 'LUKE', 'PHILIP', 'RONALDO')
+
+
+// // destructuring
+// modern short and clean syntax to unpack
+// values from array
+// properties from object
+// into distinct variable
+
+// destructuring of array
+// const raceResult = ['GLORIA','MANNY', 'PEPPER', 'JAY', 'ALEX', 'RONALDO'];
+// // destructure
+// const [gold, silver, bronze, ...others] = raceResult;
+// gold;
+// console.log(gold) //GLORIA
+// console.log(others) // [ 'JAY', 'ALEX', 'RONALDO' ]
+// console.log(...others) // JAY ALEX RONALDO
+
+//destructuring objects
+// order doesnt matter
+
+// const person = {
+//     firstName : 'boboye',
+//     laptop : 'grey',
+//     shoes : 'brown',
+//     hair : 'black',
+//     eyes : 'blue',
+//     bio : 'i love coding and experiencing new technologies'
+// }
+// destructure
+// const {firstName, bio, ...others} = person;
+
+// console.log(firstName);
+// console.log(others);
+
+// renaming property
+
+// const {firstName, laptop : favColor, ...others} = person;
+// console.log(laptop);  // error
+
+// adding more property
+// const {firstName, favColor = 'purple', ...others} = person;
+// console.log(favColor);
+
+// // param destructuring
+// in an event or most events, when we dont need all param
+
+// const client = {
+//     firstName : 'boboye',
+//     lastName : 'andazi',
+//     laptop : 'grey',
+//     shoes : 'brown',
+//     hair : 'black',
+//     eyes : 'blue',
+//     bio : 'i love coding and experiencing new technologies'
+// }
+
+// const candidate = function(client){
+//     const{firstName, lastName, bio} = client;
+//     return `${firstName} ${lastName} said "${bio}" in his bio`
+// }
+// console.log(candidate(client));
+
+const stats = [
+    {
+        title: 'SpiderMan',
+        rating: 4.7
+    },
+    {
+        title: 'Marvel',
+        rating: 4 
+    },
+    {
+        title: 'Flash',
+        rating: 3.9
+    },
+    {
+        title: 'Arrow',
+        rating: 4.1
+    },
+    {
+        title: 'Black Panther',
+        rating: 4.9
+    },
+    {
+        title: 'Scarlet Witch',
+        rating: 5
+    }   
+]
+
+// const highestRated = stats.filter(character => character.rating > 4.5);
+
+// destructure
+// const highestRated = stats.filter(({rating}) => rating > 4.5);
+
+// const longerName = stats.filter(({title}) => title.length > 7);
+
+// regular mapping
+// const comment = stats.map((movie) => 
+//     `${movie.title} charm is ${(movie.rating * 100).toFixed(0)} times ` 
+// );
+
+// map and destructuring
+// const comment = stats.map(({title, rating}) => 
+//     `${title} charm is ${(rating * 100).toFixed(0)} times ` 
+// );
+
+//  <  >  ||  * +  ()  {} console.log(); :  $  % ! +=  >= => ${}""
 
 
 
