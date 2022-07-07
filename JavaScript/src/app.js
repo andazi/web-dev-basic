@@ -1224,6 +1224,43 @@
 // }
 // itemList(resume);
 
+// DO NOT ALTER THE FOLLOWING CODE:
+// const fullNames = [
+//     {
+//         first: 'Albus', 
+//         last: 'Dumbledore'
+//     },
+//     {
+//         first: 'Harry', 
+//         last: 'Potter'
+//     }, 
+//     {
+//         first: 'Hermione', 
+//         last: 'Granger'
+//     }, 
+//     {
+//         first: 'Ron', 
+//         ast: 'Weasley'
+//     }, 
+//     {
+//         first: 'Rubeus', 
+//         last: 'Hagrid'
+//     }, 
+//     {
+//         first: 'Minerva', 
+//         last: 'McGonagall'
+//     }, 
+//     {
+//         first: 'Severus', 
+//         last: 'Snape'
+//     }
+// ];
+
+
+// // Write your code here
+
+// const fisrtName = fullNames.map(names => names.first);
+
 
 // // setTimeout(callback function, delay)
 // call once 
@@ -1704,32 +1741,32 @@
 // }
 // console.log(candidate(client));
 
-const stats = [
-    {
-        title: 'SpiderMan',
-        rating: 4.7
-    },
-    {
-        title: 'Marvel',
-        rating: 4 
-    },
-    {
-        title: 'Flash',
-        rating: 3.9
-    },
-    {
-        title: 'Arrow',
-        rating: 4.1
-    },
-    {
-        title: 'Black Panther',
-        rating: 4.9
-    },
-    {
-        title: 'Scarlet Witch',
-        rating: 5
-    }   
-]
+// const stats = [
+//     {
+//         title: 'SpiderMan',
+//         rating: 4.7
+//     },
+//     {
+//         title: 'Marvel',
+//         rating: 4 
+//     },
+//     {
+//         title: 'Flash',
+//         rating: 3.9
+//     },
+//     {
+//         title: 'Arrow',
+//         rating: 4.1
+//     },
+//     {
+//         title: 'Black Panther',
+//         rating: 4.9
+//     },
+//     {
+//         title: 'Scarlet Witch',
+//         rating: 5
+//     }   
+// ]
 
 // const highestRated = stats.filter(character => character.rating > 4.5);
 
