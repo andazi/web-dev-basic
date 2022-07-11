@@ -1,0 +1,38 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+header{
+    margin-top: 20px;
+    font-size: 2em;
+}
+
+h2 {
+    text-align: center;
+    width: 250px;
+    background-color: antiquewhite;
+    border: 2px solid black;
+}
+
+button {
+    font-weight: 600;
+    padding: 1rem;
+    margin: 0.5em;
+    font-size: 1rem;
+    border-radius: .5em;
+    cursor: pointer;
+}
+button:hover {
+    font-weight: 700;
+    background-color: #0c8d28ce;
+    box-shadow: 0 0 0.5em 0.2em #070c08a1;
+}

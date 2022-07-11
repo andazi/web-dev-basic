@@ -1989,20 +1989,34 @@
 
 
 // insertAdjancentElement
-// insert element before or after the target element
-// const h2 = document.createElement('h4');
-// h2.append('Reviews from all over all over the world');
+
+// beforebegin
+// **********<>*************
+// *       afterbegin      *
+// *        content        *
+// *       beforeend       *
+// ***********</>***********
+//         afterend
+// beforebegin<>afterbegin content beforeend</>afterend
+
+
 // const head = document.querySelector('.container header');
 
-// insert element inside but the start of the targeted element
-// head.insertAdjacentElement('afterbegin', h2);
-// insert element inside but the end of the targeted element
-// head.insertAdjacentElement('beforeend', h2);
+// const h2 = document.createElement('h4');
+// h2.innerText = 'beforebegin';
+// head.insertAdjacentElement('beforebegin', h2);
 
-// insert after the targeted element
-// head.insertAdjacentElement('afterend', h2);
-// insert start the targeted element
+// const h3 = document.createElement('h4');
+// h3.innerText = 'afterbegin';
+// head.insertAdjacentElement('afterbegin', h3);
 
+// const h4 = document.createElement('h4');
+// h4.innerText = 'beforeend';
+// head.insertAdjacentElement('beforeend', h4);
+
+// const h5 = document.createElement('h4');
+// h5.innerText = 'afterend';
+// head.insertAdjacentElement('afterend', h5);
 
 // // remove and removeChild
 // removeChild is not supported by explorer
@@ -2026,7 +2040,9 @@
 // const baby = document.querySelector('.box').remove();
 
 
-//  <  >  ||  * +  ()  {} console.log(); :  $  % ! +=  >= => ${}""
+// Event listener
+
+
 
 
 

@@ -1,0 +1,88 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header{
+    font-size: 1.9em;
+}
+
+.todoList{
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 300px;
+    min-height: 50px;
+    padding: 10px 4px;
+    margin-bottom: 6px;
+    font-weight: 200;
+    font-size: 1.1em;
+    outline: none;
+    border: 1px solid #838282;
+    box-shadow: 0 0 15px 2px #00000054;
+}
+
+
+.todoList svg {
+    width: 25px;
+    height: 15px;
+}
+
+.complete {
+    fill: #5fb65f;
+    width: 25px;
+    height: 15px;
+}
+
+.del {
+    fill: #ec2828;
+    width: 25px;
+    height: 15px;
+}
+
+form {
+    display: flex;
+    align-items: center;
+    margin: 25px auto;
+}
+
+#input {
+    width: 250px;
+    height: 30px;
+    padding: 4px;
+    font-weight: 200;
+    font-size: 1.1em;
+    outline: none;
+    border-width: 1px;
+    border-right: none;
+
+}
+
+#todoSubmit button {
+    width: 50px;
+    padding: 4px;
+    height: 30px;
+    outline: none;
+    border-width: 1px;
+    border-left: none;
+    background-color: #faebd704;
+}
+
+#todoSubmit svg {
+    width: 30px;
+    height: 30px;
+}
+
+ul {
+    padding: 0;
+}
