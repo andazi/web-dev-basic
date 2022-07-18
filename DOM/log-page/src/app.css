@@ -1,0 +1,233 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, 'Helvetica', sans-serif;
+    font-size: 15px;
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(to bottom, #fffffb7f 70%, #00000ba6);
+}
+
+
+/* span shape */
+
+body > span {
+    display: inline-block;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    z-index: 1;
+}
+
+.square {
+    background-color: #ff00005b;
+    animation: rec 5s infinite linear;
+}
+.square:nth-of-type(2) {
+    background-color: #580404;
+    bottom: 20px;
+    left: 90px;
+    animation: rec 8s infinite alternate;
+}
+.square:nth-of-type(3) {
+    background-color: #58040496;
+    top: 60px;
+    left: 150px;
+    animation: rec 6s infinite alternate;
+}
+
+.square:nth-of-type(4) {
+    background-color: #580404;
+    bottom: 20px;
+    left: 10px;
+    animation: rec 10s infinite alternate;
+}
+.square:nth-of-type(5) {
+    background-color: #420a0ab2;
+    top: 20px;
+    right: 10px;
+    animation: rec 4.6s infinite alternate;
+}
+.square:nth-of-type(6) {
+    background-color: #58040496;
+    top: 60px;
+    right: 150px;
+    animation: rec 9s infinite alternate;
+}
+
+.square:nth-of-type(7) {
+    background-color: #580404;
+    bottom: 20px;
+    right: 80px;
+    animation: rec 8.7s infinite alternate;
+}
+.square:nth-of-type(8) {
+    background-color: #420a0ab2;
+    top: 20px;
+    right: 30px;
+    animation: rec 5.6s infinite alternate;
+}
+@keyframes rec {
+    0% {
+        transform: rotateY(360deg), scale(0.7);
+        opacity: 0.4;
+    }
+    50% {
+        top: 60%;
+        transform: rotate(90deg,360deg), scale(0.5);
+        opacity: 0.2;
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.3)
+    }
+}
+
+
+/* form container  */
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fffffb7f;
+    z-index: 1000;
+}
+
+/* form  */
+
+.form {
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.3rem;
+    min-height: 400px;
+    width: 350px;
+    background: linear-gradient(#ff00009c, #8000809c);
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 10%;
+
+}
+
+/* form input  */
+
+.form p{
+    text-align: center;
+    margin: 5px 0;
+}
+
+/* svg sign up */
+
+ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+li {
+    list-style-type: none;
+}
+
+a > span {
+    display: none;
+}
+
+svg {
+    width: 30px;
+    height: 30px;
+    margin: 5px 20px;
+}
+
+
+input {
+    width: 100%;
+    height: 40px;
+    font-size: 1.2rem;
+    padding: 3px 10px;
+    margin: 5px 0 5px 0;
+    outline: none;
+    border-radius: 35px;
+    border: none;
+    background: #00000049;
+    color: #fff;
+    box-shadow: inset 0 0 5px grey;
+}
+
+input:focus {
+    background-color: #fff;
+    color: #000;
+    letter-spacing: 2;
+}
+
+small {
+    text-align: right;
+    font-size: 0.7rem;
+}
+
+/* ========DOM======== */
+
+label {
+    display: none;
+}
+
+.label {
+    display: block;
+}
+
+
+/* =================== */
+
+
+#btn {
+    width: 100%;
+    height: 40px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 5px auto;
+    padding: auto;
+    outline: none;
+    border: none;
+    border-radius: 35px;
+    box-shadow: 0 0 6px;
+}
+
+/* hover  */
+#btn:hover {
+    background-color: #8356fe;
+}
+
+/* clicking  */
+
+#btn:active {
+    box-shadow: 0 0 0;
+}
+
+/* already have account  */
+
+.account {
+    font-size: 1.1rem;
+    margin: 7px 0;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ff00005d;
+}
+
+/* click sign in */
+a:active {
+    color: #f00;
+}

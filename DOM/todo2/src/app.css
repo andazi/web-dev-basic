@@ -4,8 +4,14 @@
     padding: 0;
 }
 
+header, h2 {
+    -webkit-user-select: none;
+    user-select: none;
+}
+
 body {
     font-family: Arial, Helvetica, sans-serif;
+    background-color: #838282;
     font-size: 15px;
     display: flex;
     flex-direction: column;
@@ -18,39 +24,57 @@ header{
 
 .todoList{
     list-style-type: none;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    position: relative;
     width: 300px;
     min-height: 50px;
     padding: 10px 4px;
     margin-bottom: 6px;
     font-weight: 200;
     font-size: 1.1em;
+    text-overflow: hidden;
     outline: none;
     border: 1px solid #838282;
-    box-shadow: 0 0 15px 2px #00000054;
+    background-color: #fff;
+    cursor: pointer;
+    box-shadow: 0 0 4px;
+    -webkit-user-select: none;
+    user-select: none;
 }
+
+.completed {
+    opacity: .3;
+    box-shadow: inset 0 0 4px;
+}
+
+.completed .complete svg:hover, .completed .del svg:hover {
+    fill: #838282;
+}
+
 
 .todoList svg {
     fill: #838282;
     width: 25px;
     height: 15px;
+    margin: 4px;
 }
 
 .complete svg:hover {
     fill: #5fb65f;
 }
 
-.complete svg:focus {
-    fill: #5fb65f;
+.complete {
+    position: absolute;
+    right: 29px;
+    bottom: 0;
+}
+
+.del {
+    position: absolute;
+    right: 0;
+    bottom: 0;
 }
 
 .del svg:hover {
-    fill: #ec2828;
-}
-
-.del svg:focus {
     fill: #ec2828;
 }
 
@@ -72,7 +96,7 @@ form {
 
 }
 
-#todoSubmit button {
+button #todoSubmit{
     width: 50px;
     padding: 4px;
     height: 30px;
@@ -80,11 +104,20 @@ form {
     border-width: 1px;
     border-left: none;
     background-color: #faebd704;
+    cursor: pointer;
+}
+
+button#todoSubmit:hover {
+    background-color: #faebd7;
 }
 
 #todoSubmit svg {
     width: 30px;
     height: 30px;
+}
+
+#todoSubmit span{
+    display: none;
 }
 
 ul {
