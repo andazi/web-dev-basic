@@ -71,21 +71,21 @@ body > span {
     right: 30px;
     animation: rec 5.6s infinite alternate;
 }
-@keyframes rec {
+/* @keyframes rec {
     0% {
-        transform: rotateY(360deg), scale(0.7);
+        transform: rotateY(360deg) scale(0.7);
         opacity: 0.4;
     }
     50% {
-        top: 60%;
-        transform: rotate(90deg,360deg), scale(0.5);
+
+        transform: translateY(-60%), rotateX(360deg);
         opacity: 0.2;
     }
     100% {
         opacity: 0;
         transform: scale(0.3)
     }
-}
+} */
 
 
 /* form container  */
@@ -168,6 +168,29 @@ input:focus {
     letter-spacing: 2;
 }
 
+input::placeholder{
+    font-size: 1.2rem;
+    animation: input 10s linear alternate;
+}
+
+@keyframes input {
+    0% {
+        color: #807d96;
+    }
+    25% {
+        color: #c300ffd8;
+    }
+    50% {
+        color: #fff;
+    }
+    75% {
+        color: #c300ffd8;
+    }
+    100% {
+        color: #807d96;
+    }
+}
+
 small {
     text-align: right;
     font-size: 0.7rem;
@@ -197,17 +220,16 @@ label {
     outline: none;
     border: none;
     border-radius: 35px;
-    box-shadow: 0 0 6px;
 }
 
-/* hover  */
-#btn:hover {
-    background-color: #8356fe;
+.btn {
+    background-color: #580404;
+    box-shadow: 0 0 6px;
 }
 
 /* clicking  */
 
-#btn:active {
+.btn:active {
     box-shadow: 0 0 0;
 }
 
