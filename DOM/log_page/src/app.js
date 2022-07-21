@@ -1,10 +1,8 @@
-// const labels = document.querySelectorAll('label');
 const form = document.querySelector('.form');
 const inputs = document.querySelectorAll('input');
 const btn = document.querySelector('#btn');
 const password1 = document.querySelector('#password1');
 const password2 = document.querySelector('#password2');
-// const label = document.querySelector('lable');
 
 // revealing the input label on click
 form.addEventListener('click', (e) => {
@@ -27,6 +25,7 @@ form.addEventListener('click', (e) => {
 // disabling btn until input values are corect
 btn.disabled = true;
 
+// so many ifs, would need refactoring
 for(let input of inputs){
     input.addEventListener('input', (e) => {
         e.preventDefault();
@@ -82,14 +81,13 @@ for(let input of inputs){
                     small.innerText = 'password too short'
                 }
             }else {
-                console.log('password 2')
+                // comparing password values
                 if(password1.value !== password2.value){
                     small.innerText = 'mismatch password';
                     btn.classList.remove('btn');
                 } else {
                     small.innerText = '';
                     btn.disabled = false;
-                    console.log(inputValue.length)
                     btn.classList.add('btn');
                 }  
             } 

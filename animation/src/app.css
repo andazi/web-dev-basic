@@ -4,7 +4,7 @@
     padding: 0;
 }
 
-.play {
+/* .play {
     background-color: #fe43ea;
     width: 100%;
     height: 100%;
@@ -137,5 +137,41 @@
     100% {
         transform: skew(360deg) rotate(360deg);
         background-color: red;
+    }
+} */
+
+.boxes {
+    position: relative;
+    width: 100%;
+    height: 50vh;
+    background-color: #002;
+}
+
+.sqr{
+    position: relative;
+    top: 0;   
+    left: 50%;
+    transform: translateX(-50%);
+    display: block;
+    border-radius: 100%;
+    width: 200px;
+    height: 200px;
+    background-color: #ff0;
+    overflow: hidden;
+}
+
+.boxes:hover .sqr{
+    animation: box-man 5s infinite alternate;
+}
+
+@keyframes box-man {
+    10%{
+        transform: translateY(25%) scale(0.95, 1.05);
+        color: #000;
+    }
+
+    100% {
+        color: #fff;
+        transform: translateY(100%) scale(1.15, 0.85);
     }
 }

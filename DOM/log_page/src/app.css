@@ -25,67 +25,63 @@ body > span {
 
 .square {
     background-color: #ff00005b;
-    animation: rec 5s infinite linear;
+    animation: square 5s infinite linear;
 }
 .square:nth-of-type(2) {
     background-color: #580404;
     bottom: 20px;
     left: 90px;
-    animation: rec 8s infinite alternate;
+    animation: square 8s infinite ease-in-out;
 }
 .square:nth-of-type(3) {
     background-color: #58040496;
     top: 60px;
     left: 150px;
-    animation: rec 6s infinite alternate;
+    animation: square 6s infinite alternate;
 }
 
 .square:nth-of-type(4) {
     background-color: #580404;
     bottom: 20px;
     left: 10px;
-    animation: rec 10s infinite alternate;
+    animation: square 10s infinite ease-in-out;
 }
 .square:nth-of-type(5) {
     background-color: #420a0ab2;
     top: 20px;
     right: 10px;
-    animation: rec 4.6s infinite alternate;
+    animation: square 4.6s infinite alternate;
 }
 .square:nth-of-type(6) {
     background-color: #58040496;
     top: 60px;
     right: 150px;
-    animation: rec 9s infinite alternate;
+    animation: square 9s infinite linear;
 }
 
 .square:nth-of-type(7) {
     background-color: #580404;
     bottom: 20px;
     right: 80px;
-    animation: rec 8.7s infinite alternate;
+    animation: square 8.7s infinite alternate;
 }
 .square:nth-of-type(8) {
     background-color: #420a0ab2;
     top: 20px;
     right: 30px;
-    animation: rec 5.6s infinite alternate;
+    animation: square 5.6s infinite linear;
 }
-/* @keyframes rec {
-    0% {
-        transform: rotateY(360deg) scale(0.7);
+@keyframes square {
+    10% {
+        transform: rotateY(45deg) translateY(10%) scale(0.7);
         opacity: 0.4;
     }
-    50% {
 
-        transform: translateY(-60%), rotateX(360deg);
-        opacity: 0.2;
-    }
     100% {
         opacity: 0;
-        transform: scale(0.3)
+        transform: translateY(70%) rotateY(120deg) scale(0.3)
     }
-} */
+}
 
 
 /* form container  */
@@ -157,38 +153,21 @@ input {
     outline: none;
     border-radius: 35px;
     border: none;
-    background: #00000049;
+    background: #000000af;
     color: #fff;
     box-shadow: inset 0 0 5px grey;
 }
 
 input:focus {
-    background-color: #fff;
-    color: #000;
+    background-color: #000;
+    color: #fff;
     letter-spacing: 2;
 }
 
 input::placeholder{
+    color: #01a06b;
     font-size: 1.2rem;
-    animation: input 10s linear alternate;
-}
-
-@keyframes input {
-    0% {
-        color: #807d96;
-    }
-    25% {
-        color: #c300ffd8;
-    }
-    50% {
-        color: #fff;
-    }
-    75% {
-        color: #c300ffd8;
-    }
-    100% {
-        color: #807d96;
-    }
+    animation: placeholder 5s infinite alternate;
 }
 
 small {
