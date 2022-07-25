@@ -13,7 +13,7 @@ for(let i = 1; i <= 151; i++){
     images.appendChild(pokemon);
 
     image.src =  `${baseURL}${i}.png`;
-    label.innerText = `${i}.png`;
+    label.innerText = `pokemon no.${i}`;
     
     pokemon.appendChild(image);    
     pokemon.appendChild(label);    

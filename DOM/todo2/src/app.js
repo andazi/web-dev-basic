@@ -46,8 +46,18 @@ const addTodo = () => {
 // remove todo and complete todo
 ul.addEventListener("click", (e) =>{
     e.preventDefault();
-    e.path[1].className === 'complete' && e.target.parentElement.parentElement.classList.add('completed');
-    e.path[1].className === 'del' && e.target.parentElement.parentElement.remove();
+    e.path[1].className === 'complete' &&
+     e.target.parentElement.parentElement.classList.add('completed');
+    e.path[1].className === 'del' &&
+     e.target.parentElement.parentElement.remove();
 })
 
 // goal for completed todo is to move element to bottom
+// for(let li of ul.children){
+//     console.dir(li.classList);
+//     if(li.classList.includes(completed)){
+//         console.log('check this')
+//     }else{
+//         console.log('noting');
+//     }
+// }

@@ -21,6 +21,7 @@ body{
     display: flex;
     width: 100%;
     border: 2px solid #000000;
+    padding: 20px;
     align-items: center;
     justify-content: space-evenly;
     flex-wrap: wrap;
@@ -32,6 +33,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 10px;
 }
 
 .pokemon {
