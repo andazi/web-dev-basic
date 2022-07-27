@@ -38,13 +38,14 @@ const newExpense = () => {
 
 
     let amountValue = newEvent.amount.value;
+    let eventValue = newEvent.event.value;
+    let eventDate = newEvent.date.value;
     // const spread = [...amountValue];
     // const checkError = spread.some(content => content.includes(...amountErrors));        
   
 
-    if (newEvent.event.value === '' ||
-        newEvent.date.value === '' ||
-        amountValue === false || 
+    if (eventValue === '' ||
+        eventDate=== '' ||
         typeof amountValue !== 'number'){
         
             console.log('error')
@@ -52,7 +53,7 @@ const newExpense = () => {
         tbody.prepend(expense);
         
         // pushing every amount to an array
-        newEvent.eventAmounts.push(`${parseFloat(newEvent.amount.value)}`);
+        newEvent.eventAmounts.push(`${parseFloat(amountValue)}`);
         let num = newEvent.eventAmounts;
  
         // sum amount using for 
