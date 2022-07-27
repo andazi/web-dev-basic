@@ -41,27 +41,31 @@ const newExpense = () => {
     // const spread = [...amountValue];
     // const checkError = spread.some(content => content.includes(...amountErrors));        
 
-    if (newEvent.amount.value === '' || 
-        newEvent.event.value === '' ||
-        newEvent.date.value === '' ||
-        parseFloat(newEvent.amount.value) === 'NaN'){
-        
-            console.log('error')
+    if (newEvent.amount.value !== '' && 
+        newEvent.event.value !== '' && 
+        newEvent.date.value !== ''){
+        if (parseFloat(newEvent.amount.value) > 0 ||
+            parseFloat(newEvent.amount.value) <= 0 ){ 
+            tbody.prepend(expense);
+           
+    
+            // pushing every amount to an array
+            newEvent.eventAmounts.push(`${parseFloat(newEvent.amount.value)}`);
+            let num = newEvent.eventAmounts;
+    
+            // sum amount using for 
+            let total = 0;
+            for(let amt of num){
+                let sum = parseFloat(amt);
+                total += sum;
+                myTotal.innerText = total;
+            }
+            error.innerText = '';
+        }else{
+            error.innerText = 'insert correct values';
+        }  
    } else {
-        error.innerText = 'insert correct values'
-        // tbody.prepend(expense);
-        
-        // // pushing every amount to an array
-        // newEvent.eventAmounts.push(`${parseFloat(newEvent.amount.value)}`);
-        // let num = newEvent.eventAmounts;
- 
-        // // sum amount using for 
-        // let total = 0;
-        // for(let amt of num){
-        //     let sum = parseFloat(amt);
-        //     total += sum;
-        //     myTotal.innerText = total;
-        // }
+        error.innerText = 'insert Values';
     } 
 }
 
