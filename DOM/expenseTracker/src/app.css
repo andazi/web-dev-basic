@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,600;0,700;0,900;1,400&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 15px;
+    font-family: 'Source Sans Pro', sans-serif, Arial;
+    padding: 20px;
+}
+
+form {
+    width: 100%;
+    font-size: 2em;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+input {
+    font-size: 1.7rem;
+}
+
+
+input[type='date']{
+    width: 200px;
+}
+
+#amount {
+    max-width: 200px;
+}
+
+.error {
+    border: 1px solid red;
+}
+
+button {
+    width: 200px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 10px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+/* table  */
+
+table {
+    width: 100%;
+    border: 2px solid;
+}
+
+thead {
+    background-color: red;;
+}
