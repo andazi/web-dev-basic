@@ -5,6 +5,7 @@ const table = document.querySelector('table');
 const tbody = document.querySelector('tbody');
 const amounts = document.querySelectorAll('.amt');
 const myTotal = document.querySelector('#total');
+const error = document.querySelector('.error');
 
 const newEvent = {
     event: document.querySelector('#event'),
@@ -12,7 +13,6 @@ const newEvent = {
     amount: document.querySelector('#amount'),
     eventAmounts:  []
 }
-
 
 formInput.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -34,35 +34,34 @@ const newExpense = () => {
     `
 
     // amount errors
-    const amountErrors = ['', null, !Number, NaN];
+    // const amountErrors = ['', null, !Number, NaN];
 
 
-    let amountValue = newEvent.amount.value;
-    let eventValue = newEvent.event.value;
-    let eventDate = newEvent.date.value;
+
     // const spread = [...amountValue];
     // const checkError = spread.some(content => content.includes(...amountErrors));        
-  
 
-    if (eventValue === '' ||
-        eventDate=== '' ||
-        typeof amountValue !== 'number'){
+    if (newEvent.amount.value === '' || 
+        newEvent.event.value === '' ||
+        newEvent.date.value === '' ||
+        parseFloat(newEvent.amount.value) === 'NaN'){
         
             console.log('error')
    } else {
-        tbody.prepend(expense);
+        error.innerText = 'insert correct values'
+        // tbody.prepend(expense);
         
-        // pushing every amount to an array
-        newEvent.eventAmounts.push(`${parseFloat(amountValue)}`);
-        let num = newEvent.eventAmounts;
+        // // pushing every amount to an array
+        // newEvent.eventAmounts.push(`${parseFloat(newEvent.amount.value)}`);
+        // let num = newEvent.eventAmounts;
  
-        // sum amount using for 
-        let total = 0;
-        for(let amt of num){
-            let sum = parseFloat(amt);
-            total += sum;
-            myTotal.innerText = total;
-        }
+        // // sum amount using for 
+        // let total = 0;
+        // for(let amt of num){
+        //     let sum = parseFloat(amt);
+        //     total += sum;
+        //     myTotal.innerText = total;
+        // }
     } 
 }
 
