@@ -13,8 +13,9 @@
     </header>
     <form action="#" class="form">
         <span class="error"></span>
-        <label for="event" >Event</label>
-        <input type="text" name="event" placeholder="Enter Event" id="event" >
+        
+        <label for="event" class="item">Event</label>
+        <input type="text" name="event" placeholder="Enter Event" id="event" class="item" >
 
         <label for="date" >Date</label>
         <input type="date" name="date" placeholder="Enter Date" id="date" >
@@ -22,7 +23,7 @@
         <label for="amount" >Amount</label>
         <input type="text" name="amount" placeholder="$" id="amount" >
 
-        <button type="submit" id="newbtn">Add Expense</button>
+        <button type="submit" id="newBtn">Add Expense</button>
     </form>
 
     <table class="table">
@@ -30,7 +31,7 @@
             <tr class="theader">
               <th>Events</th>
               <th>Date</th>
-              <th>Amount</th>
+              <th>Amount ($)</th>
             </tr>
         </thead>
         <tbody></tbody>

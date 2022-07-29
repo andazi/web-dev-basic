@@ -28,8 +28,8 @@ formInput.addEventListener("submit", (e) => {
 const newExpense = () => {
     let expense = document.createElement('tr');
     expense.innerHTML = `
-    <td>${newEvent.event.value}</td>
-    <td>${newEvent.date.value}</td>
+    <td class='item'>${newEvent.event.value}</td>
+    <td class='amountDate'>${newEvent.date.value}</td>
     <td class='amt'>${newEvent.amount.value}</td>
     `
 
