@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,600;0,700;0,900;1,400&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    /* ====== light colors =======  */
+    --body-color : #e4e9f7;
+    --sidebar-color: #ffffffd2;
+    --primary-color-light: #9c9b99;
+    --primary-color:  #161616;
+    --secondary-color: #888282;
+    --secondary-color-light: #e7e7e7;
+    --text-color: #000;
+}
+
+body {
+    background-color: var(--body-color);
+    font-size: 15px;
+    font-family: 'Source Sans Pro', sans-serif, Arial;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--text-color);
+}
+
+header{
+    margin-bottom: 10px;
+}
+
+form {
+    background-color: var(--primary-color-light);
+    color: var(--primary-color);
+    font-size: 1.5em;
+    width: 90%;
+    min-height: 20%;
+    padding: 10px;
+    box-shadow: 0 0 5px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+input{
+    font-size: 0.8em;
+    padding: 5px;
+    outline: none;
+}
+
+#newBtn {
+    width: 100px;
+    height: 2em;
+    font-weight: 700;
+    padding: auto;
+    margin-top: 10px;
+}
+
+.error {
+    width: 100%;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+
+/* table  */
+
+table {
+    background-color: var(--primary-color-light);
+    width: 90vw;
+    height: auto;
+    margin:20px auto;
+    padding: 1.5px;
+    box-shadow: 0 0 15px var(--text-color);
+}
+
+thead {
+    background-color: var(--secondary-color);
+}
+
+tr > th {
+    padding: 10px;
+    font-size: 1.2em;
+}
+
+tr {
+    width: 100%;
+}
+
+td {
+    font-size: 1.3em;
+    height: 20px;
+    padding: 2px;   
+}
+
+tr>td:first-of-type {
+    width: 50vw;
+    text-overflow: ellipsis;
+    white-space: wrap;
+}
+tr>td:nth-of-type(2){
+    max-width: 25vw;
+    text-align: center;
+}
+tr>td:last-of-type{
+    max-width: 25vw;
+    text-align: right;
+
+}
+
+tfoot {
+    font-weight: 700;
+}
+
+@media screen and (min-width: 650px) {
+    form {
+        flex-direction: row;
+    }
+    label, input {
+        margin: 5px 0;
+    }
+    label{
+        width: 15%;
+    }
+    #event {
+        width: 85%;
+    }
+    
+    label[for='amount'], label[for='date']{
+        width: 15%;
+        padding-left: 4px;
+    }
+
+    #amount, #date {
+        width: 35%;
+    }
+
+    #newBtn {
+        margin-right: 10px;
+        margin-left: auto;
+    }
+
+}

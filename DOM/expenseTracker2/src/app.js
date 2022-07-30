@@ -69,5 +69,14 @@ const newExpense = () => {
     } 
 }
 
+// %change in amount
+for(let i of amounts){
+    let previousAmt = parseFloat(i.innerText);
+    console.log(previousAmt);
+}
 
+// table value
+// table.children[1].children[0].children[2].innerText
+// table.children[1].children[1].children[2].innerText
 
+// table.children[1].children[1].children[3]

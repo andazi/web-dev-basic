@@ -1,0 +1,20 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0; 
+}
+
+body {
+    display: grid;
+    grid-template-areas:
+     'head head head',
+     'nav content sideBar',
+     'nav footer footer'
+    ;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+h1,h2,h3,p,footer {
+    background-color: steelblue;
+    border: 1px solid #000000a2;
+}

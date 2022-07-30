@@ -48,8 +48,8 @@ form {
 }
 
 input{
-    font-size: 1em;
-    padding-left: 5px;
+    font-size: 0.8em;
+    padding: 5px;
     outline: none;
 }
 
@@ -101,7 +101,7 @@ td {
 tr>td:first-of-type {
     width: 50vw;
     text-overflow: ellipsis;
-    white-space: wrap;
+    overflow: hidden;
 }
 tr>td:nth-of-type(2){
     max-width: 25vw;
