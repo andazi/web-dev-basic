@@ -1511,7 +1511,7 @@
 
 // console.log(myPerson);  // this.name = undefined
 
-// // we can call this keyword insie of a higher function
+// // we can call this keyword inside of a higher function
 
 // const person = {
 //     name : 'boboye',

@@ -72,7 +72,7 @@ input{
 
 table {
     background-color: var(--primary-color-light);
-    width: 90vw;
+    width: minmax(90vw, 100vw);
     height: auto;
     margin:20px auto;
     padding: 1.5px;
@@ -99,19 +99,11 @@ td {
 }
 
 tr>td:first-of-type {
-    width: 50vw;
+    width: 50%;
     text-overflow: ellipsis;
     overflow: hidden;
 }
-tr>td:nth-of-type(2){
-    max-width: 25vw;
-    text-align: center;
-}
-tr>td:last-of-type{
-    max-width: 25vw;
-    text-align: right;
 
-}
 
 tfoot {
     font-weight: 700;
@@ -119,6 +111,7 @@ tfoot {
 
 @media screen and (min-width: 650px) {
     form {
+        align-items: center;
         flex-direction: row;
     }
     label, input {
