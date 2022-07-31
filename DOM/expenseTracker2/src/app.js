@@ -14,7 +14,7 @@ const newEvent = {
     change: function(currentValue = newEvent.amount.value){
             try{
             let previousValue = parseFloat(table.children[1].children[0].children[2].innerText)
-            let percentChange = ((previousValue - currentValue)/currentValue) * 100 
+            let percentChange = ((currentValue - previousValue)/currentValue) * 100 
             return percentChange.toFixed(2)
             } catch {
                 return 0
