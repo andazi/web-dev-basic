@@ -14,7 +14,7 @@
 // 0 - 5 = free 
 // 6 - 10 = child $10
 // 11 - 65 = Adult $20
-// 65 + SENIOP $10
+// 65 + SENIOR $10
 
 // const age = 80;
 // const age = prompt('Enter your age');
@@ -1680,10 +1680,10 @@
 // sum(34,45,67,886,54)
 
 // function medal(gold,silver,bronze, ...others){
-//     console.log(`GOLD MEDAL GOESS TO ${gold} `);
-//     console.log(`SILVER MEDAL GOESS TO ${silver} `),
-//     console.log(`BRONZE MEDAL GOESS TO ${bronze} `),
-//     console.log(`IRON MEDAL GOESS TO ${others} `)
+//     console.log(`GOLD MEDAL GOES TO ${gold} `);
+//     console.log(`SILVER MEDAL GOES TO ${silver} `),
+//     console.log(`BRONZE MEDAL GOES TO ${bronze} `),
+//     console.log(`IRON MEDAL GOES TO ${others} `)
 // }
 // medal('GLORIA','MANNY', 'PEPPER', 'LUKE', 'PHILIP', 'RONALDO')
 

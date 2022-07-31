@@ -12,9 +12,14 @@ const newEvent = {
     date : document.querySelector('#date'),
     amount: document.querySelector('#amount'),
     change: function(currentValue = newEvent.amount.value){
-                let previousValue = parseFloat(table.children[1].children[0].children[2].innerText)
-                return ((previousValue - currentValue)/currentValue) * 100 
-            },
+            try{
+            let previousValue = parseFloat(table.children[1].children[0].children[2].innerText)
+            let percentChange = ((previousValue - currentValue)/currentValue) * 100 
+            return percentChange.toFixed(2)
+            } catch {
+                return 0
+            
+            }},
     eventAmounts:  []
 }
 
