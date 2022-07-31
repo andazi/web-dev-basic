@@ -9,8 +9,8 @@ body {
     width: 100vw;
     display: grid;
     grid-template-areas:
-     'head head head',
-     'nav content sideBar',
+     'head head head'
+     'nav content sideBar'
      'nav footer footer'
     ;
     grid-template-columns: 1fr 4fr 1fr;
@@ -23,21 +23,18 @@ h1,h2,h3,p,footer {
 }
 
 h1 {
-    /* grid-area: head; */
-    grid-column: 1/4;
+    grid-area: head;
 }
 h2 {
-    /* grid-area: nav; */
-    grid-row: 2/4;
+    grid-area: nav;
 }
 p {
-    /* grid-area: content; */
+    grid-area: content;
 }
 h3 {
-    /* grid-area: sideBar; */
+    grid-area: sideBar;
 }
 
 footer {
-    /* grid-area: footer; */
-    grid-column: 2/4;
+    grid-area: footer;
 }
