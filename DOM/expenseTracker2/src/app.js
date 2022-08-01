@@ -18,7 +18,6 @@ const newEvent = {
             return percentChange.toFixed(2)
             } catch {
                 return 0
-            
             }},
     eventAmounts:  []
 }

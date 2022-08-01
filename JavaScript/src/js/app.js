@@ -538,10 +538,10 @@
 
 // function laugh(sound, freq){
 //     let laughter = [];
-    // for (i = 0; i <= freq; i++){
-    //     laughter.push(sound);
-    // }
-    // console.log(laughter);
+// for (i = 0; i <= freq; i++){
+//     laughter.push(sound);
+// }
+// console.log(laughter);
 // }
 // laugh('muahahaha ', 2);
 
@@ -619,12 +619,12 @@
 
 
 // const creature = "Common Sea Dragon";
- 
+
 // function scubaDive(){
 //     const creature = "Spanish Dancer"; //A type of sea slug
 //     console.log(creature);
 // }
- 
+
 // scubaDive(); // Spanish Dancer
 
 // let fruit = 'Pineapple';
@@ -2040,7 +2040,58 @@
 // const baby = document.querySelector('.box').remove();
 
 
-// Event listener
+// WebAPI $ Threading
+// JavaScript is single threaded.
+// runs one thing at a time
+// browser handles certain task in the background like making requestor setTimeout
+
+// callstack
+// LIFO LAST IN FIRST OUT
+// mechanism JS use to keep track of of its place in a script that callls multiple function
+
+// callstack hell
+// passing in mush of callback for it to become too nested
+
+// setTimeout(() => {
+//     document.body.style.backgroundColor = 'red';
+//     setTimeout(() => {
+//         document.body.style.backgroundColor = 'orange';
+//         setTimeout(() => {
+//             document.body.style.backgroundColor = 'yellow';
+//             setTimeout(() => {
+//                 document.body.style.backgroundColor = 'green';
+//                 setTimeout(() => {
+//                     document.body.style.backgroundColor = 'blue';
+//                 }, 1000)
+//             }, 1000)
+//         }, 1000)
+//     }, 1000)
+// }, 1000)
+
+// const delayedColorChange = (newColor, delay, nextColor) => {
+//     setTimeout(() => {
+//         document.body.style.backgroundColor = newColor;
+//         nextColor && nextColor()
+//     }, delay)
+// }
+// delayedColorChange('olive', 1000, () => {
+//     delayedColorChange('teal', 1000, () => {
+//         delayedColorChange('aqua', 1000, () => {
+//             delayedColorChange('blue', 1000)
+//         })
+//     })
+// });
+
+// // movie API callback hell
+// searchMovieApi('the big bang theory', () => {
+//     saveToDB(movies, () => {
+//         // if it works, run this:
+//     }, () => {
+//         // else run this
+//     }, () => {
+//         // if API is down or request failed
+//     })
+// })
 
 
 
@@ -2065,7 +2116,6 @@
 
 
 
-   
 
 
 
