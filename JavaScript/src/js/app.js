@@ -2094,9 +2094,32 @@
 // })
 
 // promises
+// better way to avoid callback hell
+// an object representing the eventual completion
+// or failure of an asynchronous operation
 
+// fakeRequestCallback and fakeRequestPromises
+// callback
+const fakeRequestCallback = (url, success, failure) => {
+    const delay = Math.floor(Math.random() * 4500) + 500;
+    setTimeout(() => {
+        if(delay > 4000){
+            failure('connection timeout :(')
+        }else {
+            success('Here is your fake data from ${url')
+        }
+    }, delay)
+}
 
-
+fakeRequestCallback('books.org/page1', 
+function(response){
+    console.log("IT WORKED!!!");
+    alert('IT WORKED!!!');
+},
+function(response){
+    console.log('SORRY, PAGE NOT FOUND');
+    alert('PAGE NOT FOUND');
+})
 
 
 
