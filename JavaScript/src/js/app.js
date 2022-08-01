@@ -2106,7 +2106,7 @@ const fakeRequestCallback = (url, success, failure) => {
         if(delay > 4000){
             failure('connection timeout :(')
         }else {
-            success('Here is your fake data from ${url')
+            success(`Here is your fake data from ${url}`)
         }
     }, delay)
 }
@@ -2114,12 +2114,33 @@ const fakeRequestCallback = (url, success, failure) => {
 fakeRequestCallback('books.org/page1', 
 function(response){
     console.log("IT WORKED!!!");
-    alert('IT WORKED!!!');
-},
+    alert(response);
+    fakeRequestCallback('books.org/page2', 
 function(response){
-    console.log('SORRY, PAGE NOT FOUND');
-    alert('PAGE NOT FOUND');
+    console.log("IT WORKED AGAIN!!!");
+    alert(response);
+    fakeRequestCallback('books.org/page3', 
+function(response){
+    console.log("IT WORKED THRICE!!!");
+    alert(response);
+},
+function(err){
+    console.log(err, 'SORRY, PAGE 3 NOT FOUND');
+    alert(err);
 })
+
+},
+function(err){
+    console.log(err, 'SORRY, PAGE 2 NOT FOUND');
+    alert(err);
+})
+
+},
+function(err){
+    console.log(err, 'SORRY, PAGE 1 NOT FOUND');
+    alert(err);
+})
+
 
 
 
