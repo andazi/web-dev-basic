@@ -2141,42 +2141,46 @@
 //     }
 // )
 
-// fakeRequestPromises
-const fakeRequestPromise = (url, success, failure) => {
-    const delay = Math.floor(Math.random() * 4500) + 500;
-    setTimeout(() => {
-        if (delay > 4000) {
-            failure('connection timeout :(')
-        } else {
-            success(`Here is your fake data from ${url}`)
-        }
-    }, delay)
-}
+// // fakeRequestPromises
+// const fakeRequestPromise = (url) => {
+//     return new Promise((resolve, reject) => {
+//         const delay = Math.floor(Math.random() * 4500) + 500;
+//         setTimeout(() => {
+//             if (delay > 4000) {
+//                 failure('connection timeout :(')
+//             } else {
+//                 success(`Here is your fake data from ${url}`)
+//             }
+//         }, delay)
+//     })
+// }
 
-// promises
-fakeRequestPromise('book.org/page1')
-    .then(() => {
-        console.log('IT WORKED!!!');
-        alert(response);
-        return fakeRequestPromise('book.org/page2')
-    })
-    .then(() => {
-        console.log('IT WORKED!!!');
-        alert(response);
-        return fakeRequestPromise('book.org/page3')
-    })
-    .then(() => {
-        console.log('IT WORKED!!!');
-        alert(response);
-        return fakeRequestPromise('book.org/page4')
-    })
-    .then(() => {
-        console.log('IT WORKED!!!');
-        alert(response);
-    })
-    .catch(() => {
-        console.log('ERROR, PAGE NOT FOUND')
-    })
+// // promises
+// fakeRequestPromise('book.org/page1')
+//     .then((data) => {
+//         console.log('IT WORKED!!!');
+//         alert(data);
+//         return fakeRequestPromise('book.org/page2')
+//     })
+//     .then((data) => {
+//         console.log('IT WORKED!!!');
+//         alert(data);
+//         return fakeRequestPromise('book.org/page3')
+//     })
+//     .then((data) => {
+//         console.log('IT WORKED!!!');
+//         alert(data);
+//         return fakeRequestPromise('book.org/page4')
+//     })
+//     .then((data) => {
+//         console.log('IT WORKED!!!');
+//         alert(data);
+//     })
+//     .catch((err) => {
+//         console.log('PAGE NOT FOUND');
+//         alert(err)
+//     })
+
 
 
 
