@@ -2181,11 +2181,61 @@
 //         alert(err)
 //     })
 
+// const fakeRequest = (url) => {
+//     return new Promise((resove, reject) => {
+//         const rand = Math.random();
+//         setTimeout(() => {
+//             if(rand < 0.5){
+//                 resove("THIS IS YOUR FAKE DATA");
+//             }
+//                 reject("REQUEST ERROR");
+//         }, 1000)
+//     })
+// }
+
+// fakeRequest("books.org/api/programming-language/javascript")
+//     .then((data) => {
+//         console.log("request completed");
+//         alert(data);
+//     })
+//     .catch((err) => {
+//         console.log("request failed");
+//         alert(err);
+//     })
 
 
+// const delayedColorChange = (color) => {
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             document.body.style.backgroundColor = color;
+//             resolve();
+//         }, 1000)
+//     })
+// }
 
+// delayedColorChange('red')
+//     .then(() => {
+//         return delayedColorChange('indigo')
+//     })
+//     .then(() => {
+//         return delayedColorChange('blue')
+//     })
+//     .then(() => {
+//         return delayedColorChange('pink')
+//     })
+//     .then(() => {
+//         return delayedColorChange('orange')
+//     })
+//     .then(() => {
+//         return delayedColorChange('yellow')
+//     })
 
-
+// delayedColorChange('red')
+//     .then(() => delayedColorChange('indigo'))
+//     .then(() => delayedColorChange('blue'))
+//     .then(() => delayedColorChange('pink'))
+//     .then(() => delayedColorChange('orange'))
+//     .then(() => delayedColorChange('yellow'))
 
 
 
