@@ -2237,16 +2237,68 @@
 //     .then(() => delayedColorChange('orange'))
 //     .then(() => delayedColorChange('yellow'))
 
+// async function
+// cleaner way to write for working with asyn code.
+// a "makeup" for promises
+
+// async function sing(){
+
+// }
+
+// const sing = async() => {
+    
+// }
+
+// async keyword
+// async function always returns a promise
+// if the function returns a value,
+//  the promise will be resolved with that value
+
+// const sing = async() => {
+//     return 'DO RE MI FA SO LA TI DO'
+// }
+// sing().then((data) => (console.log('sing with me:', data)))
+
+// if the function throws an exception,
+// the promise will be rejected
+
+// const sing = async() => {
+//     throw 'BLA BLA BLA BLA BLA  '
+//     return 'DO RE MI FA SO LA TI DO'
+// }
+// sing()
+//     .then((data) => (console.log('sing with me:', data)))
+//     .catch((err) => (console.log('sing with him:', err)))
 
 
 
+// const price = async() => {
+//     let delay = Math.random() * 10 + 1;
+//     if(delay > 5){
+//         throw 'Yelp.com/api/camp-orange'
+//     } return 'book.org/book-for-dummy'
+// }
+
+// price()
+//     .then((data) => (console.log(data)))
+//     .catch((err) => (console.log(err)))
 
 
+const login = async (username, password) => {
+    if(!username || !password) throw 'missing credentials';
+    if(password === 'corchh68nin43#$#ffr') return 'WELCOME';
+    throw 'invalid password';
+}
 
-
-
-
-
+login('fnniufguygu')
+    .then(msg => {
+        console.log('LOGGED IN');
+        alert(msg)
+    })
+    .catch(err => {
+        console.log('ERROR');
+        alert(err)
+    })
 
 
 
