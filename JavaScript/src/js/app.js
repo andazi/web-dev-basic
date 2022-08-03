@@ -2347,11 +2347,26 @@ const fakeRequest = (url) => {
             if (delay < 0.5) {
                 resove("Here is your fake data from", url);
             }
-            reject("Connction timeout :(");
+            reject("Connection timeout :(");
         }, 1000)
     })
 }
 
+// we use try and catch
+
+const makeRequest = async () => {
+    try {
+        let data1 = await fakeRequest('books.org/page1');
+        console.log(data1);
+        let data2 = await fakeRequest('books.org/page2/');
+        console.log(data2);
+    }
+    catch(e){
+        console.log('page not found');
+        alert(e);
+    }
+}
+makeRequest();
 
 
 
