@@ -20,6 +20,7 @@ body {
     font-family: Arial, Helvetica, sans-serif ;
     font-size: 20px;
     background-color: #dd7cd8;
+    transition: all 2s ;
 }
 
 /* review container  */

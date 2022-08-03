@@ -2284,24 +2284,73 @@
 //     .catch((err) => (console.log(err)))
 
 
-const login = async (username, password) => {
-    if(!username || !password) throw 'missing credentials';
-    if(password === 'corchh68nin43#$#ffr') return 'WELCOME';
-    throw 'invalid password';
+// const login = async (username, password) => {
+//     if(!username || !password) throw 'missing credentials';
+//     if(password === 'corchh68nin43#$#ffr') return 'WELCOME';
+//     throw 'invalid password';
+// }
+
+// login('fnniufguygu')
+//     .then(msg => {
+//         console.log('LOGGED IN');
+//         alert(msg)
+//     })
+//     .catch(err => {
+//         console.log('ERROR');
+//         alert(err)
+//     })
+
+// await keyword
+// makes async code looks sync
+// await will pause the execution of the function
+// waiting for a promise to be resolvedd
+
+   
+// const colorChange = (color) => {
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             document.body.style.backgroundColor = color;
+//             resolve();
+//         }, 1000)
+//     })
+// }
+
+// async function changeColor(color){
+//     await colorChange('pink');
+//     await colorChange('indigo');
+//     await colorChange('pink');
+//     await colorChange('indigo');
+//     await colorChange('pink');
+//     await colorChange('indigo');
+//     await colorChange('pink');
+//     await colorChange('indigo');
+//     await colorChange('pink');
+//     return 'done';
+//     // return changeColor(); // infinite loop
+// }
+// also add ".then"
+// changeColor().then(() => console.log('color done Changing'))
+// better way
+// async function printChangeColor() {
+//     await changeColor();
+//     console.log('Color done changing');
+// }
+
+// printChangeColor();
+
+// Handling errors in async functions
+
+const fakeRequest = (url) => {
+    return new Promise((resove, reject) => {
+        const delay = Math.random() + 1;
+        setTimeout(() => {
+            if (delay < 0.5) {
+                resove("Here is your fake data from", url);
+            }
+            reject("Connction timeout :(");
+        }, 1000)
+    })
 }
-
-login('fnniufguygu')
-    .then(msg => {
-        console.log('LOGGED IN');
-        alert(msg)
-    })
-    .catch(err => {
-        console.log('ERROR');
-        alert(err)
-    })
-
-
-
 
 
 
