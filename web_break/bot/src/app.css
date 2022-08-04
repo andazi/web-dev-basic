@@ -1,0 +1,97 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bot {
+  width: 300px;
+  height: 400px;
+  background-color: brown;
+}
+
+.eyes {
+  width: 80%;
+  height: 50px;
+  background-color: pink;
+  margin: 20px auto;
+  display: flex;
+}
+
+.eye {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  background-color: orange;
+}
+.eye-ball {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border: solid 2px black;
+  border-radius: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.eye-lid {
+  position: absolute;
+  width: 40px;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.eye-lid1 {
+  display: block;
+  width: 40px;
+  height: 20px;
+  background-color: grey;
+}
+.eye-lid2 {
+  display: block;
+  width: 40px;
+  height: 20px;
+  background-color: #753;
+}
+.iris {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border: 1px solid black;
+  border-radius: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.nose {
+  width: 100%;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nostrils {
+  background-color: green;
+  width: 20%;
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+.nose-hole {
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  background-color: blue;
+}
