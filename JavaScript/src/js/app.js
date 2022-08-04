@@ -2368,6 +2368,30 @@
 // }
 // makeRequest();
 
+// AJAX and API
+// AJAX => asynchronous javascript and XML(extensible markup languague)
+// old and complicated
+
+// API => APLLICATION PROGRAMMING INTERFACE
+// we would be using the web API
+// PI returns JSON format
+
+// JSON => JAVASCRIPT OBJECT NOTATION
+// read documentation json.org
+// format for sending and receiving data
+// it is in string format
+// every key has to be "" 
+// '{"ticker": {"base": "btc"}, "target": "usd"}'
+// JSON validator = jsonformatter.curiousconsept.com
+
+// undefined is not a valid value in json
+
+// when we receive json file, we convert(parse) to JS object
+// JSON.parse(json_file)
+
+// convert JS file to JSON file by stringifying it
+// JSON.stringify(JS_variable)
+
 
 
 
