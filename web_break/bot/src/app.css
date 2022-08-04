@@ -17,6 +17,41 @@
     height: 300px;
     border-radius: 100% 100% 0 0;
     background-color: brown;
+    animation: sleep 2s infinite ease alternate;
+}
+@keyframes sleep {
+    from{
+        transform: translateX(-10px);
+    }
+    to{
+        transform: translateX(10px);
+    }
+}
+
+.bot:hover{
+    animation: waking .5s infinite linear alternate;
+}
+@keyframes waking {
+    from{
+        transform: translateX(-10px);
+    }
+    to{
+        transform: translateX(10px);
+    }
+}
+
+.bot:active{
+    animation: awake .5s infinite linear alternate;
+}
+@keyframes awake {
+    from{
+        transform: translateX(-10px);
+        bok-shadow: 0 0 1px green;
+    }
+    to{
+        transform: translateX(10px);
+        box-shadow: 0 0 80px green;
+    }
 }
 
 .eyes {
@@ -31,7 +66,7 @@
     width: 50%;
     height: 100%;
     border-radius: 40px;
-    background-color: orange;
+    z-index: 1000;
 }
 
 .eye-ball {
@@ -43,7 +78,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    order: 1;
+    z-index: 1;
 }
 .iris {
     position: absolute;
@@ -54,7 +89,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    order: 1;
+    z-index: 1;
 }
 
 .eye-lid {
@@ -68,7 +103,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    order: 100;
+    z-index: 100;
 }
 
 .eye-lid1 {
@@ -76,7 +111,7 @@
     width: 100%;
     height: 50%;
     border-radius: 100% 100% 0 0;
-    border: 2px solid;
+    border: 2px solid;      
     background-color: grey;
 }
 
@@ -89,10 +124,23 @@
     background-color: #753;
 }
 
+/* .eye-lid1:hover, .eye-lid2:hover{
+    height: 35%;
+} */
+
+.eye-lid1:hover, .eye-lid2:hover{
+    animation: eye-open 1s linear forwards;
+}
+@keyframes eye-open{
+    100%{
+        height: 35%;
+    }
+}
+
 .mouth{
     position: relative;
     width: 100%;
-    height: 30%;
+    height: 10%;
 }
 .lips{
     position: absolute;
@@ -101,7 +149,17 @@
     transform: translate(-50%, -50%);
     width: 50%;
     height: 100%;
-    border-radius: 50%;
     border: none;
     border-top: 20px solid;
+    transition: all .5s linear;
+}
+
+.lips:hover{
+    border-radius: 300px;
+    transition: all 2s linear;
+}
+.lips:active{
+    border-radius: 300px;
+    border-top: none;
+    border-bottom: 20px solid;
 }
