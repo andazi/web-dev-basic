@@ -124,10 +124,6 @@
     background-color: #753;
 }
 
-/* .eye-lid1:hover, .eye-lid2:hover{
-    height: 35%;
-} */
-
 .eye-lid1:hover, .eye-lid2:hover{
     animation: eye-open 1s linear forwards;
 }
