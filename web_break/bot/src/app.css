@@ -4,14 +4,16 @@
     padding: 0;
 }
 
-:root{
-    --primary-color: 
-    --secondary-color:
-    --flash:
+:root {
+    --bg-color: #14213d;
+    --primary-color: #5D5E76;
+    --secondary-color: #000;
+    --secondary-light: #333F4C;
+    --flash: #fff;
 }
 
 .container {
-    background-color: rgb(47, 47, 82);
+    background-color: var(--bg-color);
     width: 100vw;
     height: 100vh;
     display: grid;
@@ -22,7 +24,7 @@
     width: 15rem;
     height: 8rem;
     border-radius: 4em;
-    background-color: purple;
+    background-color: var(--primary-color);
     position: relative;
 }
 
@@ -30,7 +32,7 @@
     width: 12em;
     height: 6em;
     border-radius: 2em;
-    background-color: pink;
+    background-color: var(--secondary-color);
     position: absolute;
     top: 50%;
     left: 50%;
@@ -40,16 +42,16 @@
     justify-content: space-evenly;
 }
 
-.eye{
+.eye {
     margin-top: -30px;
     width: 2em;
     height: 2em;
     border-radius: 100%;
-    background-color: #000;
+    background-color: var(--secondary-light);
     position: relative;
 }
 
-.iris{
+.iris {
     width: 1em;
     height: 1em;
     border-radius: 100%;
@@ -60,10 +62,10 @@
     transform: translate(-50%, -50%);
 }
 
-.mouth{
+.mouth {
     width: 3em;
     height: 1em;
-    background-color: black;
+    background-color: var(--secondary-light);
     position: absolute;
     top: 65%;
     left: 50%;
