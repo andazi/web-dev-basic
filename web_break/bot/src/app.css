@@ -43,7 +43,7 @@
 }
 
 .eye {
-    margin-top: -30px;
+    margin-top: -2em;
     width: 2em;
     height: 2em;
     border-radius: 100%;
@@ -51,11 +51,29 @@
     position: relative;
 }
 
-.iris {
-    width: 1em;
-    height: 1em;
+.lid{
+    margin-top: .3em;
+    width: 2em;
+    height: .6em;
+    background-color: var(--secondary-light);
+    border-radius: 2em 2em 0 0 ;
+    position: absolute;
+    transition: all .5s ease-in-out;
+    z-index: 10;
+}
+
+/* close eyes  */
+
+.bot:hover .lid {
+    height: 1.4em;
     border-radius: 100%;
-    background-color: #fff;
+}
+
+.iris {
+    width: 1.3em;
+    height: 1.3em;
+    border-radius: 100%;
+    background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(33, 114, 210, 1) 100%);
     position: absolute;
     top: 50%;
     left: 50%;
@@ -70,4 +88,11 @@
     top: 65%;
     left: 50%;
     transform: translate(-50%, -50%);
+    transition: all .4s linear;
+}
+
+.bot:hover .mouth{
+    transform: scaleY(1.6) translate(-50%, -50%) ;
+    transform-origin: top center;
+    border-radius: 1em 1em 100% 100%;
 }
