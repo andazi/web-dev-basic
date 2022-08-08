@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>json and js</title>
+    <link rel="stylesheet" href="src/app.css" />
+</head>
+
+<body>
+    <form>
+        <label for="'api">enter api url: </label>
+        <input type="urls" name="api" id="api" placeholder="Enter Web API url" />
+        <button type="submit">GET</button>
+    </form>
+    <div class="container">
+        <h2 class="source">SOURCE: <span></span></h2>
+        <h2 class="error">ERROR: <span></span></h3>
+        <span class="json">
+            <p>JSON FORMAT</p>
+        </span>
+        <span class="js">
+            <p>JS FORMAT</p>
+        </span>
+    </div>
+
+    
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="src/app.js"></script>
+</body>
+
+</html>

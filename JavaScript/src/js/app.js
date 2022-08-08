@@ -2388,9 +2388,16 @@
 
 // when we receive json file, we convert(parse) to JS object
 // JSON.parse(json_file)
+// there are cases when the fetch data is JS format, so we dont parsed
 
 // convert JS file to JSON file by stringifying it
 // JSON.stringify(JS_variable)
+
+// AXIOS
+//library for making http request
+// native to HTTPS, so needs to be import
+// axios.get()
+// as other aliases to make request like post, ...
 
 
 
