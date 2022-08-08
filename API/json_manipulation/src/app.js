@@ -15,10 +15,14 @@ const makeRequest = async () =>{
         source.textContent = input.value;
         let url = await fetch(input.value);
         const data = await url.json(); 
-        myJSON.textContent = data;
-        let jsData = JSON.parse(data);
-        console.log(jsData);
-        myJS.textContent = jsData;
+        // convert JS format to JSON format
+        myJSON.textContent = JSON.stringify(data);
+        // console.dir(myJSON)
+        // let jsData = JSON.parse(data);
+        // console.log(jsData);
+        myJS.textContent = data;
+        // if no error
+        error.textContent = 'no error';
     } catch (e) {
         error.textContent = e;
     }

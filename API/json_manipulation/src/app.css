@@ -1,4 +1,4 @@
-*{
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -14,55 +14,100 @@ body {
     font-weight: 500;
 }
 
-form{
+form {
     width: 95%;
     padding: 1em;
     font-size: 1.4em;
     text-transform: uppercase;
 }
 
-input{
+input {
     width: 50%;
-    font-size: .8em;
+    font-size: 0.8em;
     text-transform: uppercase;
-    padding: .3em 0.4em;
+    padding: 0.3em 0.4em;
 }
 
-button{
+button {
     width: auto;
     font-size: 1em;
     font-weight: 700;
-    padding: 0.2em
+    padding: 0.2em;
 }
-.container{
+
+.container {
     height: 100vh;
-    width: 100vw;
+    width: 100%;
+    color: black;
+    cursor: pointer;
     display: grid;
-    grid-template-areas: 
-    'source error'
-    'json js';
+    grid-template-areas:
+        "source error"
+        "json js";
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 1fr 8fr; 
+    grid-template-rows: 1fr 8fr;
 }
-.source{
-    background-color: pink;
-    grid-area: source;
-    padding: 1em;
-}
-.error{
-    background-color: teal;
-    grid-area: error;
-    padding: 1em;
-}
-.json, .js{
+
+.source,
+.error {
     padding: 1em;
 }
 
-.json{
+.source span,
+.error span {
+    text-decoration: underline;
+}
+
+.source {
+    background-color: pink;
+    grid-area: source;
+}
+
+.error {
+    background-color: teal;
+    grid-area: error;
+}
+
+.json,
+.js {
+    padding: 1em;
+    font-size: 2em;
+    font-weight: 500;
+    word-break: break-all;
+    word-wrap: wrap;
+}
+
+.json {
     background-color: orange;
     grid-area: json;
 }
-.js{
+
+.js {
     background-color: indigo;
     grid-area: js;
+}
+
+@media screen and(min-width: 500px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .source {
+        flex-basis: 1;
+    }
+
+    .error {
+        flex-basis: 1;
+    }
+
+    .json {
+        flex-basis: 1;
+        flex-grow: 4;
+    }
+
+    .js {
+        flex-basis: 1;
+        flex-grow: 4;
+    }
 }
