@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Elsie:wght@400;900&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,700&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --bg-light: #fff;
+    --border-light: #ccc;
+    --font-light: #000;
+
+
+    --bg-dark: #000;
+    --border-dark: #333;
+    --font-dark: #fff;
+}
+body {
+    font-size: 1em;
+    font-weight: 500;
+    background-color: var(--bg-light);
+    color: var(--font-light);
+    font-family: 'Elsie','Roboto', sans-serif;
+}

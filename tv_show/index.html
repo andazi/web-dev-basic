@@ -5,8 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ADZ MOVIES</title>
     <link rel="stylesheet" href="src/app.css">
+    <script src="https://kit.fontawesome.com/2b9cdc1c9a.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <main>
+        <nav>
+            <span class="logo">ADZ MOVIES</span>
+            <ul>
+                <li>  
+                    <form>
+                        <input type="text" name="query" id="tv-name" placeholder="Enter TV Show name">
+                        <label for="query" title="search TV Show name"></label>
+                        <button type="button">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </form>             
+                </li>
+                
+                <li>
+                    <i class="fa-regular fa-circle-user"></i>
+                    <ul id="profile">
+                        <li><i class="fa-solid fa-user"></i><span id="username">Andazi</span></li>
+                        <li>
+                            credit
+                            <span id="credit">GOOD</span>
+                        </li>
+                        <li>
+                            <a href="https://buymecoofee"> buy me coffee</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </main>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="src/app.js"></script>
