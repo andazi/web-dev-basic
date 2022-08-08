@@ -48,8 +48,7 @@ button {
     grid-template-rows: 1fr 8fr;
 }
 
-.source,
-.error {
+h2{
     padding: 1em;
 }
 
@@ -71,8 +70,8 @@ button {
 .json,
 .js {
     padding: 1em;
-    font-size: 2em;
-    font-weight: 500;
+    font-size: 1.5em;
+    font-weight: 600;
     word-break: break-all;
     word-wrap: wrap;
 }
@@ -87,17 +86,17 @@ button {
     grid-area: js;
 }
 
-@media screen and(min-width: 500px) {
+@media screen and (max-width: 400px) {
+    body{
+        font-size: 0.8em;
+    }
     .container {
         display: flex;
         flex-direction: column;
+        background-color: #fff;
     }
 
-    .source {
-        flex-basis: 1;
-    }
-
-    .error {
+    h2 {
         flex-basis: 1;
     }
 
