@@ -33,7 +33,6 @@ nav {
     position: fixed;
     height: 10%;
     width: 100vw;
-    background-color: ;
     color: #fff;
     font-family: 'Roboto', sans-serif;
     cursor: pointer;
@@ -95,7 +94,7 @@ nav {
 }
 
 input{
-    width: 10rem;
+    width: 11rem;
     height: 2rem;
     outline: none;
     margin: 0;
@@ -132,4 +131,11 @@ button{
 
 #profile{
     display: none;
+}
+
+.user:hover #profile{
+    display: block;
+    width: 7rem;
+        position: absolute;
+        top: 20px;
 }
