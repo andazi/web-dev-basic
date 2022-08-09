@@ -10,16 +10,126 @@
     --bg-light: #fff;
     --border-light: #ccc;
     --font-light: #000;
+    --highlight-light: #ccc;
 
 
     --bg-dark: #000;
     --border-dark: #333;
     --font-dark: #fff;
+    --hight-light: #999;
 }
 body {
-    font-size: 1em;
+    font-size: 18px;
     font-weight: 500;
-    background-color: var(--bg-light);
+    background-color: pink;
     color: var(--font-light);
     font-family: 'Elsie','Roboto', sans-serif;
+    font-size: 15px;
+}
+
+/* navigation bar  */
+
+nav {
+    position: fixed;
+    height: 10%;
+    width: 100vw;
+    background-color: ;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    cursor: pointer;
+}
+.nav-bar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1em;
+}
+.logo{
+    font-size: 2em;
+    font-weight: 700;
+}
+
+/* all svg  */
+
+.icons{
+    width: 2rem;
+    height: 2rem;
+    padding: .09rem;
+}
+
+.icons > svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* toggling btn  */
+
+.toggle-btn {
+    position: relative;
+    width: 3rem;
+    height: 3rem;
+    padding: .1em;
+    border-radius: 100%;
+    margin-right: 1em;
+}
+.toggle-btn .icons{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.light{
+}
+.dark{
+}
+
+.nav-heading, .search-form{
+    display: flex;
+    align-items: center;
+}
+
+/* search form  */
+
+.search-form{
+    margin-right: 1em;
+}
+
+input{
+    width: 10rem;
+    height: 2rem;
+    outline: none;
+    margin: 0;
+    padding: .7em;
+    border: 2px solid #f00;
+    border-right: none;
+    border-radius: 5em 0 0 5em;
+    font-weight: 600;
+    font-size: 1em;
+}
+button{
+    margin: 0;
+    outline: none;
+    border: 2px solid #f00;
+    border-left: none;
+    border-radius: 0 25% 25% 0;
+}
+
+/* user profiles  */
+
+.user{
+    width: 3rem;
+    height: 3rem;
+    padding: .5em;
+    border-radius: 100%;
+    display: grid;
+    place-items: center;
+}
+
+/* hover  */
+.toggle-btn:hover, #movie-search:hover, .user:hover:hover{
+    background-color: var(--highlight-light);
+}
+
+#profile{
+    display: none;
 }
