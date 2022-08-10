@@ -77,9 +77,21 @@ nav {
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+/* toggling dark/light mode */
+
 .light{
+    display: block;
 }
 .dark{
+    display: none;
+}
+
+.toggle-btn.change .light{
+    display: none;
+}
+.toggle-btn.change .dark{
+    display: block;
 }
 
 .nav-heading, .search-form{
@@ -93,24 +105,49 @@ nav {
     margin-right: 1em;
 }
 
-input{
-    width: 11rem;
+.search-form input{
+    visibility: hidden;
+    width: 0;
     height: 2rem;
     outline: none;
     margin: 0;
     padding: .7em;
-    border: 2px solid #f00;
-    border-right: none;
-    border-radius: 5em 0 0 5em;
+    border: none;
     font-weight: 600;
     font-size: 1em;
 }
-button{
+#movie-search{
     margin: 0;
     outline: none;
-    border: 2px solid #f00;
-    border-left: none;
-    border-radius: 0 25% 25% 0;
+    border: none;
+    background: transparent;
+}
+
+/* input animation */
+
+.search-form:focus-within input{
+    animation: input 1.5s linear forwards;
+}
+@keyframes input {
+    10%{
+                border: 2px solid;
+                    border-radius: 5em 0 0 5em;
+    }
+    100%{
+        visibility: visible;
+        width: 13em;
+        background-color: rgb(255, 255, 255);
+        border: 2px solid;
+            border-radius: 5em 0 0 5em;
+                        
+    }
+}
+
+.search-form:focus-within {
+    background-color: rgb(170, 48, 48);
+    border: 2px solid;
+    border-radius: 0 2em 2em 0;
+    
 }
 
 /* user profiles  */
@@ -124,18 +161,54 @@ button{
     place-items: center;
 }
 
-/* hover  */
+/* nav item hover  */
 .toggle-btn:hover, #movie-search:hover, .user:hover:hover{
     background-color: var(--highlight-light);
 }
 
 #profile{
     display: none;
+    transition: display 5s linear;
 }
 
-.user:hover #profile{
-    display: block;
-    width: 7rem;
+/* hover on profile */
+
+.user:hover #profile {
         position: absolute;
-        top: 20px;
-}
+        top: 10vh;
+        right: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+        width: 13em;
+        height: 17em;
+        padding: .3em .7em;
+        border-radius: 10%;
+        background-color: purple;
+        box-shadow: 0 0 1em;
+    }
+
+    li {
+        list-style: none;
+        width: 100%;
+        border-bottom: 1px solid grey;
+    }
+
+    a {
+        text-decoration: none;
+        color: white;
+        display: flex;
+        align-items: center;
+    }
+
+    a span {
+        margin-left: .8em;
+    }
+
+    #profile li:first-child {
+        align-self: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
