@@ -11,6 +11,10 @@ toggle.addEventListener('click', () => {
 
 // arrays of shows 
 const showsContainer = [];
+// all dates
+let startDate = [];
+// no duplicate dates
+let uniqueDate = [];
 
 // make request
 
@@ -44,7 +48,7 @@ const requestShow = async () => {
         console.log(e)
     }
 }
-requestShow();
+
 
 // top tv show
 const showItem = () => {
@@ -59,7 +63,28 @@ const showItem = () => {
         }      
     } 
 }
-showItem();
+
+
+// looping over dates and retriving unique years    
+const dates = () => {
+    for (let show of showsContainer) {
+        let tvPremiered = parseInt(show.premiered);
+        startDate.push(tvPremiered);
+    }
+    console.log(startDate)
+
+    // removing duplicate
+
+    for (let yearDate of startDate) {
+        if (uniqueDate.includes(yearDate)) {
+        }
+        else {
+            uniqueDate.push(yearDate)
+        }
+    }
+    console.log(uniqueDate)
+}
+
 
 const otherShow = (array) => {
     // looping over array
