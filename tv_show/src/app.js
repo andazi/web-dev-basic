@@ -13,12 +13,6 @@ const showsContainer = [];
 
 // GET data when online
 
-window.ononline = (event) => {
-    console.log('i am online')
-    requestShow();
-    shows()
-}
-
 const requestShow = async () => {
     try {
         let tvData = await axios.get('https://api.tvmaze.com/shows');
@@ -32,45 +26,60 @@ const requestShow = async () => {
             let summary = show.summary;
             let imageMedium = show.image.medium;
             let imageOriginal = show.image.original;
-            let item = `
-            name: ${title},
-            premiered: ${year},
-            summary: ${summary},
-            image: [${imageMedium}, ${imageOriginal}]
-            `;
+            let item = {
+            name: `${title}`,
+            premiered: `${year}`,
+            summary: `${summary}`,
+            images: [`${imageMedium}`, `${imageOriginal}`]
+        };
             showsContainer.push(item);
         }
     } catch (e) {
         console.log(e)
     }
 }
+requestShow();
+
+
+// looping over array
+const showsLoop = () => {
+    for (let show of showsContainer) {
+        const topShowDisplay = setTimeout(() => { showItem }, 100);
+        tvShow.append('topShow');
+        // topShowDisplay()
+        return topShowDisplay
+    }
+}
+
 
 // top tv show
-
-const shows = () => {
+const showItem = () => {
     let topShow = document.createElement('section');
     topShow.classList.add('top-tv');
-    tvShow.append('topShow');
+    // tvShow.append('topShow');
+    topShow.style.backgroundImage = `${show.images}`;
     topShow.innerHTML = `
 <div class="top-tv-heading">
     <div class="top-title>
         <p class="title">
-            ${this.title}
+            ${show.name}
         </p>
     </div>
     <div class="summary">
         <p class"detail">
-            ${this.summary}
+            ${show.summary}
         </p>
     </div>
 </div>
 `;
+return topShow;
 }
 
-for(let show of showsContainer){
-    const topShowDisplay = setTimeout(shows, 1000);
-    console.log('ok')
-}
+
+
+
+
+
 
 
 
