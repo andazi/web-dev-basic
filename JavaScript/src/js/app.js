@@ -1990,13 +1990,13 @@
 
 // insertAdjancentElement
 
-// beforebegin
+//      *beforebegin
 // **********<>*************
 // *       afterbegin      *
 // *        content        *
 // *       beforeend       *
 // ***********</>***********
-//         afterend
+//        *afterend
 // beforebegin<>afterbegin content beforeend</>afterend
 
 

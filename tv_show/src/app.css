@@ -29,6 +29,8 @@ body {
     background-color: rgb(29, 207, 89);
     color: var(--font-light);
     font-family: 'Elsie', 'Roboto', sans-serif;
+    line-height: 1.6;
+    word-spacing: 2px;
 }
 
 /* navigation bar  */
@@ -253,31 +255,13 @@ main {
 }
 
 .top-tv-heading {
-    position: absolute;
-    top: 50%;
-    left: 25%;
-    transform: translate(-50%, -50%);
-    width: 40%;
-    font-size: 1.4em;
-    background-color: #ffffff4f;
-    box-shadow: 0 0 2em;
-    padding: .5em;
-    border-radius: 1em;
+    height: 100%;
 }
 
 .top-title {
     font-size: 1em;
-}
-
-/* all summary family  */
-
-.summary {
-    font-family: 'Roboto', sans-serif;
-}
-
-p {
-    text-overflow: ellipsis;
-    overflow: hidden;
+    font-weight: 700;
+    border-bottom: 2px solid;
 }
 
 /* genre section */
