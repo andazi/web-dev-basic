@@ -6,6 +6,7 @@ const tvShow = document.querySelector('.top-tv');
 
 toggle.addEventListener('click', () => {
     toggle.classList.toggle('change');
+    
 })
 
 
@@ -13,7 +14,7 @@ toggle.addEventListener('click', () => {
 const showsContainer = [];
 // all dates
 let startDate = [];
-// no duplicate dates
+// no duplicated dates
 let uniqueDate = [];
 
 // make request
@@ -50,6 +51,7 @@ const requestShow = async () => {
 }
 
 
+
 // top tv show
 const showItem = () => {
     let topShow = '';
@@ -58,7 +60,7 @@ const showItem = () => {
 
     for (let show of showsContainer) {
         let myFav = 'the flash';
-        if(show.name.toLowerCase() === myFav){
+        if (show.name.toLowerCase() === myFav) {
             tvShow.style.backgroundImage = `url(${show.images[1]})`;
         }      
     } 
@@ -71,7 +73,6 @@ const dates = () => {
         let tvPremiered = parseInt(show.premiered);
         startDate.push(tvPremiered);
     }
-    console.log(startDate)
 
     // removing duplicate
 
@@ -82,100 +83,53 @@ const dates = () => {
             uniqueDate.push(yearDate)
         }
     }
-    console.log(uniqueDate)
 }
 
 
-const otherShow = (array) => {
-    // looping over array
-    for (let show of showsContainer) {
-        let tvPremiered = parseInt(show.premiered.slice(0, 4));
-        // conosole.log(tvPremiered)
-        if (tvPremiered === 2014) {
+// tv shows sorted by year
 
-            let newShows = document.createElement('section');
-            newShows.classList.add('tv-year');
-            let newShowYear = document.createElement('header');
-            newShowYear.classList.add('year');
-            newShowYear.textContent = 2014;
-            newShows.append(newShowYear);
+const scrollTv = () =>{
+    for (let year of uniqueDate) {
+        let newShows = document.createElement('section');
+        newShows.classList.add('tv-year');
+        let newShowYear = document.createElement('header');
+        newShowYear.classList.add('year');
+        newShowYear.textContent = `${year}`;
+        newShows.append(newShowYear);
 
-            let newShow = document.createElement('div');
-            newShow.classList.add('tv-container');
+        let newShow = document.createElement('div');
+        newShow.classList.add('tv-container');
+        newShows.append(newShow)
 
-
-            // let thisShow = document.createElement('div');
-            // thisShow.classList.add("tv-card");
-            newShow.innerHTML = `
-                <div class="tv-card">
-                    <div class="tv-img>
-                        <img class="img" src="${show.images[0]} alt="${show.name} cover image">
+        for (let show of showsContainer) {
+            let tvPremiered = parseInt(show.premiered);
+            if (tvPremiered === year) {
+                let thisShow = document.createElement('div');
+                thisShow.classList.add("tv-card");
+                thisShow.innerHTML = `
+                    <div class="tv-img">
+                        <img src="${show.images[1]}" alt="${show.name} cover image" class="img">
                     </div>
                     <div class="tv-title">
                         <p class="title">${show.name}</p>
                     </div>
-                </div>
                 `;
-            newShows.appendChild(newShow)
 
-            // newShow.append(thisShow)
+                newShow.append(thisShow)
+                allTvShows.append(newShows)
 
-            // allTvShows.append(newShow)
+
+                
+            }
         }
-        console.log(newShows)
-        // console.log(tvPremiered);
-        // showItem()
-        // tvShow.append('topShow');
-        // showItem()
     }
 }
 
 
-
-
-
-
-
-
-// // other sorted movies
-
-// let tvShowSort = document.createElement('section');
-// tvShowSort.classList.add("tv-year");
-// tvShowSort.innerHTML = `
-// <header class="year">${year}</header>
-// <div class="tv-container"></div>
-// `;
-
-// // tv shows to sort
-
-// let show = `
-// <div class="tv-card">
-//     <div class="tv-img>
-//         <img class="img">
-//     </div>
-//     <div class="tv-title">
-//         <p class="title"></p>
-//     </div>
-// </div>
-// `
-
-// // appending top-tv and tv-year
-// tvShow.appendChild('topTvShow');
-// tvShow.appendChild('tvShowSort');
-
-// fetching api
-
-
-// makeRequest()
-
-
-
-
-
-
-
-
-
-
-
+const xen = async () => {
+    await requestShow()
+    showItem()
+    dates()
+    scrollTv()
+}
 
