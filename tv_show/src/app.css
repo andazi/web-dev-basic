@@ -45,11 +45,20 @@ nav {
     background-color: #ffffff4f;
 }
 
-.nav-bar {
+.nav-bar,
+.nav-heading,
+#search-form {
     display: flex;
     align-items: center;
+}
+
+.nav-bar {
     justify-content: space-between;
-    padding: 1em;
+    padding: 0 1em;
+}
+
+.nav-heading {
+    gap: 20px;
 }
 
 .logo {
@@ -60,25 +69,19 @@ nav {
 /* all svg  */
 
 .icons {
+    display: block;
     width: 2em;
     height: 2em;
-    padding: .09em;
+    padding: 5px;
 }
 
-.icons>svg {
-    width: 100%;
-    height: 100%;
+.icons:hover {
+    fill: teal;
 }
 
 /* toggling btn  */
-
 .toggle-btn {
     position: relative;
-    width: 3em;
-    height: 3em;
-    padding: .1em;
-    border-radius: 100%;
-    margin-right: 1em;
 }
 
 .toggle-btn .icons {
@@ -106,38 +109,33 @@ nav {
     display: block;
 }
 
-.nav-heading,
-.search-form {
-    display: flex;
-    align-items: center;
-}
-
 /* search form  */
 
-.search-form {
+#search-form {
     margin-right: 1em;
 }
 
-.search-form input {
-    visibility: hidden;
+#tv-name-search {
+    height: 1.5em;
     width: 0;
-    height: 2em;
-    margin: 0;
-    padding: .7em;
-    border: none;
-    font-weight: 600;
+    outline: 2px solid;
+    visibility: hidden;
+    font-weight: 500;
     font-size: 1em;
+    padding: 10px;
 }
 
-#tv-search {
-    margin: 0;
+button.icons {
+    background-color: transparent;
     border: none;
-    background: transparent;
+    height: 2.5em;
+    width: 2.5em;
 }
+
 
 /* input animation */
 
-.search-form:focus-within input {
+#search-form:focus-within #tv-name-search {
     animation: input 1.5s linear forwards;
 }
 
@@ -145,23 +143,17 @@ nav {
     10% {
         border: 2px solid;
         border-radius: 5em 0 0 5em;
+        border-right: none;
     }
 
     100% {
         visibility: visible;
-        width: 13em;
+        width: 11em;
         background-color: rgb(255, 255, 255);
         border: 2px solid;
         border-radius: 5em 0 0 5em;
 
     }
-}
-
-.search-form:focus-within {
-    background-color: rgb(170, 48, 48);
-    border: 2px solid;
-    border-radius: 0 2em 2em 0;
-
 }
 
 /* user profiles  */
@@ -173,13 +165,6 @@ nav {
     border-radius: 100%;
     display: grid;
     place-items: center;
-}
-
-/* nav item hover  */
-.toggle-btn:hover,
-#tv-search:hover,
-.user:hover:hover {
-    background-color: var(--highlight-light);
 }
 
 #profile {
@@ -311,7 +296,7 @@ main {
     width: 100%;
 }
 
-.tv-title .title{
+.tv-title .title {
     color: indigo;
     font-size: .9em;
 }
@@ -379,7 +364,7 @@ footer ul {
 }
 
 footer li {
-    
+
     list-style: none;
 }
 
@@ -389,11 +374,10 @@ li:hover {
 
 /* mobile version  */
 
-@media screen and (max-width: 720px) {
-}
+@media screen and (max-width: 720px) {}
 
 @media screen and (max-width: 520px) {
-    footer{
+    footer {
         width: 100%;
     }
 }

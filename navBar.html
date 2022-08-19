@@ -4,11 +4,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ADZ MOVIES</title>
-    <link rel="stylesheet" href="src/app.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <!-- <script src="https://unpkg.com/axios/dist/axios.min.js"></script> -->
+    <title>navBar</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-size: 18px;
+            font-weight: 500;
+            background-color: rgb(29, 207, 89);
+            color: var(--font-light);
+            font-family: 'Elsie', 'Roboto', sans-serif;
+            line-height: 1.6;
+            word-spacing: 2px;
+        }
+
+
+        nav {
+            position: fixed;
+            height: 10%;
+            width: 100%;
+            color: #fff;
+            font-family: 'Roboto', sans-serif;
+            cursor: pointer;
+            background-color: #ffffff4f;
+        }
+
+        .nav-bar, .nav-heading, .search-form{
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-bar{
+            justify-content: space-between;
+            padding: 0 1em;
+        }
+        .nav-heading{
+            gap: 20px;
+        }
+
+
+        #profile{
+            display: none;
+        }
+
+        .icons{
+            display: block;
+            width: 2em;
+            height: 2em;
+            padding: 5px;
+        }
+        .icons:hover{
+            fill: teal;
+        }
+
+        #tv-name-search{
+            height: 2.5em;
+            width: 0;
+            outline: 2px solid;
+            visibility: hidden;
+
+        }
+
+        button.icons{
+            background-color: transparent;
+            border: none;
+            height: 2.5em;
+            width: 2.5em;
+        }
+
+        .search-form:focus-within #tv-name-search {
+    animation: input 1.5s linear forwards;
+}
+
+@keyframes input {
+    10% {
+        border: 2px solid;
+        border-radius: 5em 0 0 5em;
+            border-right: none;
+    }
+
+    100% {
+        visibility: visible;
+        width: 13em;
+        background-color: rgb(255, 255, 255);
+        border: 2px solid;
+        border-radius: 5em 0 0 5em;
+
+    }
+}
+
+        .toggle-btn {
+    position: relative;
+}
+
+.toggle-btn .icons {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* toggling dark/light mode */
+
+.light {
+    display: block;
+}
+
+.dark {
+    display: none;
+}
+
+.toggle-btn.change .light {
+    display: none;
+}
+
+.toggle-btn.change .dark {
+    display: block;
+}
+
+
+    </style>
 </head>
 
 <body>
@@ -22,7 +141,7 @@
                         <path
                             d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z" />
                     </svg>
-
+    
                 </span>
                 <span class="icons dark">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -32,7 +151,7 @@
                     </svg>
                 </span>
             </div>
-            <form id="search-form">
+            <form class="search-form">
                 <input type="text" name="query" id="tv-name-search" placeholder="Search TV Show name">
                 <button type="button" title="search Tv Show name" class="icons" id="tv-search">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -118,28 +237,6 @@
             </span>
         </div>
     </nav>
-    <main>
-        <section class="top-tv">
-        </section>
-    </main>
-    
-    <footer>
-        <p>credits</p>
-        <ul>
-            <li>
-                <a href="https://tvmaze.com" title="credit for API belongs to tvmaze">tvmaze API</a>
-            </li>
-            <li>
-                <a href="https://fonts.google.com" title="credit for fonts belongs to google">google fonts</a>
-            </li>
-            <li>
-                <a href="https://fontawesome.com" title="credit for svg belongs to awesome">fontawesome</a>
-            </li>
-        </ul>
-    </footer>
-
-
-
-    <script src="src/app.js"></script>
-   
 </body>
+
+</html>

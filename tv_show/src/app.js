@@ -1,12 +1,32 @@
 const toggle = document.querySelector('.toggle-btn');
 const allTvShows = document.querySelector('main');
 const tvShow = document.querySelector('.top-tv');
+const tvSearch = document.querySelector('#search-form');
 
 // dark-light mode toggle 
 
 toggle.addEventListener('click', () => {
     toggle.classList.toggle('change');
     
+})
+
+tvSearch.addEventListener('input',  async (e) => {
+    e.preventDefault();
+    let querySearch = tvSearch.elements.query.value;
+
+    const config = {params: {
+        q: querySearch
+    }}
+    let queryData = await axios.get(`https://api.tvmaze.com/search/shows?`, config);
+    queryData = queryData.data
+    console.log(queryData)
+    for(let queryResult of queryData){
+        console.log(queryResult.show.name)
+    }
+
+  
+
+   
 })
 
 
@@ -22,8 +42,8 @@ let uniqueDate = [];
 const requestShow = async () => {
     try {
         let tvData = await axios.get('https://api.tvmaze.com/shows');
-        tvData = JSON.stringify(tvData);
-        tvData = JSON.parse(tvData);
+        // tvData = JSON.stringify(tvData);
+        // tvData = JSON.parse(tvData);
         tvData = tvData.data;
 
 
@@ -47,16 +67,13 @@ const requestShow = async () => {
         }
     } catch (e) {
         console.log(e)
-    }
-}
+}}
+
 
 
 
 // top tv show
 const showItem = () => {
-    let topShow = '';
-    // let topShow = document.createElement('section');
-    // topShow.classList.add('top-tv');
 
     for (let show of showsContainer) {
         let myFav = 'the flash';
@@ -67,7 +84,7 @@ const showItem = () => {
 }
 
 
-// looping over dates and retriving unique years    
+// looping over dates and retrieving unique years    
 const dates = () => {
     for (let show of showsContainer) {
         let tvPremiered = parseInt(show.premiered);
@@ -89,7 +106,10 @@ const dates = () => {
 // tv shows sorted by year
 
 const scrollTv = () =>{
-    for (let year of uniqueDate) {
+    // sort uniqueDate
+    const sortedUniqueDate = uniqueDate.sort((a, b) => (b-a));
+
+    for (let year of sortedUniqueDate) {
         let newShows = document.createElement('section');
         newShows.classList.add('tv-year');
         let newShowYear = document.createElement('header');
@@ -114,22 +134,18 @@ const scrollTv = () =>{
                         <p class="title">${show.name}</p>
                     </div>
                 `;
-
                 newShow.append(thisShow)
-                allTvShows.append(newShows)
-
-
-                
+                allTvShows.append(newShows)                
             }
         }
     }
 }
 
 
-const xen = async () => {
+const makeRequest = async () => {
     await requestShow()
     showItem()
     dates()
     scrollTv()
 }
-
+// makeRequest()
