@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-size: 18px;
+            display: grid;
+            place-items: center;
+            height: 100vh;
+        }
+        ul{
+            background: teal;
+        }
+        .showList .hideList{
+            display: block;
+        }
+        .hideList{
+            display: none;
+        }
+        .view-more{
+            color: #00f;
+            text-decoration: underline;
+            text-align: right;
+        }
+        .view-more:hover{
+            color: #000;
+        }
+
+    </style>
+</head>
+
+<body>
+    <ul class="search-result">
+
+    </ul>
+</body>
+
+<script>
+    const searchListContainer = document.querySelector('.search-result');
+    const searchList = ['darling', 'shark', 'do', 'do', 'do', 'do', 'do', 'do', 'do'];
+
+
+    // looping and creating search results
+    for (let i = 0; i <= searchList.length; i++) {
+        let result = document.createElement('li');
+        result.textContent = searchList[i];
+        searchListContainer.append(result);
+    
+        if (i > 4) {   
+            result.classList.add('hideList');
+              
+        }
+        
+    }
+    // creating view more toggle
+    let views = document.createElement('li');
+        views.textContent = 'view more';
+
+        views.classList.add('view-more');
+        views.classList.remove('hideList')
+        searchListContainer.append(views)
+
+        views.addEventListener('click', () => {
+            searchListContainer.classList.add('showList');
+            views.style.display = 'none';
+
+        })
+
+            
+</script>
+</html>

@@ -24,9 +24,6 @@ tvSearch.addEventListener('input',  async (e) => {
         console.log(queryResult.show.name)
     }
 
-  
-
-   
 })
 
 
@@ -68,9 +65,6 @@ const requestShow = async () => {
     } catch (e) {
         console.log(e)
 }}
-
-
-
 
 // top tv show
 const showItem = () => {
@@ -141,7 +135,6 @@ const scrollTv = () =>{
     }
 }
 
-
 const makeRequest = async () => {
     await requestShow()
     showItem()
@@ -149,3 +142,33 @@ const makeRequest = async () => {
     scrollTv()
 }
 // makeRequest()
+
+// searching for tv shows
+for (let i = 0; i <= searchList.length; i++) {
+    let result = document.createElement('li');
+    result.textContent = searchList[i];
+    searchListContainer.append(result);
+
+    if (i > 4) {
+        result.classList.add('hideList');
+
+    }
+
+}
+// creating view more toggle
+
+searches.addEventListener('input', () => {
+    let searchValue = searches.elements.query.value;
+
+let views = document.createElement('li');
+views.textContent = 'view more';
+
+views.classList.add('view-more');
+views.classList.remove('hideList')
+searchListContainer.append(views)
+
+views.addEventListener('click', () => {
+    searchListContainer.classList.add('showList');
+    views.style.display = 'none';
+
+})})

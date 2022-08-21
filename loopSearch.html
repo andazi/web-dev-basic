@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #000;
+            color: #fff;
+        }
+        form{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+        ul{
+            background-color: teal;
+        }
+         .showList .hideList{
+            display: block;
+        }
+        .hideList{
+            display: none;
+        }
+        .view-more{
+            color: #00f;
+            text-decoration: underline;
+            text-align: right;
+        }
+        .view-more:hover{
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <label>
+            <input type="text" placeholder="enter data" name="query">
+        </label>
+    </form>
+    <ul class="search-result">
+        
+    </ul>
+
+    <script>
+        let searches = document.querySelector('form');
+        let results = document.querySelector('.search-result');
+
+        const searchList = ['darling', 'shark', 'do', 'do', 'do', 'do', 'do', 'do', 'do'];
+
+
+        searches.addEventListener('input', ()=>{
+            let searchValue = searches.elements.query.value;
+            rest.push(searchValue)
+
+            if(searchValue.includes(...searchList)){
+                 // looping and creating search results
+                for (let i = 0; i <= searchList.length; i++) {
+                    let result = document.createElement('li');
+                    result.textContent = searchList[i];
+                    searches.append(result);
+
+                    if (i > 4) {
+                        result.classList.add('hideList');
+
+                    }
+
+                }
+                // creating view more toggle
+                let views = document.createElement('li');
+                views.textContent = 'view more';
+
+                views.classList.add('view-more');
+                views.classList.remove('hideList')
+                searches.append(views)
+
+                views.addEventListener('click', () => {
+                    searches.classList.add('showList');
+                    views.style.display = 'none';
+                })
+
+            }
+        }
+    </script>
+</body>
