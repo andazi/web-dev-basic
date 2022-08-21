@@ -156,6 +156,26 @@ button.icons {
     }
 }
 
+/* search results  */
+
+ .showList .hideList {
+     display: block;
+ }
+
+ .hideList {
+     display: none;
+ }
+
+ .view-more {
+     color: #00f;
+     text-decoration: underline;
+     text-align: right;
+ }
+
+ .view-more:hover {
+     color: #000;
+ }
+
 /* user profiles  */
 
 .user {

@@ -2,6 +2,7 @@ const toggle = document.querySelector('.toggle-btn');
 const allTvShows = document.querySelector('main');
 const tvShow = document.querySelector('.top-tv');
 const tvSearch = document.querySelector('#search-form');
+const searchList = document.querySelector('.search-result')
 
 // dark-light mode toggle 
 
@@ -20,11 +21,43 @@ tvSearch.addEventListener('input',  async (e) => {
     let queryData = await axios.get(`https://api.tvmaze.com/search/shows?`, config);
     queryData = queryData.data
     console.log(queryData)
-    for(let queryResult of queryData){
-        console.log(queryResult.show.name)
+    // searching for tv shows
+
+    for (let res = 0; i <= queryData.length; res++) {
+        let result = document.createElement('li');
+        result.textContent = queryData[i];
+        searchList.append(result);
+        console.log(searchList)
+
+        // if (res > 4) {
+        //     result.classList.add('hideList');
+
+        // }
+
     }
 
 })
+
+
+
+// // creating view more toggle
+
+// searches.addEventListener('input', () => {
+//     let searchValue = tvSearch.elements.query.value;
+
+//     let views = document.createElement('li');
+//     views.textContent = 'view more';
+
+//     views.classList.add('view-more');
+//     views.classList.remove('hideList')
+//     searchList.append(views)
+
+//     views.addEventListener('click', () => {
+//         searchList.classList.add('showList');
+//         views.style.display = 'none';
+
+//     })
+// })
 
 
 // arrays of shows 
@@ -142,33 +175,3 @@ const makeRequest = async () => {
     scrollTv()
 }
 // makeRequest()
-
-// searching for tv shows
-for (let i = 0; i <= searchList.length; i++) {
-    let result = document.createElement('li');
-    result.textContent = searchList[i];
-    searchListContainer.append(result);
-
-    if (i > 4) {
-        result.classList.add('hideList');
-
-    }
-
-}
-// creating view more toggle
-
-searches.addEventListener('input', () => {
-    let searchValue = searches.elements.query.value;
-
-let views = document.createElement('li');
-views.textContent = 'view more';
-
-views.classList.add('view-more');
-views.classList.remove('hideList')
-searchListContainer.append(views)
-
-views.addEventListener('click', () => {
-    searchListContainer.classList.add('showList');
-    views.style.display = 'none';
-
-})})
