@@ -23,41 +23,32 @@ tvSearch.addEventListener('input',  async (e) => {
     console.log(queryData)
     // searching for tv shows
 
-    for (let res = 0; i <= queryData.length; res++) {
+    for (let res = 0; res <= queryData.length; res++) {
         let result = document.createElement('li');
-        result.textContent = queryData[i];
+        result.textContent = queryData[res].show.name;
         searchList.append(result);
         console.log(searchList)
 
-        // if (res > 4) {
-        //     result.classList.add('hideList');
-
-        // }
-
+        if (res > 4) {
+            result.classList.add('hideList');
+        }
     }
 
+// creating view more toggle
+
+    let views = document.createElement('li');
+    views.textContent = 'view more';
+
+    views.classList.add('view-more');
+    views.classList.remove('hideList')
+    searchList.append(views)
+
+    views.addEventListener('click', () => {
+        searchList.classList.add('showList');
+        views.style.display = 'none';
+
+    })
 })
-
-
-
-// // creating view more toggle
-
-// searches.addEventListener('input', () => {
-//     let searchValue = tvSearch.elements.query.value;
-
-//     let views = document.createElement('li');
-//     views.textContent = 'view more';
-
-//     views.classList.add('view-more');
-//     views.classList.remove('hideList')
-//     searchList.append(views)
-
-//     views.addEventListener('click', () => {
-//         searchList.classList.add('showList');
-//         views.style.display = 'none';
-
-//     })
-// })
 
 
 // arrays of shows 

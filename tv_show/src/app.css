@@ -157,6 +157,24 @@ button.icons {
 }
 
 /* search results  */
+.search-result {
+    position: absolute;
+    top: 1.5em;
+    font-size: 1em;
+    width: 11em;
+    background-color: #ffffff4d;
+    color: #000;
+}
+
+.search-result li {
+    list-style: none;
+    border-top: 1px solid;
+    padding: 4px;
+    line-height: 1;
+    font-style: italic;
+    overflow: ellipse;
+    white-space: hidden;
+}
 
  .showList .hideList {
      display: block;
