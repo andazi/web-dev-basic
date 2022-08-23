@@ -1,17 +1,20 @@
+const body = document.querySelector('body');
 const toggle = document.querySelector('.toggle-btn');
 const allTvShows = document.querySelector('main');
 const tvShow = document.querySelector('.top-tv');
 const tvSearch = document.querySelector('#search-form');
 const searchList = document.querySelector('.search-result')
 
-// dark-light mode toggle 
+// dark-light mode toggle ?
 
 toggle.addEventListener('click', () => {
-    toggle.classList.toggle('change');
-    
+    toggle.classList.toggle('change');  
+    body.classList.toggle('dark-mode');
 })
 
-tvSearch.addEventListener('input',  async (e) => {
+// searching for tv shows
+
+tvSearch.addEventListener('change',  async (e) => {
     e.preventDefault();
     let querySearch = tvSearch.elements.query.value;
 
@@ -21,7 +24,6 @@ tvSearch.addEventListener('input',  async (e) => {
     let queryData = await axios.get(`https://api.tvmaze.com/search/shows?`, config);
     queryData = queryData.data
     console.log(queryData)
-    // searching for tv shows
 
     for (let res = 0; res <= queryData.length; res++) {
         let result = document.createElement('li');
@@ -48,7 +50,14 @@ tvSearch.addEventListener('input',  async (e) => {
         views.style.display = 'none';
 
     })
+
+    // clear search input and result
+    if (e.target.className !== 'search-result') {
+        console.log('it works')
+
+    }
 })
+
 
 
 // arrays of shows 
@@ -94,7 +103,7 @@ const requestShow = async () => {
 const showItem = () => {
 
     for (let show of showsContainer) {
-        let myFav = 'the flash';
+        let myFav = 'gotham';
         if (show.name.toLowerCase() === myFav) {
             tvShow.style.backgroundImage = `url(${show.images[1]})`;
         }      
@@ -165,4 +174,4 @@ const makeRequest = async () => {
     dates()
     scrollTv()
 }
-// makeRequest()
+makeRequest()
