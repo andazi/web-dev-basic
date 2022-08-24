@@ -24,7 +24,7 @@ body {
     background-color: var(--bg-light);
     color: var(--font-light);
     font-family: 'Elsie', 'Roboto', sans-serif;
-    line-height: 1.6;
+    line-height: 1;
     word-spacing: 2px;
 }
 
@@ -301,7 +301,7 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    background-color: var(--font-light);
+    background-color: var(--bg-light);
 }
 
 .year {
@@ -317,7 +317,8 @@ main {
     flex-grow: 2;
     display: grid;
     grid-auto-flow: column;
-    grid-auto-columns: 23%;
+    /* grid-auto-columns: 23%; */
+    justify-content: start;
     gap: 1em;
     overflow-x: auto;
     overflow-y: hidden;
@@ -343,7 +344,10 @@ main {
 
 .tv-title .title {
     color: var(--font-light);
-    font-size: .9em;
+    font-size: .8em;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 /* from kelvin powell  */
@@ -425,6 +429,16 @@ li:hover {
 @media screen and (max-width: 720px) {}
 
 @media screen and (max-width: 520px) {
+    .tv-year{
+        height: 12em;
+    }
+    .tv-card{
+        width: 8rem;
+        height: 8rem;
+    }
+    .title{
+        font-size: .5em;
+    }
     footer {
         width: 100%;
     }

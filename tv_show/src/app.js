@@ -12,51 +12,6 @@ toggle.addEventListener('click', () => {
     body.classList.toggle('dark-mode');
 })
 
-// searching for tv shows
-
-tvSearch.addEventListener('change',  async (e) => {
-    e.preventDefault();
-    let querySearch = tvSearch.elements.query.value;
-
-    const config = {params: {
-        q: querySearch
-    }}
-    let queryData = await axios.get(`https://api.tvmaze.com/search/shows?`, config);
-    queryData = queryData.data
-    console.log(queryData)
-
-    for (let res = 0; res <= queryData.length; res++) {
-        let result = document.createElement('li');
-        result.textContent = queryData[res].show.name;
-        searchList.append(result);
-        console.log(searchList)
-
-        if (res > 4) {
-            result.classList.add('hideList');
-        }
-    }
-
-// creating view more toggle
-
-    let views = document.createElement('li');
-    views.textContent = 'view more';
-
-    views.classList.add('view-more');
-    views.classList.remove('hideList')
-    searchList.append(views)
-
-    views.addEventListener('click', () => {
-        searchList.classList.add('showList');
-        views.style.display = 'none';
-
-    })
-
-    // clear search input and result
-    if (e.target.className !== 'search-result') {
-        console.log('it works')
-
-    }
-})
 
 
 
@@ -158,7 +113,7 @@ const scrollTv = () =>{
                         <img src="${show.images[1]}" alt="${show.name} cover image" class="img">
                     </div>
                     <div class="tv-title">
-                        <p class="title">${show.name}</p>
+                        <p class="title" title="${show.name}">${show.name}</p>
                     </div>
                 `;
                 newShow.append(thisShow)
@@ -175,3 +130,55 @@ const makeRequest = async () => {
     scrollTv()
 }
 makeRequest()
+
+// searching for tv shows
+
+tvSearch.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    console.dir(e.target)
+    let querySearch = tvSearch.elements.query.value;
+
+    const config = {
+        params: {
+            q: querySearch
+        }
+    }
+    let queryData = await axios.get(`https://api.tvmaze.com/search/shows?`, config);
+    queryData = queryData.data
+    // console.log(queryData)
+    
+
+    for (let res = 0; res <= queryData.length; res++) {
+        let result = document.createElement('li');
+        result.textContent = queryData[res].show.name;
+        searchList.append(result);
+        console.log(searchList)
+
+        if (res > 4) {
+            result.classList.add('hideList');
+        }
+    }
+
+    // creating view more toggle
+
+    let views = document.createElement('li');
+    views.textContent = 'view more';
+
+    views.classList.add('view-more');
+    views.classList.remove('hideList')
+    searchList.append(views)
+
+    views.addEventListener('click', () => {
+        searchList.classList.add('showList');
+        views.style.display = 'none';
+
+    })
+
+    // clear search input and result
+    // not working
+    tvSearch.addEventlistener('mouseleave', (event) => {
+        console.log('mouseleave')
+        searchList.innerHtml = '';
+        querySearch = '';
+    })
+})
