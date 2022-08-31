@@ -1,0 +1,62 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 18px;
+}
+
+.container{
+    position: relative;
+    height: 100%;
+    background-color: teal;
+    color: #000;
+}
+
+.card{
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* transform: translate(-50%, -50%); */
+    height: 10em;
+    width: 10em;
+    margin: 5px;
+    border: 1px solid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    -webkit-user-select: none;
+    user-select: none;
+}
+.card:hover{
+    box-shadow: 0 0 5px;
+}
+
+.card:active{
+    box-shadow: 0 0 0;
+}
+
+.hide{
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

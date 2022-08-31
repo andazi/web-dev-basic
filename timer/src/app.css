@@ -1,0 +1,109 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 18px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.container {
+    background-color: teal;
+    min-height: 100vh;
+    width: 100%;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+span {
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 0.16rem 1rem;
+    border-radius: 10rem;
+    box-shadow: 0 0 0.19rem;
+}
+
+span:hover {
+    box-shadow: 0 0 .6em;
+}
+
+span:active {
+    box-shadow: inset 0 0 0;
+}
+
+.play-pause {
+    background-color: green;
+}
+
+.pause {
+    background-color: yellow;
+}
+
+.restart {
+    background-color: blue;
+    color: white;
+}
+
+.record {
+    background-color: black;
+    color: white;
+}
+
+
+.time-container {
+    position: relative;
+    display: flex;
+    box-shadow: 0 0 0.39em;
+}
+
+.time-card {
+    border: 1px solid;
+    width: 10em;
+    height: 10em;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.head,
+.count {
+    width: 100%;
+    font-weight: 700;
+}
+
+.head {
+    font-size: 1.9em;
+    padding: 2px;
+    flex: 1 .5 0;
+}
+
+.count {
+    border-top: 2px solid;
+    font-size: 5em;
+    flex: 2 1 0;
+}
+
+.record-list>* {
+    list-style: disc;
+    padding: 5px;
+    font-size: 1.2em;
+    font-weight: 700;
+}
+
+@media screen and (max-width: 520px) {
+    .time-card{
+        width: 7em;
+    }
+    .head{
+                font-size: 1.5rem;
+    }
+}

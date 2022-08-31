@@ -58,7 +58,7 @@ header{
     margin: 4px;
 }
 
-.complete svg:hover {
+.todoList:hover .complete svg {
     fill: #5fb65f;
 }
 
@@ -74,7 +74,7 @@ header{
     bottom: 0;
 }
 
-.del svg:hover {
+.todoList:hover .del svg {
     fill: #ec2828;
 }
 

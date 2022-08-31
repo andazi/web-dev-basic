@@ -1,0 +1,192 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: sans-serif;
+    font-size: 18px;
+    height: 100vh;
+}
+.container{
+    height: 100%;
+    display: flex;
+}
+.card{
+    border: 1px solid green;
+    width: 50%;
+    height: 100%;
+}
+
+.card-user{
+    position: relative;
+}
+.form{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    width: 90%;
+    height: 60%;
+}
+
+input.email{
+    width: 80%;
+    height: 2em;
+    padding: 4px;
+    font-weight: 600;
+    font-size: 1.1rem;
+        border: none;
+}
+
+.register{
+    padding: 5px;
+    width: 50%;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.form, input, .checkbox, button{
+        box-shadow: 0 0 10px;
+} 
+
+header{
+    font-size: 2rem;
+    font-weight: 700;
+    text-shadow:
+     0 -2px green,
+    0 2px white,
+    0 -4px green;
+}
+
+p{
+    position: absolute;
+    /* left: 50%; */
+    /* transform: translateX(-50%); */
+    width: 150px;
+    height: 75px;
+    /* border: 1px solid; */
+    /* border-radius: 100%; */
+   /* display: grid; */
+   /* place-content: center; */
+   background-color: green;
+   color: white;
+   text-align: center;
+   font-weight: 800;
+   line-height: 19px;
+   padding: 15px;
+   /* z-index: 3; */
+   /* animation: quote 10s infinite linear; */
+}
+
+.p1{
+    left: 0;
+    top: 0;
+    animation-delay: 10s;
+}
+.p2{
+    right: 0;
+    top: 0;
+animation-delay: 5s;
+}
+.p3{
+    bottom: 0;
+    left: 0;
+    animation-delay: 7s;
+}
+.p4{
+    bottom: 0;
+    right: 0;
+    animation-delay: 1s;
+}
+
+/* @keyframes quote {
+    to{
+        transform: translateY(45rem);
+        background-color: white;
+        color: green;
+    }
+} */
+
+
+
+/* nigerian flag  */
+.flag{
+    height: 100%;
+    display: flex;
+}
+.flag span{
+    height: 100%;
+    width: 100%;
+}
+.green{
+    background-color: green;
+}
+.white{
+    background-color: white;
+}
+
+/* images  */
+/* .card-img{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, min(100px, 1fr));
+    grid-template-rows: minmax(200px, 300px);
+    grid-auto-flow: dense;
+}
+.img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.oddImg{
+    grid-row: span 2;
+    grid-column: span 2;
+}
+.evenImg{
+    grid-column: span 2;
+} */
+
+.card-img{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.img{
+    width: calc(100% / 3);
+    height: calc(100%/3);
+    object-fit: cover;
+}
+
+@media screen and (max-width: 720px){
+    .container{
+        position: relative;
+    }
+    .card{
+        width: 100%;
+    }
+    .card-user{
+        position: absolute;
+    }
+    .flag{
+        height: 60%;
+        width: 90%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    /* .card-img{
+        z-index: 2;
+    } */
+    .form{
+        z-index: 5;
+    }
+}
