@@ -1,125 +1,130 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-header, h2 {
-    -webkit-user-select: none;
-    user-select: none;
+header,
+h2 {
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #838282;
-    font-size: 15px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #838282;
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-header{
-    font-size: 1.9em;
+header {
+  font-size: 1.9em;
 }
 
-.todoList{
-    list-style-type: none;
-    position: relative;
-    width: 300px;
-    min-height: 50px;
-    padding: 10px 4px;
-    margin-bottom: 6px;
-    font-weight: 200;
-    font-size: 1.1em;
-    text-overflow: hidden;
-    outline: none;
-    border: 1px solid #838282;
-    background-color: #fff;
-    cursor: pointer;
-    box-shadow: 0 0 4px;
-    -webkit-user-select: none;
-    user-select: none;
+.todoList {
+  list-style-type: none;
+  position: relative;
+  width: 300px;
+  min-height: 50px;
+  padding: 10px 4px;
+  margin-bottom: 6px;
+  font-weight: 200;
+  font-size: 1.1em;
+  text-overflow: hidden;
+  outline: none;
+  border: 1px solid #838282;
+  background-color: #fff;
+  cursor: pointer;
+  box-shadow: 0 0 4px;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 .completed {
-    opacity: .3;
-    box-shadow: inset 0 0 4px;
+  opacity: 0.3;
+  box-shadow: inset 0 0 4px;
 }
 
-.completed .complete svg:hover, .completed .del svg:hover {
-    fill: #838282;
-}
-
+/* .completed .complete svg:hover,
+.completed .del svg:hover {
+  fill: #838282;
+} */
 
 .todoList svg {
-    fill: #838282;
-    width: 25px;
-    height: 15px;
-    margin: 4px;
+  display: none;
+  fill: #838282;
+  width: 25px;
+  height: 15px;
+  margin: 4px;
+}
+
+.todoList:hover svg {
+  display: block;
 }
 
 .todoList:hover .complete svg {
-    fill: #5fb65f;
+  fill: #5fb65f;
 }
 
 .complete {
-    position: absolute;
-    right: 29px;
-    bottom: 0;
+  position: absolute;
+  right: 29px;
+  bottom: 0;
 }
 
 .del {
-    position: absolute;
-    right: 0;
-    bottom: 0;
+  position: absolute;
+  right: 0;
+  bottom: 0;
 }
 
 .todoList:hover .del svg {
-    fill: #ec2828;
+  fill: #ec2828;
 }
 
 form {
-    display: flex;
-    align-items: center;
-    margin: 25px auto;
+  display: flex;
+  align-items: center;
+  margin: 25px auto;
 }
 
 #input {
-    width: 250px;
-    height: 30px;
-    padding: 4px;
-    font-weight: 200;
-    font-size: 1.1em;
-    outline: none;
-    border-width: 1px;
-    border-right: none;
-
+  width: 250px;
+  height: 30px;
+  padding: 4px;
+  font-weight: 200;
+  font-size: 1.1em;
+  outline: none;
+  border-width: 1px;
+  border-right: none;
 }
 
-button #todoSubmit{
-    width: 50px;
-    padding: 4px;
-    height: 30px;
-    outline: none;
-    border-width: 1px;
-    border-left: none;
-    background-color: #faebd704;
-    cursor: pointer;
+button #todoSubmit {
+  width: 50px;
+  padding: 4px;
+  height: 30px;
+  outline: none;
+  border-width: 1px;
+  border-left: none;
+  background-color: #faebd704;
+  cursor: pointer;
 }
 
 button#todoSubmit:hover {
-    background-color: #faebd7;
+  background-color: #faebd7;
 }
 
 #todoSubmit svg {
-    width: 30px;
-    height: 30px;
+  width: 30px;
+  height: 30px;
 }
 
-#todoSubmit span{
-    display: none;
+#todoSubmit span {
+  display: none;
 }
 
 ul {
-    padding: 0;
+  padding: 0;
 }

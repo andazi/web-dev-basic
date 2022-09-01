@@ -4,7 +4,9 @@ const ul = document.querySelector('#task');
 
 form.addEventListener("submit", (e) =>{
     e.preventDefault();
-    addTodo();
+   if(input.value !== ''){
+      addTodo();
+   }
 });
  
 // add todo
@@ -55,7 +57,7 @@ ul.addEventListener("click", (e) =>{
 // goal for completed todo is to move element to bottom
 // for(let li of ul.children){
 //     console.dir(li.classList);
-//     if(li.classList.includes(completed)){
+//     if(li.classList.contains(completed)){
 //         console.log('check this')
 //     }else{
 //         console.log('noting');
