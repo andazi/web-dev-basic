@@ -1,0 +1,250 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    font-family: sans-serif;
+    font-size: 18px;
+    display: grid;
+    place-items: center;
+}
+
+.container {
+    width: 33rem;
+    height: 33rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 0 5px;
+    background: rgb(67, 56, 159);
+    background: linear-gradient(to bottom left, rgb(67, 56, 159) 0%, rgb(78, 198, 202) 100%)
+}
+
+/* all span to block */
+span {
+    display: block;
+}
+
+.days {
+    flex: 2 1 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+
+.one {
+    /* border: 1px solid; */
+    position: relative;
+    height: 10em;
+    width: 3em;
+}
+
+.one>* {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 1)
+}
+
+.one-top,
+.one-bottom {
+    height: 20%;
+    width: 3em;
+}
+
+.one-middle {
+    height: 40%;
+    width: 1em;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.one-bottom {
+    bottom: 0;
+}
+
+.one-left,
+.one-right {
+    top: 50%;
+    transform: translateY(-50%);
+    height: 60%;
+    width: 50%;
+}
+
+.one-right {
+    right: 0;
+}
+
+.container:hover .one-top {
+    animation: one-top 2s linear forwards;
+}
+
+@keyframes one-top {
+    to {
+        transform: translateY(-50%);
+        box-shadow: 0 5px 5px rgb(67,
+                56,
+                159, 0.8);
+    }
+}
+
+.container:hover .one-bottom {
+    animation: one-bottom 2s linear forwards;
+}
+
+@keyframes one-bottom {
+    to {
+        transform: translateY(50%);
+        box-shadow: 0 -5px 5px rgb(67,
+                56,
+                159, 0.8);
+    }
+}
+
+
+
+.container:hover .one-left {
+    animation: one-left 2s linear forwards;
+}
+
+@keyframes one-left {
+    to {
+        transform: translateX(-50%) translateY(-50%);
+        box-shadow: 5px 0 5px rgb(67,
+                56,
+                159, 0.8);
+    }
+}
+
+.container:hover .one-right {
+    animation: one-right 2s linear forwards;
+}
+
+@keyframes one-right {
+    to {
+        transform: translateX(50%) translateY(-50%);
+        box-shadow: -5px 0 5px rgb(67,
+                56,
+                159, 0.8);
+    }
+}
+
+.zero {
+    position: relative;
+    width: 10em;
+    height: 10em;
+    border-radius: 100%;
+}
+
+.container:hover .zero {
+    animation: zero-rotate 2s linear infinite;
+    box-shadow: 0 0 5px rgb(67,
+            56,
+            159, 0.8);
+}
+
+@keyframes zero-rotate {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.zero>* {
+    position: absolute;
+    width: 10em;
+    height: 10em;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: none;
+    border-radius: 100%;
+}
+
+.zero-shadow {
+    border: 3em solid rgba(64, 255, 255, 0.69);
+}
+
+.zero-top {
+    border: 3em solid transparent;
+    border-top-color: rgba(255, 255, 255, 1);
+}
+
+.container:hover .zero-top {
+    animation: zero-top 2s linear forwards;
+}
+
+
+@keyframes zero-top {
+    to {
+        transform: translate(-50%, -55%);
+    }
+}
+
+.zero-right {
+    border: 3em solid transparent;
+    border-right-color: rgba(255, 255, 255, 1);
+}
+
+.container:hover .zero-right {
+    animation: zero-right 2s linear forwards;
+}
+
+@keyframes zero-right {
+    to {
+        transform: translate(-45%, -50%);
+    }
+}
+
+.zero-bottom {
+    border: 3em solid transparent;
+    border-bottom-color: rgba(255, 255, 255, 1);
+}
+
+.container:hover .zero-bottom {
+    animation: zero-bottom 2s linear forwards;
+}
+
+@keyframes zero-bottom {
+    to {
+        transform: translate(-50%, -45%);
+    }
+}
+
+.zero-left {
+    border: 3em solid transparent;
+    border-left-color: rgba(255, 255, 255, 1);
+    ;
+}
+
+.container:hover .zero-left {
+    animation: zero-left 2s linear forwards;
+}
+
+@keyframes zero-left {
+    to {
+        transform: translate(-55%, -50%);
+    }
+}
+
+.letters {
+    flex: 1 1 0;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 2em;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 1);
+    text-shadow: 0 5px rgb(67,
+            56,
+            159),
+        0 2px rgb(78, 198, 202);
+    transition: all 2s linear;
+}
+
+.container:hover .letters {
+    letter-spacing: 4px;
+}
