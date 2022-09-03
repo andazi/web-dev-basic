@@ -19,7 +19,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    box-shadow: 0 0 5px;
+    box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.712);
+    border-radius: 10%;
     background: rgb(67, 56, 159);
     background: linear-gradient(to bottom left, rgb(67, 56, 159) 0%, rgb(78, 198, 202) 100%)
 }
@@ -87,7 +88,7 @@ span {
 @keyframes one-top {
     to {
         transform: translateY(-50%);
-        box-shadow: 0 5px 5px rgb(67,
+        box-shadow: inset 0 -5px 5px rgb(67,
                 56,
                 159, 0.8);
     }
@@ -100,7 +101,7 @@ span {
 @keyframes one-bottom {
     to {
         transform: translateY(50%);
-        box-shadow: 0 -5px 5px rgb(67,
+        box-shadow: inset 0 -5px 5px rgb(67,
                 56,
                 159, 0.8);
     }
@@ -128,9 +129,11 @@ span {
 @keyframes one-right {
     to {
         transform: translateX(50%) translateY(-50%);
-        box-shadow: -5px 0 5px rgb(67,
+        box-shadow: 5px 0 5px rgb(67,
                 56,
-                159, 0.8);
+                159, 0.8)
+        ;
+
     }
 }
 
@@ -232,6 +235,7 @@ span {
 }
 
 .letters {
+    margin-bottom: 1em;
     flex: 1 1 0;
     text-align: center;
     text-transform: uppercase;
@@ -247,4 +251,8 @@ span {
 
 .container:hover .letters {
     letter-spacing: 4px;
+    text-shadow: 0 10px rgb(67,
+                56,
+                159),
+            0 5px rgb(78, 198, 202);
 }
