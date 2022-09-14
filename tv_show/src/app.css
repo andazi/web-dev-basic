@@ -154,7 +154,6 @@ button.icons {
     100% {
         visibility: visible;
         width: 11em;
-        background-color: var(--bg-light);
         border: 2px solid;
         border-radius: 5em 0 0 5em;
 
@@ -162,42 +161,99 @@ button.icons {
 }
 
 /* search results  */
+.search-container {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    width: 17em;
+    min-height: 10em;
+}
+
+.show-result{
+    animation: result 2s linear forwards;
+}
+
+@keyframes result{
+    0%{
+        display: block;
+        opacity: 0;
+    }
+    100%{
+        display: block;
+        opacity: 1;
+    }
+}
+
+.exit {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(50%, -50%);
+    width: 2em;
+    height: 2em;
+    border: 1px solid;
+    border-radius: 100%;
+    box-shadow: 0 0 5px #000;
+
+    z-index: 1;
+    display: grid;
+    place-items: center;
+
+}
+
+.exit span {
+    position: absolute;
+    width: 2em;
+    height: 3px;
+    border: 2px solid purple;
+
+}
+
+.one-stroke {
+    transform: rotate(45deg);
+}
+
+.two-stroke {
+    transform: rotate(-45deg);
+}
+
 .search-result {
     position: absolute;
-    top: 1.5em;
-    font-size: 1em;
-    width: 11em;
-    background-color: var(--highlight-light);
-    color: var(--bg-light);
+    padding: 1em;
+    background-color: #fff;
+    color: #000;
+    box-shadow: 0 0 10px;
+    border: 1px solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    flex-wrap: wrap;
 }
 
 .search-result li {
     list-style: none;
-    border-top: 1px solid;
+    box-shadow: 0 0 4px;
     padding: 4px;
     line-height: 1;
     font-style: italic;
+    font-size: .8em;
+    font-weight: 700;
+    text-overflow: ellipsis;
+    overflow: hidden;
     overflow: ellipse;
     white-space: hidden;
+    width: 5em;
+    height: 5em;
 }
 
- .showList .hideList {
-     display: block;
- }
+  .search-result li:focus {
+      box-shadow: inset 0 0 5px;
+  }
 
- .hideList {
-     display: none;
- }
 
- .view-more {
-     color: #00f;
-     text-decoration: underline;
-     text-align: right;
- }
-
- .view-more:hover {
-     color: var(--bg-light);
- }
 
 /* user profiles  */
 
@@ -217,7 +273,7 @@ button.icons {
 
 /* hover on profile */
 
-.user:hover #profile {
+.user:focus #profile, .user:hover #profile {
     position: absolute;
     top: 10vh;
     right: 5px;

@@ -4,18 +4,220 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AMOVIES</title>
-    <link rel="stylesheet" href="src/app.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <!-- <script src="https://unpkg.com/axios/dist/axios.min.js"></script> -->
+    <title>navBar</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-size: 18px;
+            font-weight: 500;
+            background-color: rgb(29, 207, 89);
+            color: var(--font-light);
+            font-family: 'Elsie', 'Roboto', sans-serif;
+            line-height: 1.6;
+            word-spacing: 2px;
+        }
+
+
+        nav {
+            position: fixed;
+            height: 10%;
+            width: 100%;
+            color: #fff;
+            font-family: 'Roboto', sans-serif;
+            cursor: pointer;
+            background-color: #ffffff4f;
+        }
+
+        .nav-bar,
+        .nav-heading,
+        .search-form {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-bar {
+            justify-content: space-between;
+            padding: 0 1em;
+        }
+
+        .nav-heading {
+            gap: 20px;
+        }
+
+
+        #profile {
+            display: none;
+        }
+
+        .icons {
+            display: block;
+            width: 2em;
+            height: 2em;
+            padding: 5px;
+        }
+
+        .icons:hover {
+            fill: teal;
+        }
+
+        #tv-name-search {
+            height: 2.5em;
+            width: 0;
+            outline: 2px solid;
+            visibility: hidden;
+
+        }
+
+        button.icons {
+            background-color: transparent;
+            border: none;
+            height: 2.5em;
+            width: 2.5em;
+        }
+
+        .search-form:focus-within #tv-name-search {
+            animation: input 1.5s linear forwards;
+        }
+
+        @keyframes input {
+            10% {
+                border: 2px solid;
+                border-radius: 5em 0 0 5em;
+                border-right: none;
+            }
+
+            100% {
+                visibility: visible;
+                width: 13em;
+                background-color: rgb(255, 255, 255);
+                border: 2px solid;
+                border-radius: 5em 0 0 5em;
+
+            }
+        }
+
+        .search-form {
+            position: relative;
+        }
+
+        .search-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, 50%);
+            width: 17em;
+            min-height: 10em;
+        }
+
+        .exit {
+            position: absolute;
+            top: 0;
+            right: 0;
+            transform: translate(50%, -50%);
+            width: 2em;
+            height: 2em;
+            border: 1px solid;
+            border-radius: 100%;
+            box-shadow: 0 0 5px #000;
+
+            z-index: 1;
+            display: grid;
+            place-items: center;
+
+        }
+
+        .exit span {
+            position: absolute;
+            width: 2em;
+            height: 3px;
+            border: 2px solid purple;
+
+        }
+
+        .one-stroke {
+            transform: rotate(45deg);
+        }
+
+        .two-stroke {
+            transform: rotate(-45deg);
+        }
+
+        .search-result {
+            position: absolute;
+
+            padding: 1em;
+            background-color: #fff;
+            color: #000;
+            box-shadow: 0 0 10px;
+            border: 1px solid;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1em;
+            flex-wrap: wrap;
+        }
+
+        .search-result li {
+            list-style: none;
+            box-shadow: 0 0 4px;
+            padding: 4px;
+            line-height: 1;
+            font-style: italic;
+            font-size: .8em;
+            font-weight: 700;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            overflow: ellipse;
+            white-space: hidden;
+            width: 5em;
+            height: 5em;
+        }
+
+        .search-result li:focus {
+            box-shadow: inset 0 0 5px;
+        }
+
+        .toggle-btn {
+            position: relative;
+        }
+
+        .toggle-btn .icons {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        /* toggling dark/light mode */
+
+        .light {
+            display: block;
+        }
+
+        .dark {
+            display: none;
+        }
+
+        .toggle-btn.change .light {
+            display: none;
+        }
+
+        .toggle-btn.change .dark {
+            display: block;
+        }
+    </style>
 </head>
 
 <body>
     <nav class="nav-bar">
         <span class="logo">AMOVIES</span>
         <div class="nav-heading">
-            <div class="toggle-btn" tabindex="0">
+            <div class="toggle-btn">
                 <span class="icons light">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                         <!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
@@ -32,7 +234,7 @@
                     </svg>
                 </span>
             </div>
-            <form id="search-form">
+            <form class="search-form">
                 <input type="text" name="query" id="tv-name-search" placeholder="Search TV Show name">
                 <button type="button" title="search Tv Show name" class="icons" id="tv-search">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -41,7 +243,16 @@
                             d="M500.3 443.7l-119.7-119.7c27.22-40.41 40.65-90.9 33.46-144.7C401.8 87.79 326.8 13.32 235.2 1.723C99.01-15.51-15.51 99.01 1.724 235.2c11.6 91.64 86.08 166.7 177.6 178.9c53.8 7.189 104.3-6.236 144.7-33.46l119.7 119.7c15.62 15.62 40.95 15.62 56.57 0C515.9 484.7 515.9 459.3 500.3 443.7zM79.1 208c0-70.58 57.42-128 128-128s128 57.42 128 128c0 70.58-57.42 128-128 128S79.1 278.6 79.1 208z" />
                     </svg>
                 </button>
-          
+                <!-- <ul class="search-result">
+                    <li>un change</li>
+                    <li>killer of solomon's 2045th daughter</li>
+                    <li>changes</li>
+                    <li>...</li>
+                    <li>changes</li>
+                    <li>un change</li>
+                    <li>killer of solomon's 2045th daughter</li>
+                    <li>changes</li>
+                </ul> -->
             </form>
             <div class="search-container">
                 <span class="exit">
@@ -63,7 +274,8 @@
                     <li>changes</li>
                 </ul>
             </div>
-            <span class="user" tabindex="0">
+
+            <span class="user">
                 <span class="icons">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                         <!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
@@ -71,7 +283,7 @@
                             d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c39.77 0 72 32.24 72 72S295.8 272 256 272c-39.76 0-72-32.24-72-72S216.2 128 256 128zM256 448c-52.93 0-100.9-21.53-135.7-56.29C136.5 349.9 176.5 320 224 320h64c47.54 0 87.54 29.88 103.7 71.71C356.9 426.5 308.9 448 256 448z" />
                     </svg>
                 </span>
-                <ul id="profile" tabindex="0">
+                <ul id="profile">
                     <li>
                         <span class="icons">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -96,7 +308,7 @@
                                         d="M512 194.8c0 101.3-82.4 183.8-183.8 183.8-101.7 0-184.4-82.4-184.4-183.8 0-101.6 82.7-184.3 184.4-184.3C429.6 10.5 512 93.2 512 194.8zM0 501.5h90v-491H0v491z" />
                                 </svg>
                             </span>
-                            <span>Patreon</span>
+                            <span>buy me coffee</span>
                         </a>
                     </li>
                     <li>
@@ -139,28 +351,6 @@
             </span>
         </div>
     </nav>
-    <main>
-        <section class="top-tv">
-        </section>
-    </main>
-    
-    <footer>
-        <p>credits</p>
-        <ul>
-            <li>
-                <a href="https://tvmaze.com" title="credit for API belongs to tvmaze">tvmaze API</a>
-            </li>
-            <li>
-                <a href="https://fonts.google.com" title="credit for fonts belongs to google">google fonts</a>
-            </li>
-            <li>
-                <a href="https://fontawesome.com" title="credit for svg belongs to awesome">fontawesome</a>
-            </li>
-        </ul>
-    </footer>
-
-
-
-    <script src="src/app.js"></script>
-   
 </body>
+
+</html>

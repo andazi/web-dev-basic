@@ -1,14 +1,14 @@
-let months = [
-    'january', 'february',
-    'march', 'april',
-    'may', 'june',
-    'july', 'august',
-    'september', 'october',
-    'november', 'december'
-]
-
-function checkMonthQuarter(checkMonth) {
-    checkMonth = checkMonth.toLowerCase()
+const quarterOf = (month) => {
+    // Your code here
+    let months = [
+        'january', 'february',
+        'march', 'april',
+        'may', 'june',
+        'july', 'august',
+        'september', 'october',
+        'november', 'december'
+    ]
+    checkMonth = month.toLowerCase()
     for (let index = 0; index <= months.length; index++) {
         let month = months[index]
         if (checkMonth === month) {
@@ -26,6 +26,7 @@ function checkMonthQuarter(checkMonth) {
             }
         }
     }
+
 }
 
-checkMonthQuarter('januAry')
+quarterOf('march')

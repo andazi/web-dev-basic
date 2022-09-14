@@ -1,0 +1,32 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-size: 18px;
+    font-family: sans-serif;
+}
+
+.nav{
+    height: 5vh;
+    font-weight: 700;
+    border: 2px solid;
+    font-size: 1em;
+    padding: 0 1em;
+}
+ul{
+    display: flex;
+    gap: 1em;
+    align-items: center;
+    justify-content: space-between;
+}
+
+li{
+    list-style: none;
+}
+
+.container{
+    
+}

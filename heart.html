@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-size: 18px;
+        }
+        .media{
+            position: relative;
+            border: 1px solid;
+            height: 100vh;
+            display: grid;
+            place-items: center;
+        }
+        span{
+            position: absolute;
+            width: 5em;
+            height: 5em;
+            border: 1px solid;
+        }
+        .one, .two{
+            border-radius: 100%;
+        }
+        .one{
+            left: 50%;
+        }
+        .two{
+            right: 50%;
+      
+        }
+        .three{
+            width: 10rem;
+            height: 10rem;
+            transform: rotate(45deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="media">
+        <span class="one"></span>
+        <span class="two"></span>
+        <span class="three"></span>
+    </div>
+</body>
+</html>

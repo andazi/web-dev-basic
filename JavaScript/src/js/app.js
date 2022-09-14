@@ -2400,6 +2400,88 @@
 // as other aliases to make request like post, ...
 
 
+// Object prototypes
+// prototype are template objects that containss bunch of methods 
+// use to create custom method or edit existing method
+// Array.prototype
+// String.prototype
+// Number.prototype
+// Object.prototype
+
+// String.prototype.yell = function(){
+//     return `FOR THE LOVE GOD ${this.toUpperCase()}. I LOVE YOU, SILLY (~^~)`
+// }
+
+// "maureen".yell
+
+
+
+// new keyword and constructor
+
+// classes
+
+// extends and super
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

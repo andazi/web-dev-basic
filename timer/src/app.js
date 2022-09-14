@@ -6,44 +6,18 @@ const countSecond = document.querySelector('.second-count');
 const countMinute = document.querySelector('.minute-count');
 const countHour = document.querySelector('.hour-count');
 
-// time initialization
+// variables initialization
 let seconds = 0;
 let minutes = 0;
 let hours = 0;
+let startTimer = null;
 
-
-playPause.addEventListener('click', () => {
-    playPause.classList.toggle('pause')
-    if(playPause.classList.contains('pause')){
-        playPause.textContent = 'pause';
-        startTimer()
-    } else{
-        playPause.textContent = 'play';
-        // startTimer = null;
-        // startTimer.clearInterval(null)
-
-    }
-})
-
-resetTimer.addEventListener('click', () => {
-    reset()
-    timerList.innerHTML = '';
-})
-
-recordTimer.addEventListener('click', () => {
-    let presentTime = document.createElement('li');
-    presentTime.innerHTML = `<li>${hours} : ${minutes} : ${seconds}</li>`;
-    timerList.append(presentTime);
-
-})
-
-
-
+// stopWatch logic
 const stopWatch = () => {
     seconds++
-    if(seconds < 10){
+    if (seconds < 10) {
         countSecond.textContent = `0${seconds}`;
-    }else{
+    } else {
         countSecond.textContent = seconds;
     }
 
@@ -70,17 +44,47 @@ const stopWatch = () => {
     }
 }
 
+// play and pause eventListener
+playPause.addEventListener('click', () => {
+    playPause.classList.toggle('pause')
+    if (playPause.classList.contains('pause')) {
+        playPause.textContent = 'pause';
+        startTimer = window.setInterval(() => stopWatch(), 1000)
+    } else {
+        playPause.textContent = 'play';
+        window.clearInterval(startTimer)
 
-const startTimer = (() => (setInterval(() => stopWatch(), 1000)
-))
+    }
+})
 
-const reset = () =>{
+// reset eventListener
+resetTimer.addEventListener('click', () => {
+    reset()
+})
+
+
+// reset all timer
+const reset = () => {
     seconds = 0;
     minutes = 0;
     hours = 0;
+
+    countSecond.textContent = `0${seconds}`;
+    countMinute.textContent = `0${hours}`;
+    countHour.textContent = `0${minutes}`;
+
+    timerList.innerHTML = '';
+
 }
 
+// record time
+recordTimer.addEventListener('click', () => {
+    let presentTime = document.createElement('li');
+    presentTime.innerHTML = `<li>${countHour.textContent} :
+     ${countMinute.textContent} : ${countSecond.textContent}</li>`;
+    timerList.append(presentTime);
 
+})
 
 
 

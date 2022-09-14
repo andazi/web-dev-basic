@@ -2,6 +2,7 @@ const body = document.querySelector('body');
 const toggle = document.querySelector('.toggle-btn');
 const allTvShows = document.querySelector('main');
 const tvShow = document.querySelector('.top-tv');
+const mySearchResult = document.querySelector('.search-container')
 const tvSearch = document.querySelector('#search-form');
 const searchList = document.querySelector('.search-result')
 
@@ -107,6 +108,7 @@ const scrollTv = () =>{
             let tvPremiered = parseInt(show.premiered);
             if (tvPremiered === year) {
                 let thisShow = document.createElement('div');
+                thisShow.setAttribute('tabindex', '0');
                 thisShow.classList.add("tv-card");
                 thisShow.innerHTML = `
                     <div class="tv-img">
@@ -135,7 +137,9 @@ makeRequest()
 
 tvSearch.addEventListener('submit', async (e) => {
     e.preventDefault();
-    console.dir(e.target)
+
+    mySearchResult.classList.add('show-result');
+
     let querySearch = tvSearch.elements.query.value;
 
     const config = {
@@ -145,40 +149,26 @@ tvSearch.addEventListener('submit', async (e) => {
     }
     let queryData = await axios.get(`https://api.tvmaze.com/search/shows?`, config);
     queryData = queryData.data
-    // console.log(queryData)
-    
 
-    for (let res = 0; res <= queryData.length; res++) {
+    
+    for (let res of queryData){
         let result = document.createElement('li');
         result.textContent = queryData[res].show.name;
         searchList.append(result);
         console.log(searchList)
 
-        if (res > 4) {
-            result.classList.add('hideList');
-        }
     }
 
-    // creating view more toggle
-
-    let views = document.createElement('li');
-    views.textContent = 'view more';
-
-    views.classList.add('view-more');
-    views.classList.remove('hideList')
-    searchList.append(views)
-
-    views.addEventListener('click', () => {
-        searchList.classList.add('showList');
-        views.style.display = 'none';
-
-    })
-
+   
     // clear search input and result
     // not working
-    tvSearch.addEventlistener('mouseleave', (event) => {
-        console.log('mouseleave')
-        searchList.innerHtml = '';
-        querySearch = '';
+    tvSearch.addEventlistener('click', (e) => {
+        let searchResult = e.target.className;
+        if(searchResult !== 'show-result' || searchResult === 'exit'){
+            searchList.innerHtml = '';
+            querySearch = '';
+            mySearchResult.classList.remove('show-result')
+        }
+       
     })
 })
