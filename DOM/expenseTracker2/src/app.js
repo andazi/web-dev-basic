@@ -71,7 +71,7 @@ const newExpense = () => {
     <td class='amountDate'>${newEvent.date.value}</td>
     <td class='amt'>${newEvent.amount.value}</td>
     <td class='change'>${newEvent.change()}</td>
-    <td class=arrow>${newEvent.arrow()}</td>
+    <td class='arrow'>${newEvent.arrow()}</td>
     `
 
     if (newEvent.amount.value !== '' && 

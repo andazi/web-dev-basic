@@ -1,49 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        body{
+        body {
             font-size: 18px;
-        }
-        .media{
-            position: relative;
-            border: 1px solid;
             height: 100vh;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1em;
+        }
+
+        .media {
+            position: relative;
             display: grid;
             place-items: center;
+            width: 10rem;
+            height: 10rem;
+            border: 1px solid;
         }
-        span{
+
+        .heart {
             position: absolute;
+            width: 5em;
+            height: 5em;
+            border: 1px solid red;
+            border-top: none;
+            border-left: none;
+            transform: rotate(45deg);
+        }
+
+        .heart::before,
+        .heart::after {
+            position: absolute;
+            content: "";
+            width: 5em;
+            height: 5em;
+            border-radius: 100%;
+        }
+
+        .heart::before {
+            left: -38%;
+            border-left: 2px solid;
+        }
+
+        .heart::after {
+            border-top: 2px solid;
+
+            top: -38%;
+        }
+
+        .heart1 {
+            position: absolute;
+            width: 5em;
+            height: 5em;
+            border: 1px solid red;
+            border-top: none;
+            border-left: none;
+            transform: rotate(45deg);
+        }
+
+        .heart1::before,
+        .heart1::after {
+            position: absolute;
+            content: "";
             width: 5em;
             height: 5em;
             border: 1px solid;
         }
-        .one, .two{
-            border-radius: 100%;
+
+        .heart1::before {
+            left: -38%;
+            border-radius: 100% 100% 0 100%;
+
         }
-        .one{
-            left: 50%;
+
+        .heart1::after {
+            border-radius: 100% 100% 0 100%;
+            top: -38%;
         }
-        .two{
-            right: 50%;
-      
+
+        .heart2 {
+            position: absolute;
+            width: 6rem;
+            height: 6.5em;
         }
-        .three{
-            width: 10rem;
-            height: 10rem;
+
+        .heart2::before {
+            position: absolute;
+            content: "";
+            width: 5em;
+            height: 6.5em;
+            border: 1px solid green;
+            border-radius: 50% 50% 0 25%;
             transform: rotate(45deg);
+            left: 20%;
+        }
+
+        .heart2::after {
+            position: absolute;
+            content: "";
+            width: 5em;
+            height: 6.5em;
+            border: 1px solid blue;
+            border-radius: 50% 50% 25% 0;
+            transform: rotate(-45deg);
+        }
+
+        .heart3{
+            position: relative;
+            width: 5rem;
+            height: 5rem;
+            border: 1px solid red;
+            transform: rotate(45deg);
+        }
+        .heart3::before,
+        .heart3::after{
+            position: absolute;
+            content: "";
+            width: 5rem;
+            height: 5rem;
+            border: 1px solid;
+            border-radius: 50%;
+        }
+        .heart3::after{
+            bottom: 50%;
+        }
+        .heart3::before{
+            right: 50%;
         }
     </style>
 </head>
+
 <body>
     <div class="media">
-        <span class="one"></span>
-        <span class="two"></span>
-        <span class="three"></span>
+        <span class="heart"></span>
+    </div>
+    <div class="media">
+        <span class="heart1"></span>
+    </div>
+    <div class="media">
+        <span class="heart2"></span>
+    </div>
+    <div class="media">
+        <span class="heart3"></span>
     </div>
 </body>
+
 </html>
