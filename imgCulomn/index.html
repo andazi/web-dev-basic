@@ -12,18 +12,50 @@
 <body>
     <nav class="nav">
         <ul>
-            <li>HOME</li>
-            <li>PROFILE</li>
+            <li>Home</li>
+            <li>Today</li>
+            <li>Create</li>
+            <li id="search-bar">
+                <form action="submit">
+                    <input placeholder="Search" type="search" name="search" id="search">
+                </form>
+            </li>
+            <li class="notification">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                        <!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
+                        <path
+                            d="M256 32V51.2C329 66.03 384 130.6 384 208V226.8C384 273.9 401.3 319.2 432.5 354.4L439.9 362.7C448.3 372.2 450.4 385.6 445.2 397.1C440 408.6 428.6 416 416 416H32C19.4 416 7.971 408.6 2.809 397.1C-2.353 385.6-.2883 372.2 8.084 362.7L15.5 354.4C46.74 319.2 64 273.9 64 226.8V208C64 130.6 118.1 66.03 192 51.2V32C192 14.33 206.3 0 224 0C241.7 0 256 14.33 256 32H256zM224 512C207 512 190.7 505.3 178.7 493.3C166.7 481.3 160 464.1 160 448H288C288 464.1 281.3 481.3 269.3 493.3C257.3 505.3 240.1 512 224 512z" />
+                    </svg>
+            </li>
+            <li class="message">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                        <!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
+                        <path
+                            d="M511.1 63.1v287.1c0 35.25-28.75 63.1-64 63.1h-144l-124.9 93.68c-7.875 5.75-19.12 .0497-19.12-9.7v-83.98h-96c-35.25 0-64-28.75-64-63.1V63.1c0-35.25 28.75-63.1 64-63.1h384C483.2 0 511.1 28.75 511.1 63.1z" />
+                    </svg>
+            </li>
+            <li class="profile">
+                <span class="profile-img">
+                    <img class="img" title="profile" src="src/images/andazi.jpg">
+                </span>
+                <span class="profile-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                        <!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
+                        <path
+                            d="M511.1 63.1v287.1c0 35.25-28.75 63.1-64 63.1h-144l-124.9 93.68c-7.875 5.75-19.12 .0497-19.12-9.7v-83.98h-96c-35.25 0-64-28.75-64-63.1V63.1c0-35.25 28.75-63.1 64-63.1h384C483.2 0 511.1 28.75 511.1 63.1z" />
+                    </svg>
+                </span>
+            </li>
         </ul>
     </nav>
     <div class="container">
         <div class="media">
             <img class="img" title="image" src="src/images/andazi.jpg">
-
+            <div class="show-like">
+                <span class="heart"></span>
+            </div>
             <div class="like">
-
-                <span class="heart3"></span>
-
+                <span class="heart"></span>
             </div>
             <div class="bottom">
                 <h3 class="img-title">Andazi</h3>
@@ -35,20 +67,18 @@
                     <div class="toggle-options">
                         <span class="circle"></span>
                         <span class="circle"></span>
-
                         <span class="circle"></span>
-
                     </div>
                 </div>
             </div>
         </div>
         <div class="media">
-            <img class="img" title="image" src="src/images/bike.jpg">
-        
+            <img class="img" title="image" src="src/images/andazi.jpg">
+            <div class="show-like">
+                <span class="heart"></span>
+            </div>
             <div class="like">
-        
-                <span class="heart3"></span>
-        
+                <span class="heart"></span>
             </div>
             <div class="bottom">
                 <h3 class="img-title">Andazi</h3>
@@ -60,20 +90,18 @@
                     <div class="toggle-options">
                         <span class="circle"></span>
                         <span class="circle"></span>
-        
                         <span class="circle"></span>
-        
                     </div>
                 </div>
             </div>
         </div>
         <div class="media">
-            <img class="img" title="image" src="src/images/fruit.jpg">
-        
+            <img class="img" title="image" src="src/images/andazi.jpg">
+            <div class="show-like">
+                <span class="heart"></span>
+            </div>
             <div class="like">
-        
-                <span class="heart3"></span>
-        
+                <span class="heart"></span>
             </div>
             <div class="bottom">
                 <h3 class="img-title">Andazi</h3>
@@ -83,22 +111,20 @@
                         <span class="line-2"></span>
                     </div>
                     <div class="toggle-options">
-                        <span class="circle circle-1"></span>
-                        <span class="circle circle-2"></span>
-        
-                        <span class="circle circle-3"></span>
-        
+                        <span class="circle"></span>
+                        <span class="circle"></span>
+                        <span class="circle"></span>
                     </div>
                 </div>
             </div>
         </div>
         <div class="media">
-            <img class="img" title="image" src="src/images/waterlamp.jpg">
-        
+            <img class="img" title="image" src="src/images/andazi.jpg">
+            <div class="show-like">
+                <span class="heart"></span>
+            </div>
             <div class="like">
-        
-                <span class="heart3"></span>
-        
+                <span class="heart"></span>
             </div>
             <div class="bottom">
                 <h3 class="img-title">Andazi</h3>
@@ -110,15 +136,38 @@
                     <div class="toggle-options">
                         <span class="circle"></span>
                         <span class="circle"></span>
-        
                         <span class="circle"></span>
-        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="media">
+            <img class="img" title="image" src="src/images/andazi.jpg">
+            <div class="show-like">
+                <span class="heart"></span>
+            </div>
+            <div class="like">
+                <span class="heart"></span>
+            </div>
+            <div class="bottom">
+                <h3 class="img-title">Andazi</h3>
+                <div class="options">
+                    <div class="follow">
+                        <span class="line-1"></span>
+                        <span class="line-2"></span>
+                    </div>
+                    <div class="toggle-options">
+                        <span class="circle"></span>
+                        <span class="circle"></span>
+                        <span class="circle"></span>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
+
+    <script src="src/app.js"></script>
 </body>
 
 </html>
