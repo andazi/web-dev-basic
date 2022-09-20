@@ -10,67 +10,132 @@ body {
 }
 
 .nav {
-    height: 8vh;
+    height: 3.5em;
+    width: 100%;
     font-weight: 700;
-    border: 2px solid;
     font-size: 1em;
-    padding: 0 1.5em;
 }
 
-.nav, ul, li {
+.nav,
+ul,
+li,
+form,
+.profile>span {
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 
-ul{
+ul {
     width: 100%;
-        gap: 2em;
+    height: 100%;
+    gap: 1em;
+    padding: 0 1em;
 }
 
-ul li {
+#search-bar {
+    width: 3em;
+    height: 100%;
 }
 
-li {
-    list-style: none;
+.nav-tab {
+    width: 4em;
     height: 2em;
-    width: 2em;
+    padding: 2px;
+    justify-content: space-around;
 }
 
-#search-bar{
+.nav-tab:hover {
+    background-color: #ed9121;
+    border-radius: 20px;
+}
+
+#search-bar {
     flex-basis: 0;
     flex-grow: 2;
 }
 
-form{
-        height: 80%;
-        width: 100%;
+form {
+    height: 100%;
+    width: 100%;
 }
 
-#search{
-    width: 100%;
-    height: 100%;
+#search {
+    width: 80%;
+    height: 70%;
     border-radius: 20px;
     padding: 10px 0 5px 10px;
+    margin-left: auto;
+    margin-right: auto;
     font-size: 1.1em;
+    font-weight: 600;
+    border: none;
+    background-color: rgb(180, 179, 180);
+    color: #000;
 }
 
-li span {
-    display: block;
+#search::placeholder {
+    font-size: 1.3rem;
+    font-weight: 600;
 }
 
-li svg {
-    width: 100%;
+#search:focus {
+    background-color: #fff;
+    outline-color: #ed9121;
+}
+
+.profile {
+    width: 6em;
+
+}
+
+.profile>span {
     height: 100%;
-    padding: 5px;
+    width: 50%;
 }
 
-.profile{
-    justify-self: end;
+.logo svg {
+    fill: #ed9121;
+    width: 3.5rem;
+    width: 3.5rem;
+    padding: 2px;
+}
+
+li svg,
+span svg {
+    width: 2rem;
+    height: 2rem;
+    padding: 5px;
+    margin-left: auto;
+}
+
+.profile-toggle svg {
+    margin-left: 0;
+}
+
+ul svg:hover {
+    fill: #ed9121;
+}
+
+.img.profile-picture {
+    border: 2px solid;
+    border-radius: 50%;
+    height: 3rem;
+    width: 3rem;
+}
+
+.profile-toggle {
+    display: grid;
+    place-items: center;
+}
+
+.profile-toggle svg:hover {
+    transform: rotate(180deg);
 }
 
 .container {
     min-height: 100vh;
+    width: 100%;
     columns: 3;
     gap: 1em;
     margin: 10px;
@@ -88,7 +153,7 @@ li svg {
     border-radius: 20px;
 }
 
-.media:hover .img{
+.media:hover .img {
     filter: brightness(50%);
 }
 
@@ -334,6 +399,10 @@ li svg {
         columns: 2;
     }
 
+    #search {
+        display: none;
+    }
+
 
 }
 
@@ -347,7 +416,7 @@ li svg {
 
 @media(min-width: 960px) {
     .container {
-        columns: 4;
+        columns: 5;
     }
 
 

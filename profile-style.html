@@ -1,0 +1,136 @@
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-size: 18px;
+    }
+
+    nav {
+        height: 3em;
+        border: 1px solid blue;
+    }
+
+    .settings {
+        width: 6em;
+        height: 0;
+        display: flex;
+        align-items: flex-end;
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    nav:hover .settings {
+        animation: show-setting 1s linear forwards;
+
+    }
+
+    @keyframes show-setting {
+        to {
+            height: 6em;
+        }
+    }
+
+    .bubble {
+        display: block;
+        border-radius: 50%;
+        border: 1px solid;
+        width: 1em;
+        height: 1em;
+    }
+
+    nav:hover .b6 {
+        animation: show-bubble 2s linear forwards;
+
+    }
+
+    nav:hover .b5 {
+        animation: show-bubble 3s linear forwards;
+
+    }
+
+    nav:hover .b4 {
+        animation: show-bubble 4s linear forwards;
+
+    }
+
+    nav:hover .b3 {
+        animation: show-bubble 5s linear forwards;
+
+    }
+
+    nav:hover .b2 {
+        animation: show-bubble 6s linear forwards;
+
+    }
+
+    nav:hover .b1 {
+        animation: show-bubble 7s linear forwards;
+    }
+
+    @keyframes show-bubble {
+        50% {
+            border-radius: 50%;
+            width: 1em;
+        }
+
+        100% {
+            width: 100%;
+            border-radius: 20px;
+        }
+    }
+
+    .bubble h3 {
+        display: none;
+        opacity: 0;
+    }
+
+    nav:hover .bubble h3 {
+        animation: show-bubble-text 7s ease-in-out forwards;
+    }
+
+    @keyframes shoe-bubble-text {
+        0% {
+            display: block;
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+            display: block;
+        }
+    }
+</style>
+
+<body>
+    <nav>
+        <div class="settings">
+            <span class="bubble b1">
+                <h3>Explore</h3>
+            </span>
+            <span class="bubble b2">
+                <h3>Market</h3>
+
+            </span>
+            <span class="bubble b3">
+                <h3>Following</h3>
+
+            </span>
+            <span class="bubble b4">
+                <h3>followers</h3>
+
+            </span>
+            <span class="bubble b5">
+                <h3>Settings</h3>
+
+            </span>
+            <span class="bubble b6">
+                <h3>Sign out</h3>
+
+            </span>
+        </div>
+    </nav>
+</body>
