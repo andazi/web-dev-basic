@@ -24,51 +24,53 @@
     }
 
     nav:hover .settings {
-        animation: show-setting 1s linear forwards;
+        animation: show-setting 400ms linear forwards;
 
     }
 
     @keyframes show-setting {
         to {
-            height: 6em;
+            height: 7em;
         }
     }
 
     .bubble {
         display: block;
         border-radius: 50%;
-        border: 1px solid;
-        width: 1em;
-        height: 1em;
+        border: 1px solid #ED9121;
+        box-shadow: 0 0 10px;
+        width: 3.1em;
+        height: 3.1em;
+        padding: 2px;
     }
 
     nav:hover .b6 {
-        animation: show-bubble 2s linear forwards;
+        animation: show-bubble 800ms linear forwards;
 
     }
 
     nav:hover .b5 {
-        animation: show-bubble 3s linear forwards;
+        animation: show-bubble 900ms linear forwards;
 
     }
 
     nav:hover .b4 {
-        animation: show-bubble 4s linear forwards;
+        animation: show-bubble 1000ms linear forwards;
 
     }
 
     nav:hover .b3 {
-        animation: show-bubble 5s linear forwards;
+        animation: show-bubble 1100ms linear forwards;
 
     }
 
     nav:hover .b2 {
-        animation: show-bubble 6s linear forwards;
+        animation: show-bubble 1200ms linear forwards;
 
     }
 
     nav:hover .b1 {
-        animation: show-bubble 7s linear forwards;
+        animation: show-bubble 1300ms linear forwards;
     }
 
     @keyframes show-bubble {
@@ -84,23 +86,22 @@
     }
 
     .bubble h3 {
-        display: none;
+        font-size: 1em;
+        font-weight: 600;
         opacity: 0;
     }
 
     nav:hover .bubble h3 {
-        animation: show-bubble-text 7s ease-in-out forwards;
+        animation: show-bubble-text 2s ease-in-out forwards;
     }
 
-    @keyframes shoe-bubble-text {
+    @keyframes show-bubble-text {
         0% {
-            display: block;
             opacity: 0;
         }
 
         100% {
             opacity: 1;
-            display: block;
         }
     }
 </style>

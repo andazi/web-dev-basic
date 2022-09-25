@@ -10,10 +10,9 @@ body {
 }
 
 .nav {
-    height: 3.5em;
-    width: 100%;
+    height: 3em;
     font-weight: 700;
-    font-size: 1em;
+    margin-top: 10px;
 }
 
 .nav,
@@ -23,13 +22,12 @@ form,
 .profile>span {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 ul {
     width: 100%;
-    height: 100%;
-    gap: 1em;
+    gap: 10px;
     padding: 0 1em;
 }
 
@@ -39,10 +37,8 @@ ul {
 }
 
 .nav-tab {
-    width: 4em;
     height: 2em;
-    padding: 2px;
-    justify-content: space-around;
+    padding: 5px;
 }
 
 .nav-tab:hover {
@@ -67,16 +63,22 @@ form {
     padding: 10px 0 5px 10px;
     margin-left: auto;
     margin-right: auto;
-    font-size: 1.1em;
-    font-weight: 600;
+    font-size: 1em;
+    font-weight: 300;
     border: none;
     background-color: rgb(180, 179, 180);
     color: #000;
 }
 
 #search::placeholder {
-    font-size: 1.3rem;
+    font-size: 1em;
     font-weight: 600;
+}
+
+#search:hover {
+    box-shadow: 0 2px 7px;
+    outline: none;
+    border: 2px solid #ed9121;
 }
 
 #search:focus {
@@ -85,26 +87,24 @@ form {
 }
 
 .profile {
-    width: 6em;
-
+    width: 4em;
 }
 
 .profile>span {
     height: 100%;
-    width: 50%;
 }
 
 .logo svg {
     fill: #ed9121;
-    width: 3.5rem;
-    width: 3.5rem;
-    padding: 2px;
+    width: 3.5em;
+    width: 3.5em;
+    padding: 1px;
 }
 
 li svg,
 span svg {
-    width: 2rem;
-    height: 2rem;
+    width: 2em;
+    height: 2em;
     padding: 5px;
     margin-left: auto;
 }
@@ -117,11 +117,15 @@ ul svg:hover {
     fill: #ed9121;
 }
 
+.profile-picture {
+    width: 75%;
+}
+
 .img.profile-picture {
     border: 2px solid;
     border-radius: 50%;
-    height: 3rem;
-    width: 3rem;
+    height: 3em;
+    width: 3em;
 }
 
 .profile-toggle {
@@ -129,21 +133,132 @@ ul svg:hover {
     place-items: center;
 }
 
-.profile-toggle svg:hover {
-    transform: rotate(180deg);
+.view-profile.profile-toggle svg {
+    transform: rotate(-180deg);
+}
+
+/* profile toggle views */
+
+.settings {
+    width: 7em;
+    height: 0;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.view-profile {
+    position: relative;
+}
+
+.view-profile.settings {
+    position: absolute;
+    top: 8%;
+    right: 1%;
+    z-index: 10;
+}
+
+.view-profile.settings {
+    animation: show-setting 400ms linear forwards;
+
+}
+
+@keyframes show-setting {
+    to {
+        height: 12em;
+    }
+}
+
+.bubble {
+    display: block;
+    border-radius: 50%;
+    border: 1px solid #ED9121;
+    background-color: #ffffff;
+    box-shadow: 0 0 5px;
+    width: 3.1em;
+    height: 3.1em;
+    padding: 2px;
+}
+
+.bubble:hover {
+    box-shadow: 0 5px 7px;
+    background-color: #ed9121;
+    color: #000;
+}
+
+.view-profile .b6 {
+    animation: show-bubble 800ms linear forwards;
+
+}
+
+.view-profile .b5 {
+    animation: show-bubble 900ms linear forwards;
+
+}
+
+.view-profile .b4 {
+    animation: show-bubble 1000ms linear forwards;
+
+}
+
+.view-profile .b3 {
+    animation: show-bubble 1100ms linear forwards;
+
+}
+
+.view-profile .b2 {
+    animation: show-bubble 1200ms linear forwards;
+
+}
+
+.view-profile .b1 {
+    animation: show-bubble 1300ms linear forwards;
+}
+
+@keyframes show-bubble {
+    50% {
+        border-radius: 50%;
+        width: 1em;
+    }
+
+    100% {
+        width: 100%;
+        border-radius: 20px;
+    }
+}
+
+.bubble h3 {
+    font-size: 1em;
+    text-align: center;
+    font-weight: 600;
+    opacity: 0;
+}
+
+.view-profile .bubble h3 {
+    animation: show-bubble-text 2s ease-in-out forwards;
+}
+
+@keyframes show-bubble-text {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
 .container {
     min-height: 100vh;
-    width: 100%;
+    /* width: 100vw; */
     columns: 3;
     gap: 1em;
-    margin: 10px;
+    padding: 10px;
 }
 
 .media {
     position: relative;
-    width: 100%;
     margin-bottom: 1em;
 }
 
@@ -164,8 +279,8 @@ ul svg:hover {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    width: 40%;
-    height: 40%;
+    width: 100%;
+    height: 100%;
 }
 
 .show-like>.heart {
@@ -308,8 +423,6 @@ ul svg:hover {
     gap: 1em;
 }
 
-
-
 /* download */
 
 .follow {
@@ -346,7 +459,7 @@ ul svg:hover {
 
 @keyframes follow {
     100% {
-        background-color: rgb(136, 132, 132);
+        background-color: #888484;
     }
 }
 
@@ -363,7 +476,7 @@ ul svg:hover {
 
 .circle {
     width: .5em;
-    height: .51em;
+    height: .5em;
     background-color: black;
     border-radius: 50%;
 }
@@ -394,25 +507,27 @@ ul svg:hover {
     }
 }
 
-@media(max-width: 560px) {
-    .container {
-        columns: 2;
+@media(max-width: 600px) {
+    ul {
+        font-size: .7em;
     }
 
-    #search {
+    #search-bar {
         display: none;
     }
 
-
-}
-
-@media(max-width: 360px) {
-    .container {
-        columns: 1;
+    .heart,
+    .heart::before,
+    .heart::after {
+        height: 1em;
+        width: 1em;
     }
 
-
+    .bottom{
+        height: 2em;
+    }
 }
+
 
 @media(min-width: 960px) {
     .container {
