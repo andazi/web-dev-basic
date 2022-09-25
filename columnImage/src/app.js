@@ -77,7 +77,7 @@ const myMedia = () => {
         //     likes.classList.toggle("liked-img");
         // })
     };
-
+}
     // // clicking the like button
 
     // for (let likeBtn of likeBtns) {
