@@ -1,6 +1,4 @@
 const container = document.querySelector(".container");
-// const medias = document.querySelectorAll(".media");
-const likeBtns = document.querySelectorAll(".heart");
 const profileSettings = document.querySelector(".profile-toggle");
 
 
@@ -63,36 +61,28 @@ const myMedia = () => {
         // double clicking the image
 
         newMedia.addEventListener("dblclick", (e) => {
-            let mediaImage = e.target;
-            mediaImage.classList.toggle("liked-img");
-            let likes = e.target.nextElementSibling.firstElementChild;
-            likes.classList.toggle("liked");
+            newMedia.classList.toggle("liked-img");
         })
 
         // clicking the like button
 
-        // newMedia.addEventListener("click", (e) => {
-        //     likeBtn.classList.toggle("liked");
-        //     let likes = e.target.parentNode.previousElementSibling;
-        //     likes.classList.toggle("liked-img");
-        // })
+        newMedia.addEventListener("click", (e) => {
+            newMedia.classList.toggle("liked-img");
+        })
     };
 }
-    // // clicking the like button
 
-    // for (let likeBtn of likeBtns) {
-    //     likeBtn.addEventListener("click", (e) => {
-    //         likeBtn.classList.toggle("liked");
-    //         let likes = e.target.parentNode.previousElementSibling;
-    //         likes.classList.toggle("liked-img");
-    //     })
-    // };
+myMedia();
 
-    myMedia();
+// side menu 
+
+profileSettings.addEventListener("click", (e) => {
+    profileSettings.classList.toggle("view-profile");
+    let settings = profileSettings.nextElementSibling;
+    settings.classList.toggle('view-profile');
+});
 
 
-    profileSettings.addEventListener("click", (e) => {
-        profileSettings.classList.toggle("view-profile");
-        let settings = profileSettings.nextElementSibling;
-        settings.classList.toggle('view-profile');
-    });
+
+
+

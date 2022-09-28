@@ -1,0 +1,540 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 18px;
+    font-family: sans-serif;
+}
+
+.nav {
+    height: 3em;
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+.nav,
+ul,
+li,
+form,
+.profile>span {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+ul {
+    width: 100%;
+    gap: 10px;
+    padding: 0 1em;
+}
+
+#search-bar {
+    width: 3em;
+    height: 100%;
+}
+
+.nav-tab {
+    height: 2em;
+    padding: 5px;
+}
+
+.nav-tab:hover {
+    background-color: #ed9121;
+    border-radius: 20px;
+}
+
+#search-bar {
+    flex-basis: 0;
+    flex-grow: 2;
+}
+
+form {
+    height: 100%;
+    width: 100%;
+}
+
+#search {
+    width: 80%;
+    height: 70%;
+    border-radius: 20px;
+    padding: 10px 0 5px 10px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1em;
+    font-weight: 300;
+    border: none;
+    background-color: rgb(180, 179, 180);
+    color: #000;
+}
+
+#search::placeholder {
+    font-size: 1em;
+    font-weight: 600;
+}
+
+#search:hover {
+    box-shadow: 0 2px 7px;
+    outline: none;
+    border: 2px solid #ed9121;
+}
+
+#search:focus {
+    background-color: #fff;
+    outline-color: #ed9121;
+}
+
+.profile {
+    width: 4em;
+}
+
+.profile>span {
+    height: 100%;
+}
+
+.logo svg {
+    fill: #ed9121;
+    width: 3.5em;
+    width: 3.5em;
+    padding: 1px;
+}
+
+li svg,
+span svg {
+    width: 2em;
+    height: 2em;
+    padding: 5px;
+    margin-left: auto;
+}
+
+.profile-toggle svg {
+    margin-left: 0;
+}
+
+ul svg:hover {
+    fill: #ed9121;
+}
+
+.profile-picture {
+    width: 75%;
+}
+
+.img.profile-picture {
+    border: 2px solid;
+    border-radius: 50%;
+    height: 3em;
+    width: 3em;
+}
+
+.profile-toggle {
+    display: grid;
+    place-items: center;
+}
+
+.view-profile.profile-toggle svg {
+    transform: rotate(-180deg);
+}
+
+/* profile toggle views */
+
+.settings {
+    width: 7em;
+    height: 0;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.view-profile {
+    position: relative;
+}
+
+.view-profile.settings {
+    position: absolute;
+    top: 8%;
+    right: 1%;
+    z-index: 10;
+}
+
+.view-profile.settings {
+    animation: show-setting 400ms linear forwards;
+
+}
+
+@keyframes show-setting {
+    to {
+        height: 12em;
+    }
+}
+
+.bubble {
+    display: block;
+    border-radius: 50%;
+    border: 1px solid #ED9121;
+    background-color: #ffffff;
+    box-shadow: 0 0 5px;
+    width: 3.1em;
+    height: 3.1em;
+    padding: 2px;
+}
+
+.bubble:hover {
+    box-shadow: 0 5px 7px;
+    background-color: #ed9121;
+    color: #000;
+}
+
+.view-profile .b6 {
+    animation: show-bubble 800ms linear forwards;
+
+}
+
+.view-profile .b5 {
+    animation: show-bubble 900ms linear forwards;
+
+}
+
+.view-profile .b4 {
+    animation: show-bubble 1000ms linear forwards;
+
+}
+
+.view-profile .b3 {
+    animation: show-bubble 1100ms linear forwards;
+
+}
+
+.view-profile .b2 {
+    animation: show-bubble 1200ms linear forwards;
+
+}
+
+.view-profile .b1 {
+    animation: show-bubble 1300ms linear forwards;
+}
+
+@keyframes show-bubble {
+    50% {
+        border-radius: 50%;
+        width: 1em;
+    }
+
+    100% {
+        width: 100%;
+        border-radius: 20px;
+    }
+}
+
+.bubble h3 {
+    font-size: 1em;
+    text-align: center;
+    font-weight: 600;
+    opacity: 0;
+}
+
+.view-profile .bubble h3 {
+    animation: show-bubble-text 2s ease-in-out forwards;
+}
+
+@keyframes show-bubble-text {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.container {
+    min-height: 100vh;
+    /* width: 100vw; */
+    columns: 3;
+    gap: 1em;
+    padding: 10px;
+}
+
+.media {
+    position: relative;
+    margin-bottom: 1em;
+}
+
+.img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.media:hover .img {
+    filter: brightness(50%);
+    box-shadow: 0 0 10px 2px #ed9121;
+}
+
+/* show heart  */
+
+.show-like {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+}
+
+.show-like>.heart {
+    background-color: red;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -100%) rotate(45deg);
+    display: none;
+}
+
+.show-like>.heart::before,
+.show-like>.heart::after {
+    background-color: red;
+    display: none;
+}
+
+.liked-img .show-like>.heart,
+.liked-img .show-like>.heart::before,
+.liked-img .show-like>.heart::after {
+    display: block;
+    animation: liking 1s linear forwards;
+}
+
+@keyframes liking {
+    0% {
+        width: 1em;
+        height: 1em;
+        display: block;
+        /* opacity: .4; */
+    }
+
+    50% {
+        width: 2.5em;
+        height: 2.5em;
+        display: block;
+    }
+
+    100% {
+        width: 0;
+        height: 0;
+        display: none;
+    }
+}
+
+
+/* like  */
+
+.heart {
+    position: absolute;
+    display: block;
+    opacity: 0;
+    margin-top: 20px;
+    margin-right: 20px;
+    top: 0;
+    right: 0;
+    width: 1.5em;
+    height: 1.5em;
+    background-color: #fff;
+    transform: rotate(45deg);
+}
+
+.heart::before,
+.heart::after {
+    position: absolute;
+    content: "";
+    width: 1.5em;
+    height: 1.5em;
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+.liked-img .heart,
+.liked-img .heart::before,
+.liked-img .heart::after {
+    background-color: red;
+}
+
+.heart::after {
+    bottom: 50%;
+}
+
+.heart::before {
+    right: 50%;
+}
+
+.media:hover .heart {
+    opacity: 1;
+}
+
+/* bottom  */
+
+.bottom {
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 10px;
+    background-color: #ffffffd7;
+}
+
+.media:hover .bottom {
+    animation: show-options .2s linear forwards;
+}
+
+@keyframes show-options {
+    0% {
+        display: none;
+        opacity: 0;
+        bottom: 0;
+    }
+
+    100% {
+        display: block;
+        opacity: 1;
+        bottom: 20px;
+    }
+}
+
+/* image tittle */
+.img-title {
+    font-size: 1em;
+    font-weight: 700;
+    letter-spacing: 2px;
+    min-width: 20%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 5px;
+    border-radius: 20px;
+}
+
+/* download and options */
+
+.options {
+    height: 3em;
+    width: 40%;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+/* download */
+
+.follow {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    border-radius: 40px;
+}
+
+.line-1,
+.line-2 {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.line-1 {
+    position: absolute;
+    width: .25em;
+    height: 1em;
+    background-color: black;
+}
+
+.line-2 {
+    position: absolute;
+    width: 1em;
+    height: .25em;
+    background-color: #000;
+}
+
+.follow:hover>* {
+    animation: follow 1s alternate infinite;
+}
+
+@keyframes follow {
+    100% {
+        background-color: #888484;
+    }
+}
+
+/* other options */
+.toggle-options {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    width: 50%;
+    height: 100%;
+    margin-right: 5px;
+    border-radius: 40px;
+}
+
+.circle {
+    width: .5em;
+    height: .5em;
+    background-color: black;
+    border-radius: 50%;
+}
+
+.toggle-options:hover .circle {
+    animation: bounce 1s alternate infinite;
+}
+
+.toggle-options:hover .circle:first-child {
+    animation-delay: .2s;
+}
+
+.toggle-options:hover .circle:nth-child(2) {
+    animation-delay: .4s;
+}
+
+.toggle-options:hover .circle:last-child {
+    animation-delay: .6s;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0%);
+    }
+
+    100% {
+        transform: translateY(80%);
+    }
+}
+
+@media(max-width: 600px) {
+    ul {
+        font-size: .7em;
+    }
+
+    #search-bar {
+        display: none;
+    }
+
+    .heart,
+    .heart::before,
+    .heart::after {
+        height: 1em;
+        width: 1em;
+    }
+
+    .bottom{
+        height: 2em;
+    }
+}
+
+
+@media(min-width: 960px) {
+    .container {
+        columns: 5;
+    }
+
+
+}

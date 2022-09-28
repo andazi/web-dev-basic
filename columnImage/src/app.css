@@ -270,6 +270,7 @@ ul svg:hover {
 
 .media:hover .img {
     filter: brightness(50%);
+    box-shadow: 0 0 10px 2px #ed9121;
 }
 
 /* show heart  */
@@ -297,9 +298,9 @@ ul svg:hover {
     display: none;
 }
 
-.liked-img.show-like>.heart,
-.liked-img.show-like>.heart::before,
-.liked-img.show-like>.heart::after {
+.liked-img .show-like>.heart,
+.liked-img .show-like>.heart::before,
+.liked-img .show-like>.heart::after {
     display: block;
     animation: liking 1s linear forwards;
 }
@@ -352,9 +353,9 @@ ul svg:hover {
     border-radius: 50%;
 }
 
-.liked.heart,
-.liked.heart::before,
-.liked.heart::after {
+.liked-img .heart,
+.liked-img .heart::before,
+.liked-img .heart::after {
     background-color: red;
 }
 
@@ -471,6 +472,7 @@ ul svg:hover {
     gap: 5px;
     width: 50%;
     height: 100%;
+    margin-right: 5px;
     border-radius: 40px;
 }
 
