@@ -13,6 +13,7 @@ body {
     height: 3em;
     font-weight: 700;
     margin-top: 10px;
+    cursor: pointer;
 }
 
 .nav,
@@ -525,7 +526,7 @@ ul svg:hover {
         width: 1em;
     }
 
-    .bottom{
+    .bottom {
         height: 2em;
     }
 }
