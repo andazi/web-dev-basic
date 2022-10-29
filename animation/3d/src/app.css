@@ -1,0 +1,71 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.body {
+    font-size: 15px; 
+}
+
+.container {
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+.box {
+    position: relative;
+    width: 8em;
+    height: 8em;
+    top: -2em;
+    z-index: 10;
+}
+
+.box:hover {
+    animation: box 2s linear infinite;
+}
+
+@keyframes box {
+    to {
+        transform: rotateY(360deg);
+    }
+}
+
+.box>div {
+    position: absolute;
+    width: 6em;
+    height: 6em;
+    background-color: #20dac150;
+    box-shadow: 0 0 .5em inset;
+}
+
+.top {
+    top: 0;
+    transform: rotateX(90deg);
+}
+
+.bottom {
+    bottom: 0;
+    transform: rotateX(90deg);
+}
+
+.right {
+    right: 0;
+    transform: rotateY(90deg);
+}
+
+.left {
+    left: 0;
+    transform: rotateY(90deg);
+}
+
+.floor {
+    position: absolute;
+    width: 12em;
+    height: 12em;
+    background-image: conic-gradient(#000000 90deg, #a3a3a3 90deg 180deg, rgb(0, 0, 0) 180deg 270deg, #a3a3a3 270deg);
+    background-size: 2em 2em;
+transform: rotateX(90deg) perspective(10em);
+/* perspective: 10em; */
+}

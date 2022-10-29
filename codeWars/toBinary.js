@@ -1,4 +1,4 @@
 function toBinary(number) {
     return number.toString(2)
 }
-toBinary(222)
+toBinary(3)

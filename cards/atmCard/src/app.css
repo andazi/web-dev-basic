@@ -1,0 +1,302 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    font-size: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.container {
+    height: 100%;
+    background-color: #0002;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+span {
+    display: block;
+}
+
+.title {
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.card-data {
+    width: 40em;
+    font-size: .7em;
+    display: flex;
+    flex-direction: column;
+    gap: .2em;
+}
+
+.card-data>span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .4em;
+    text-transform: uppercase;
+    width: 100%;
+    background-color: #1002;
+}
+
+.data-labels {
+    margin-left: 0;
+    margin-right: 0;
+    width: 50%;
+    text-align: right;
+}
+
+input,
+select {
+    width: 50%;
+    font-size: 1em;
+    padding: .1em .2em;
+    height: 1.5em;
+    text-transform: uppercase;
+}
+
+
+/* card display */
+
+.card {
+    border: 1px dashed;
+    position: relative;
+    height: 60%;
+    width: 100%;
+    margin-top: 1em;
+    display: grid;
+    place-items: center;
+}
+
+.card-front,
+.card-back {
+    border: 1px solid;
+    position: absolute;
+    width: 32rem;
+    height: 20rem;
+    border-radius: 1em;
+}
+
+.card-front {
+    /* z-index: 10; */
+}
+
+.card-logo {
+    position: absolute;
+    /* width: 12em;
+    height: 8em; */
+        width: 35%;
+            height: 40%;
+            border: 1px dashed;
+    right: 0;
+    top: .1em;
+    font-weight: 600;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 100%;
+    width: 50%;
+}
+
+.logo-name{
+        font-size: 100%;
+    width: 50%;
+    padding: .2em;
+    transform: rotate(-40deg);
+}
+
+.logo svg {
+    width: 80%;
+    height: 100%;
+}
+
+.panel {
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    width: 20%;
+    height: 30%;
+    background-color: rgb(136, 98, 2);
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+    box-shadow:inset 0 0 7px #000;
+}
+
+.panel::before {
+    content: '';
+    position: absolute;
+    border: 1px solid;
+    border-top: none;
+    border-bottom: none;
+    width: 60%;
+    height: 80%;
+}
+
+.panel::after {
+    content: '';
+    position: absolute;
+    border: 1px solid;
+    border-left: none;
+    border-right: none;
+    width: 80%;
+    height: 60%;
+}
+
+.svg {
+    position: absolute;
+    width: 1.5em;
+    height: 1.5em;
+}
+
+.currency {
+    top: -2.3em;
+}
+
+.network {
+    right: -2.3em;
+}
+
+.arrow {
+    left: -2.3em;
+    width: 1em;
+    height: 1em;
+    background-color: black;
+    clip-path: polygon( 0% 50%,100% 0% , 100% 100%);
+}
+
+.card-numbers,
+.card-name,
+.card-expiration,
+.card-type {
+    position: absolute;
+}
+
+.card-numbers {
+    top: 50%;
+    width: 100%;
+}
+
+.numbers {
+    text-align: center;
+    padding: 0 .211em;
+    /* letter-spacing: 1.4px; */
+    font-size: 2.4em;
+}
+
+.card-name {
+    top: 80%;
+    font-size: 1.5em;
+    display: flex;
+    gap: 5px;
+    padding-left: 9px;
+}
+
+.card-expiration {
+    top: 65%;
+    left: 30%;
+    width: 20%;
+    font-size: .7em;
+    font-weight: 700;
+    display: flex;
+    place-items: center;
+    gap: 10px; 
+
+}
+
+.valid {
+    word-wrap: break-word;
+    width: 50%;
+    text-align: center;
+    font-weight: 500;
+}
+
+.month::after {
+    content: '/';
+    position: absolute;
+    margin-right: 10px;
+}
+
+/* cards */
+
+.card-type {
+    bottom: 0;
+    right: 0;
+    width: 40%;
+    height: 30%;
+}
+
+.visa-card,
+.verve-card,
+.master-card{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.master-card {
+    left: 40%;
+    width: 5em;
+    height: 5em;
+    border-radius: 50%;
+    background-color: #ff7300b0;
+    display: none;
+}
+
+.master-card.show{
+    display: block;
+}
+
+.master-card::after {
+    content: '';
+    position: absolute;
+    left: 60%;
+    width: 5em;
+        height: 5em;
+    border-radius: 50%;
+    background-color: #fad91cb0;
+}
+
+.visa-card,
+.verve-card {
+    font-size: 150%;
+    font-weight: 700;
+    font-style: oblique;
+    display: none;
+}
+
+.visa-card.show {
+    display: block;
+}
+
+.verve.show {
+    display: block;
+}
+
+/* .visa-card::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    font-size: 170%;
+    font-weight: 700;
+    border: 1px solid;
+    background-color: purple;
+    z-index: -10;
+} */
+
+
+span {
+    /* border: 1px dashed; */
+}
