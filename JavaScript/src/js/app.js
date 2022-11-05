@@ -154,7 +154,7 @@
 
 // colors.unshift('purple') // adds to the start
 
-// colors.shift()  // removes from the end
+// colors.shift()  // removes from the start
 
 // colors.unshift('teal')
 
