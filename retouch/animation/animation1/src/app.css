@@ -1,0 +1,18 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial Narrow Bold', sans-serif ;
+}
+
+.box {
+    width: 150px;
+    height: 100px;
+    padding: 2%;
+    border: 1px solid #000;
+    background-color: #a30;
+    transition: 1s;
+}

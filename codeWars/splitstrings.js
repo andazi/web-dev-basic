@@ -1,5 +1,10 @@
 function solution(str) {
+if(str.length % 2 === 0){
 
+}
+for(let x of str){
+    console.log(x)
+}
 }
 
 solution("boboye");

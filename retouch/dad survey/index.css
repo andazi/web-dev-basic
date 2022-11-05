@@ -1,0 +1,83 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    outline: none;
+}
+
+body {
+    background: #c9c6c6;
+    width: 100%;
+    font-size: 10px;
+    font-family: sans-serif;
+}
+
+.container {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+/* form header  */
+
+header, h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.container h3 {
+    font-weight: 100;
+}
+
+/* form section  */
+
+section {
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+fieldset .details {
+    display: flex;
+    flex-direction: column;
+    margin: 0.6rem;
+}
+
+legend {
+    font-weight: 600;
+}
+
+label {
+    font-weight: 500;
+    padding-top: 0.6rem;
+}
+
+input, select {
+    font-size: 1.2rem;
+    flex-wrap: wrap;
+}
+
+textarea {
+    resize:none ;
+    font-size: 1.2rem;
+    width: 100%;
+}
+
+#personal label {
+    display: block;
+}
+
+button {
+    padding: 1rem;
+    font-size: 1.4rem;
+}
+
+@media (max-width: 840px) {
+    #form select, #career {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+}

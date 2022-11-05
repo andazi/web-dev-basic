@@ -1,0 +1,111 @@
+body {
+    background-color: rgb(127, 255, 212);
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    margin: 0;
+    padding-inline-end: 0;
+}
+
+.body {
+    display: block;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem auto;
+    padding: 0.9rem;
+    background-color: rgba(28, 36, 33, 0.286);
+    border-radius: .8rem;
+    box-shadow: 0 0 4em 2em rgba(28, 36, 33, 0.521);
+}
+
+header {
+    font-size: 1.6em;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+section h2 {
+    font-weight: 300;
+    font-size: 1.5rem;
+}
+
+fieldset {
+    align-items: center;
+    padding: 10px;
+}
+
+legend {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+section {
+    margin: 20px 0;
+    width: 100%;
+}
+
+.formality {
+    display: block;
+    /* width: 50%; */
+}
+
+.details label {
+    display: block;
+    margin-top: 15px;
+}
+
+.reason label {
+    display: flex;
+    margin-top: 15px;
+}
+
+.details input, .timing input {
+    width: 100%;
+    height: 30px;
+    font-size: 1.3rem;
+}
+
+.details::placeholder {
+    font-size: large;
+    margin: 20% 0;
+    padding: 10% 0;
+}
+
+textarea {
+    resize: none;
+    width: 100%;
+    font-size: 1.2rem;
+}
+
+textarea::placeholder {
+    padding: 0;
+    font-size: 1.2rem;
+}
+
+.gender p {
+    margin-bottom: 0;
+    padding: 0;
+    font-weight: 300;
+}
+
+.timing label {
+    display: block;
+    margin-top: 15px;
+}
+
+.timing input {
+    width: 100%;
+    height: 30px;
+}
+
+button {
+    margin-top: 0.75rem;
+    padding: .5rem 0;
+    border: 1.5rem;
+    width: 100%;
+    font-size: 1.7rem;
+    background-color: rgba(31, 31, 31, 0.904);
+    color: rgb(127, 255, 212);
+    transition: 0ms;
+}

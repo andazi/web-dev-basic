@@ -1927,7 +1927,7 @@
 // body.setAttribute('class', `${currentClass} purple`);
 
 // // classList
-// intereat with classes on an element
+// interact with classes on an element
 // you can push classes or remove
 // there are various function to classList method such as add,remove,toggle...
 

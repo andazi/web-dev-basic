@@ -1,33 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>calculator</title>
+    <link rel="stylesheet" href="src/app.css">
 </head>
+
 <body>
-<div class="container">
-    <div class="frame">
-        <div class="output"></div>
-        <div class="input">
-            <div class="keys"></div>
-            <div class="keys"></div>
-            <div class="keys"></div>
-            <div class="keys"></div>
-            <div class="keys"></div>
-            <div class="keys"></div>
-            <div class="keys"></div>
-            <div class="keys"></div>
-            <div class="keys"></div>
-            <div class="keys"></div>
-            <div class="keys"></div>
-            <div class="keys"></div>
-            <div class="keys"></div>
-            <div class="keys"></div>
-            <div class="keys"></div>
-            <div class="keys"></div>
+    <div class="container">
+        <div class="frame">
+            <div class="output">
+                <input type="text" class="key-output" title="double click to copy" readOnly>
+                <input type="text" class="result" title="double click to copy" readOnly>
+            </div>
+            <form action="submit" class="inputs">
+                <input type="button" class="keys" value="7">
+                <input type="button" class="keys" value="8">
+                <input type="button" class="keys" value="9">
+
+                <input type="button" class="keys" value="CLR">
+                <input type="button" class="keys" value="4">
+                <input type="button" class="keys" value="5">
+                <input type="button" class="keys" value="6">
+                <input type="button" class="keys" value="+">
+
+                <input type="button" class="keys" value="1">
+                <input type="button" class="keys" value="2">
+                <input type="button" class="keys" value="3">
+                <input type="button" class="keys" value="-">
+
+                <input type="button" class="keys" value="0">
+                <input type="button" class="keys" value="*">
+
+                <input type="button" class="keys" value="/">
+                <input type="button" class="keys" value="=">
+
+            </form>
         </div>
     </div>
-</div>
+    <script src="src/app.js"></script>
 </body>
+
 </html>

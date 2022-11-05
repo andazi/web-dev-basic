@@ -1,0 +1,437 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+::selection {
+    background: #646363;
+}
+
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    width: 100vw;
+    cursor: pointer;
+}
+
+/* header and nav  */
+
+.container {
+    background-image: url(/christ/src/img/emmanuel-phaeton-ZFIkUxRTWHk-unsplash.jpg);
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 0.7em;
+    text-transform: uppercase;
+    background-color: #ffffff3d;
+
+}
+
+.logo {
+    -webkit-user-select: none;
+    user-select: none;
+    flex-basis: 0;
+    flex-grow: 1;
+}
+
+.logo h1 {
+    font-size: 3em;
+    font-weight: 100;
+}
+
+nav ul {
+    flex-basis: 0;
+    flex-grow: 5;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+nav li {
+    list-style: none;
+}
+
+nav a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 100;
+    transition: .5s;
+}
+
+nav a:hover {
+    border-bottom: 2px solid #000;
+}
+
+nav a:active {
+    color: #685e34;
+}
+
+.home {
+    width: 90%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 10px auto;
+    background-color: #ffffff1e;
+    box-shadow: 0 0 40px 8px #000000;
+    border-radius: 10px;
+}
+
+.highlight {
+    width: 90%;
+    line-height: 1.4;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h2 {
+    font-size: 3em;
+}
+
+.highlight p {
+    font-size: 1.5em;
+    color: #252525;
+}
+
+.btn button {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: 10px;
+    padding: 10px;
+    width: 250px;
+    font-size: .7em;
+    font-weight: 700;
+    background-color: #685e34;
+    border: none;
+    border-radius: 7px;
+    transition: 100ms;
+}
+
+.btn button:first-child{
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.btn button:hover {
+    background-color: #685e34;
+}
+
+.btn button:nth-child(2):hover {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.btn button:active {
+    box-shadow: inset 0 0 5px 5px #ffffff;
+}
+
+/* section  */
+
+section {
+    height: 100vh;
+    background-color: #e7df93;
+}
+
+.goal {
+    display: flex;
+    align-items: center;
+}
+
+.goal-img {
+    flex-basis: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.goal-img img {
+    width: 90%;
+    object-fit: cover;
+    box-shadow: 0 0 20px #ffffff;
+}
+
+.goal-words {
+    flex-basis: 50%;
+}
+
+.goal-words header {
+    font-size: 2em;
+    font-weight: 500;
+}
+
+.goal-words p {
+    font-size: 1.2em;
+    color: #646363;
+}
+
+/* podcast  */
+
+.podcast {
+    height: 80vh;
+    background-color: #f5e97c98;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.podcast-head {
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 2;
+}
+
+.podcast-head header {
+    font-size: .9em;
+    color: #646363;
+    border-bottom: 2px solid #000;
+}
+
+.podcast-head ul {
+    display: flex;
+}
+
+.podcast-head ul li {
+    list-style: none;
+    display: inline-block;
+    width: 20px;
+    margin: 5px 10px;
+}
+
+svg {
+    border-radius: 50%;
+}
+
+svg:hover {
+    box-shadow: 0 0 15px 5px #b4b4b442;
+}
+
+
+.podcast-head button {
+    width: 100px;
+    height: 30px;
+    font-size: .6em;
+    border: none;
+    box-shadow: inset 0 0 5px #000;
+    transition: .5s;
+}
+
+.podcast-head button:hover {
+    background-color: #685e34;
+    color: #ffffff;
+    box-shadow: 0 0 10px 5px #000;
+}
+
+.podcast-head button:active {
+    box-shadow: none;
+}
+
+.podcast-img {
+    flex-basis: 50%;
+}
+
+.podcast-img img {
+    width: 60%;
+    object-fit: cover;
+    box-shadow:  0 0 90px #e6e6e67e;
+}
+
+/* event  */
+
+.event {
+    height: auto;
+}
+
+.event header {
+    text-align: center;
+    font-size: 2em;
+}
+
+.event-card {
+    display: flex;
+    flex-direction: row;
+    /* width: 90%; */
+    justify-content: space-evenly;
+    overflow: hidden;
+    flex-wrap: wrap;
+}
+
+figure {
+    width: 300px;
+    height: 400px;
+    margin: 20px 0;
+    background-color: #ffffff7e;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+figcaption {
+    padding: 10px;
+    text-align: justify;
+    flex-basis: 0;
+    flex-grow: 1;
+}
+
+figure img {
+    width: 100%;
+    object-fit: cover;
+    flex-basis: 0;
+    flex-grow: 1;
+}
+
+/* Testimony  */
+
+.testimony {
+    height: auto;
+}
+
+.testimony header {
+    text-align: center;
+    font-size: 2em;
+}
+
+.testimony-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.testimony-card {
+    margin: 20px 0;
+    width: 300px;
+    text-align: justify;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #ffffff7e;
+    box-shadow: 0 0 15px 3px #fff;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile {
+    display: flex; 
+    font-family: 100;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #000;
+}
+
+.profile img {
+    width: 70px;
+    height: 70px;
+    margin-right: 10px;
+    border: 2px solid #000;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* people  */
+
+.people {
+    background-image: url(/christ/src/img/ismael-paramo-aEtbu7ymQo4-unsplash.jpg);
+    background-size: cover;
+}
+
+.people > div {
+    width: 90%;
+    font-size: 1.7em;
+    text-align: center;
+}
+
+/* footer  */
+
+footer {
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+footer ul {
+    display: flex;
+    width: 70%;
+    justify-content: space-evenly;
+    margin: 20px 0;
+}
+
+footer li {
+    list-style: none;
+    text-decoration: underline;
+}
+
+ul li:hover {
+    color: #646363;
+    text-decoration: none;
+}
+
+
+/* headers with direct section parent  */
+
+section > header, div > header {
+    text-transform: uppercase;
+    padding: 20px 0;
+    letter-spacing: 5px;
+    text-shadow: 0 5px 5px #000;
+}
+
+/* responsive  */
+
+@media (max-width: 950px) {
+    body {
+        font-size: 17px;
+    }
+
+    nav {
+        height: auto;
+        flex-direction: column;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;   
+    }
+
+    nav li {
+        margin-bottom: 10px;
+    }
+
+    .goal {
+        flex-direction: column;
+        height: 100vh
+    }
+
+    .goal-img {
+        order: 1;
+    }
+    .goal-words {
+        order: 0;
+        text-align: center;
+    }
+
+    .podcast {
+        height: auto;
+        padding: 20px 0;
+    }
+
+    footer ul {
+        width: 90%;
+        font-size: .96em;
+        flex-wrap: wrap;
+    }
+}
+
+
+

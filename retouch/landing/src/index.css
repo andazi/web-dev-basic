@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,400;0,700;1,300;1,400&display=swap');
+
+* {
+    font-family: 'Josefin Sans', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* body of the app  */
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    color: #f6d55c;
+    background: #000000;
+    display: flex;
+    flex-direction: column;
+}
+
+/* heading  */
+
+.header {
+    flex-basis: 10%;
+    align-self: center;
+}
+
+.header ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+li {
+    list-style-type: none;
+    margin: 2vh 3vw;
+    padding: 1em;
+    font-weight: 500;
+}
+ 
+/* all links  */
+
+a {
+    text-decoration: none;
+    color: #f6d55c;
+    transition: 1s all;
+}
+
+li>a:hover {
+    border-bottom: 2px solid #f6d55c;
+}
+
+.content {
+    flex-basis: 80%;
+    margin: 0 auto;
+}
+ /* social media svg  */
+.socials {
+    background-color: #f6d55c79;
+    border-radius: 0 10px 10px 0;
+    position: fixed;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10vh;
+    height: 25vh;
+}
+
+.socials:hover {
+    background-color: #f6d55c;
+}
+
+.social {
+    height: 30%;
+    width: 100%;
+}
+
+/* title  */
+
+/* [title]:hover {
+    background-color: #ed553b;
+} */
+
+/* content intro  */
+
+
+section {
+    flex-basis: 80%;
+    text-align: center;
+    user-select: none;
+}
+
+
+.intro .logo {
+    font-size: 5em;
+    font-weight: 700;
+    padding-top: 40%;
+}
+
+.text {
+    font-size: 1.3em;
+    font-weight: 100;
+}
+
+button {
+    font-size: 1.7em;
+    font-weight: 700;
+    padding: 10px 30px;
+    background: linear-gradient( #000000, #f6d55c, #000000);
+    box-shadow: 0 5px 8px #000000;
+    border: none;
+}
+
+button:hover {
+    background: linear-gradient(#f6d55c, #000000);
+    box-shadow: 0 5px 8px #000000;
+}
+
+button:active {
+    background: linear-gradient(#000000, #f6d55c, #000000);
+    box-shadow: 0 5px 8px #000000;
+}
+
+@media (min-width: 380px) {
+    .intro .logo {
+        font-size: 10em;
+        padding: 0;
+    }
+    
+    .text {
+        word-spacing: 7px;
+        letter-spacing: 3px;
+        margin: 20px 0;
+    }
+    
+}
+
+
+
+/* footer  */
+
+.footer {
+    flex-basis: 10%;
+}
+
+.link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.link ul {
+    display: flex;
+    flex-basis: 60%;
+}
+
+.link p {
+    flex-basis: 40%;
+    margin-bottom: 10px;
+}

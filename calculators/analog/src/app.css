@@ -1,0 +1,82 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    font-size: 15px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+}
+
+.frame {
+    width: 70%;
+    height: 80%;
+    box-shadow: 0 0 10px;
+}
+
+.output {
+    width: 100%;
+    height: 30%;
+    border-bottom: .1em solid;
+    background-color: #e0e0e0;
+}
+
+.output>input {
+    background-color: #e0e0e0;
+    border: none;
+    outline: none;
+    width: 100%;
+}
+
+.key-output {
+    height: 40%;
+    text-align: right;
+    font-size: 2.3em;
+    padding-right: 5px;
+    text-overflow: hidden;
+}
+
+.result {
+    height: 60%;
+    font-size: 4em;
+    font-weight: 700;
+    text-align: left;
+    padding-left: 10px;
+}
+
+.inputs {
+    width: 100%;
+    height: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+.keys {
+    width: 20%;
+    height: 20%;
+    font-size: 2.4em;
+}
+
+/* key hover/focus  */
+
+.keys:is(:hover, :focus) {
+    box-shadow: 0 0 10px;
+}
+
+/* key press */
+
+.keys:active {
+    box-shadow: inset 0 0 10px;
+}
