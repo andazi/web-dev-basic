@@ -1,9 +1,8 @@
 function solution(str) {
-if(str.length % 2 === 0){
-
-}
-for(let x of str){
-    console.log(x)
+    let strLength = str.length;
+while(strLength > 0){
+    console.log(str[0], str[1]);
+    str = str.slice(0,1);
 }
 }
 

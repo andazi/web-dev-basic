@@ -65,14 +65,12 @@ input {
     margin-right: .5em;
 }
 
-
 .controls {
     height: 22%;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 4px;
-
 }
 
 button {
